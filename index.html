@@ -708,6 +708,30 @@ ul{list-style:none;}
   padding:4px 10px;
   backdrop-filter:blur(8px);
 }
+/* card único de destaque (não é antes/depois) */
+.ad-single{
+  position:relative;
+  height:380px;
+  overflow:hidden;
+  background:var(--paper-warm);
+}
+.ad-single img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 32%;
+  z-index:1;
+}
+.ad-tag-single{
+  position:absolute;top:var(--sp-sm);left:50%;
+  transform:translateX(-50%);
+  z-index:4;
+  font-family:var(--sans);
+  font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;
+  background:rgba(14,12,10,.65);
+  color:rgba(255,255,255,.72);
+  padding:4px 14px;
+  backdrop-filter:blur(8px);
+}
 .ad-footer{
   padding:20px 24px;
   border:1px solid var(--rule);
@@ -761,6 +785,7 @@ ul{list-style:none;}
 }
 .dep-carousel-track{
   display:flex;
+  flex-wrap:wrap;
   gap:24px;
   transition:transform .5s var(--ease);
 }
@@ -1465,9 +1490,12 @@ footer{
   /* antes/depois */
   .ad-grid{grid-template-columns:1fr;}
   .ad-pair{height:280px;}
+  .ad-single{height:280px;}
 
-  /* depoimentos */
-  .dep-card{flex:0 0 calc(100% - 0px);}
+  /* depoimentos — vira carrossel de 1 card por vez */
+  .dep-carousel-outer{overflow:hidden;}
+  .dep-carousel-track{flex-wrap:nowrap;}
+  .dep-card{flex:0 0 100%;padding:36px 28px;}
   .dep-dots{display:flex;}
   .dep-head{flex-direction:column;align-items:flex-start;}
 
@@ -1512,7 +1540,6 @@ footer{
     <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
     <li><a href="#servicos" onclick="closeMenu()">Serviços</a></li>
     <li><a href="#antes-depois" onclick="closeMenu()">Resultados</a></li>
-    <li><a href="#galeria" onclick="closeMenu()">Galeria</a></li>
     <li><a href="#depoimentos" onclick="closeMenu()">Depoimentos</a></li>
     <li><a href="#faq" onclick="closeMenu()">Dúvidas</a></li>
     <li><a href="#localizacao" onclick="closeMenu()">Localização</a></li>
@@ -1533,7 +1560,6 @@ footer{
   <ul class="nav-center" role="navigation" aria-label="Navegação principal">
     <li><a href="#sobre">Sobre</a></li>
     <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#galeria">Galeria</a></li>
     <li><a href="#depoimentos">Depoimentos</a></li>
     <li><a href="#localizacao">Localização</a></li>
   </ul>
@@ -1893,24 +1919,15 @@ footer{
         <div class="ad-note">Micropigmentação fio a fio</div>
       </div>
     </div>
-    <!-- Card 3 -->
+    <!-- Card 3 — destaque (imagem única, não é antes/depois) -->
     <div class="ad-card reveal d2">
-      <div class="ad-pair">
-        <div class="ad-side">
-          <img src="img/galeria-cilios-sobrancelha-a.jpg" alt="Antes — sobrancelha e cílios">
-        </div>
-        <div class="ad-side">
-          <img src="img/galeria-cilios-sobrancelhas-resultado.jpg" alt="Depois — resultado completo olhar">
-        </div>
-        <div class="ad-divider" aria-hidden="true"></div>
-        <div class="ad-badge" aria-hidden="true">
-          <span>Antes</span>
-          <span>Depois</span>
-        </div>
+      <div class="ad-single">
+        <img src="img/galeria-cilios-sobrancelhas-resultado.jpg" alt="Resultado de extensão de cílios e design de sobrancelhas">
+        <div class="ad-tag-single" aria-hidden="true">Destaque</div>
       </div>
       <div class="ad-footer">
-        <div class="ad-svc">Resultados Surpreendentes</div>
-        <div class="ad-note">Trabalhos reais · Elis Miranda</div>
+        <div class="ad-svc">Olhar Completo</div>
+        <div class="ad-note">Cílios e sobrancelha em harmonia</div>
       </div>
     </div>
   </div>
@@ -2032,9 +2049,11 @@ footer{
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     GALERIA — comentada temporariamente (remover <!-- e --> para reativar)
+     GALERIA — desativada no momento.
+     Para reativar: apague a linha "INICIO-COMENTARIO" abaixo e a
+     linha "FIM-COMENTARIO" que fica logo após o fechamento da section.
 ═══════════════════════════════════════════════════════════ -->
-<!--
+<!-- INICIO-COMENTARIO
 <section id="galeria" aria-labelledby="galeria-title">
   <div class="galeria-head">
     <div>
@@ -2112,7 +2131,7 @@ footer{
     </div>
   </div>
 </section>
--->
+FIM-COMENTARIO -->
 
 <!-- ═══════════════════════════════════════════════════════════
      COMO FUNCIONA
