@@ -732,6 +732,7 @@ ul{list-style:none;}
 #depoimentos{
   padding:var(--sp-xl) var(--sp-lg);
   background:var(--paper-off);
+  overflow:hidden;
 }
 .dep-head{
   max-width:var(--max);margin:0 auto;
@@ -753,67 +754,159 @@ ul{list-style:none;}
   color:var(--ink-soft);font-weight:300;margin-top:4px;
 }
 
-.dep-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:2px;
+/* ── CARROSSEL WRAPPER ── */
+.dep-carousel-outer{
   max-width:var(--max);margin:0 auto;
+  position:relative;
+}
+.dep-carousel-track{
+  display:flex;
+  gap:24px;
+  transition:transform .5s var(--ease);
 }
 
+/* ── CARDS ── */
 .dep-card{
-  background:var(--paper);
-  padding:44px 40px;
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(18px) saturate(1.3);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  border:1px solid rgba(139,111,78,.12);
+  box-shadow:0 8px 32px rgba(14,12,10,.06),0 2px 8px rgba(139,111,78,.08);
+  padding:44px 40px 36px;
   transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+  flex:0 0 calc(33.333% - 16px);
+  min-width:0;
+  position:relative;
+}
+.dep-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--accent-pale),var(--accent),var(--accent-pale));
+  opacity:0;
+  transition:opacity .4s var(--ease);
 }
 .dep-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 24px 48px rgba(14,12,10,.06);
+  transform:translateY(-6px);
+  box-shadow:0 24px 56px rgba(14,12,10,.09),0 4px 16px rgba(139,111,78,.12);
 }
+.dep-card:hover::before{opacity:1;}
+
 .dep-stars{
-  display:flex;gap:3px;margin-bottom:var(--sp-md);
+  display:flex;gap:4px;margin-bottom:22px;
 }
 .dep-star{
-  font-size:.65rem;color:var(--accent);
+  font-size:.85rem;color:#C9963A;
 }
 .dep-quote{
   font-family:var(--serif);
-  font-size:1.2rem;font-style:italic;
+  font-size:1.12rem;font-style:italic;
   font-weight:300;
   color:var(--ink-mid);
-  line-height:1.65;
-  margin-bottom:32px;
+  line-height:1.7;
+  margin-bottom:28px;
+  position:relative;
 }
+.dep-quote::before{
+  content:'\201C';
+  font-family:var(--serif);
+  font-size:4rem;
+  line-height:.6;
+  color:var(--accent-pale);
+  position:absolute;
+  top:-4px;left:-8px;
+  pointer-events:none;
+  z-index:0;
+}
+.dep-quote-text{position:relative;z-index:1;}
+
 .dep-divider{
   width:100%;height:1px;
   background:var(--rule);
   margin-bottom:24px;
 }
 .dep-author{
-  display:flex;align-items:center;gap:14px;
+  display:flex;align-items:center;gap:16px;
 }
 .dep-avatar{
-  width:40px;height:40px;border-radius:50%;
+  width:56px;height:56px;border-radius:50%;
   background:var(--paper-warm);
   overflow:hidden;flex-shrink:0;
-  border:1px solid var(--rule);
+  border:2px solid var(--accent-pale);
+  box-shadow:0 0 0 3px rgba(212,196,176,.25);
 }
-.dep-avatar img{width:100%;height:100%;object-fit:cover;}
+.dep-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;}
 .dep-avatar-init{
   width:100%;height:100%;
   display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);font-size:1rem;
+  font-family:var(--serif);font-size:1.2rem;
   color:var(--accent);
 }
 .dep-name{
   font-family:var(--sans);
   font-size:var(--t-sm);font-weight:500;
   color:var(--ink);display:block;
+  letter-spacing:.02em;
 }
 .dep-role{
-  font-size:.6rem;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--ink-soft);
-  font-weight:300;
+  font-size:.58rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);
+  font-weight:400;
+  margin-top:3px;display:block;
 }
+
+/* ── DOTS (indicadores) ── */
+.dep-dots{
+  display:none;
+  justify-content:center;
+  gap:8px;
+  margin-top:32px;
+}
+.dep-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--accent-pale);
+  border:none;cursor:pointer;
+  transition:background .3s,transform .3s;
+  padding:0;
+}
+.dep-dot.active{
+  background:var(--accent);
+  transform:scale(1.35);
+}
+
+/* ── FRASE EMOCIONAL + CTA ── */
+.dep-closing{
+  max-width:680px;
+  margin:72px auto 0;
+  text-align:center;
+}
+.dep-closing-phrase{
+  font-family:var(--serif);
+  font-size:clamp(1.2rem,2.2vw,1.6rem);
+  font-weight:300;font-style:italic;
+  color:var(--ink-mid);
+  line-height:1.55;
+  margin-bottom:36px;
+  letter-spacing:.01em;
+}
+.dep-closing-phrase em{
+  color:var(--accent);
+  font-style:italic;
+}
+.dep-closing-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--accent);
+  color:var(--white);
+  padding:18px 48px;
+  font-family:var(--sans);
+  font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;
+  font-weight:500;
+  transition:all .4s var(--ease);
+  box-shadow:0 8px 28px rgba(139,111,78,.28);
+}
+.dep-closing-btn svg{width:16px;height:16px;fill:var(--white);transition:transform .35s var(--ease);}
+.dep-closing-btn:hover{background:var(--ink);box-shadow:0 8px 32px rgba(14,12,10,.2);}
+.dep-closing-btn:hover svg{transform:translateX(4px);}
 
 /* ═══════════════════════════════════════════════════════════
    GALERIA
@@ -1334,7 +1427,7 @@ footer{
   .svc-grid.cols-1{grid-template-columns:1fr;}
 
   .ad-grid{grid-template-columns:1fr 1fr;}
-  .dep-grid{grid-template-columns:1fr 1fr;}
+  .dep-card{flex:0 0 calc(50% - 12px);}
   .cf-steps{grid-template-columns:repeat(2,1fr);}
 
   .cf-step:nth-child(2){border-right:none;}
@@ -1374,7 +1467,8 @@ footer{
   .ad-pair{height:280px;}
 
   /* depoimentos */
-  .dep-grid{grid-template-columns:1fr;}
+  .dep-card{flex:0 0 calc(100% - 0px);}
+  .dep-dots{display:flex;}
   .dep-head{flex-direction:column;align-items:flex-start;}
 
   /* como funciona */
@@ -1595,24 +1689,24 @@ footer{
       <div class="svc-grid">
         <article class="svc-card" aria-label="Extensão de Cílios">
           <h3 class="svc-name">Extensão de Cílios</h3>
-          <p class="svc-desc">Fio a fio ou volume russo. Técnica que cria um olhar denso e expressivo sem perder a naturalidade. Adaptada à sua estrutura ocular e rotina.</p>
+          <p class="svc-desc">Há mais de 5 anos dedicada a valorizar o olhar de cada cliente. Cada fio é aplicado com atenção e precisão, respeitando a saúde dos cílios naturais. O resultado: leve, bonito e natural.</p>
           <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Extensão%20de%20Cílios." class="svc-cta" target="_blank" rel="noopener">
             Agendar
             <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
           </a>
         </article>
-        <article class="svc-card" aria-label="Lash Lifting">
-          <h3 class="svc-name">Lash Lifting</h3>
-          <p class="svc-desc">Curvatura permanente dos seus próprios cílios. Resultado limpo, feminino e de baixíssima manutenção — perfeito para quem quer praticidade com elegância.</p>
-          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Lash%20Lifting." class="svc-cta" target="_blank" rel="noopener">
+        <article class="svc-card" aria-label="Brow Lamination e Lash Lifting">
+          <h3 class="svc-name">Brow Lamination &amp; Lash Lifting</h3>
+          <p class="svc-desc">Sobrancelhas alinhadas, cílios curvados e um olhar naturalmente mais bonito. Um procedimento delicado que valoriza seus traços e realça sua beleza sem perder a naturalidade.</p>
+          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Brow%20Lamination%20e%20Lash%20Lifting." class="svc-cta" target="_blank" rel="noopener">
             Agendar
             <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
           </a>
         </article>
-        <article class="svc-card" aria-label="Design de Sobrancelhas">
-          <h3 class="svc-name">Design de Sobrancelhas</h3>
-          <p class="svc-desc">Mapeamento facial preciso para definir o arco ideal para o seu rosto. Henna, remodelação e acabamento que estruturam o olhar sem parecer forçado.</p>
-          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Design%20de%20Sobrancelhas." class="svc-cta" target="_blank" rel="noopener">
+        <article class="svc-card" aria-label="Sobrancelhas Chumbadas — Repigment Balance">
+          <h3 class="svc-name">Repigment Balance</h3>
+          <p class="svc-desc">Sobrancelhas muito escuras, azuladas ou avermelhadas têm solução. Com pigmentos de alta performance, Elis neutraliza tonalidades indesejadas e devolve naturalidade e harmonia ao olhar — sem laser em muitos casos.</p>
+          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Repigment%20Balance." class="svc-cta" target="_blank" rel="noopener">
             Agendar
             <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
           </a>
@@ -1629,7 +1723,7 @@ footer{
       <div class="svc-grid cols-2">
         <article class="svc-card" aria-label="Micropigmentação de Sobrancelhas">
           <h3 class="svc-name">Micropigmentação de Sobrancelhas</h3>
-          <p class="svc-desc">Técnica semi-permanente que simula fios reais com traços ultra-finos. Naturalidade absoluta, durabilidade e zero manutenção diária.</p>
+          <p class="svc-desc">O trabalho vai além de desenhar sobrancelhas: é realçar a beleza de forma natural, respeitando os traços e a expressão de cada cliente. Realizado com dermógrafo, sem cortes, sem sangue e com total conforto.</p>
           <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Micropigmentação%20de%20Sobrancelhas." class="svc-cta" target="_blank" rel="noopener">
             Agendar
             <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
@@ -1652,19 +1746,11 @@ footer{
         Unhas
         <span>Cuidado completo</span>
       </div>
-      <div class="svc-grid">
-        <article class="svc-card" aria-label="Esmaltação em Gel">
-          <h3 class="svc-name">Esmaltação em Gel</h3>
-          <p class="svc-desc">Acabamento impecável com durabilidade de até 3 semanas. Paleta ampla de cores e acabamentos para cada ocasião e estilo.</p>
-          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Esmaltação%20em%20Gel." class="svc-cta" target="_blank" rel="noopener">
-            Agendar
-            <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
-          </a>
-        </article>
-        <article class="svc-card" aria-label="Alongamento de Unhas">
-          <h3 class="svc-name">Alongamento de Unhas</h3>
-          <p class="svc-desc">Fibra de vidro, gel ou acrílico. Comprimento e formato sob medida para valorizar suas mãos com técnica que resiste ao cotidiano.</p>
-          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Alongamento%20de%20Unhas." class="svc-cta" target="_blank" rel="noopener">
+      <div class="svc-grid cols-2">
+        <article class="svc-card" aria-label="Alongamento, Blindagem e Esmaltação em Gel">
+          <h3 class="svc-name">Gel · Blindagem · Alongamento</h3>
+          <p class="svc-desc">Unhas bonitas vão além da estética — elas refletem cuidado e autoestima. Cada procedimento é realizado com técnica e capricho, respeitando a saúde das unhas naturais e buscando acabamento elegante e resistente.</p>
+          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Unhas%20em%20Gel." class="svc-cta" target="_blank" rel="noopener">
             Agendar
             <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
           </a>
@@ -1686,20 +1772,12 @@ footer{
         Estética Corporal
         <span>Cuidado além do rosto</span>
       </div>
-      <div class="svc-grid cols-2">
-        <article class="svc-card" aria-label="Tratamento de Estrias">
-          <h3 class="svc-name">Tratamento de Estrias</h3>
-          <p class="svc-desc">Protocolo especializado com técnicas que minimizam a aparência de estrias e melhoram a textura da pele. Seguro, eficaz e personalizado ao seu tom de pele.</p>
-          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Tratamento%20de%20Estrias." class="svc-cta" target="_blank" rel="noopener">
+      <div class="svc-grid cols-1">
+        <article class="svc-card" aria-label="Método Microderme — Tratamento de Estrias">
+          <h3 class="svc-name">Método Microderme — Tratamento de Estrias</h3>
+          <p class="svc-desc">Por trás de cada estria existe uma história. Com o Método Microderme, o objetivo é estimular a regeneração da pele e suavizar a aparência das estrias, ajudando a cliente a recuperar confiança e liberdade para se sentir bem em sua própria pele.</p>
+          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Método%20Microderme." class="svc-cta" target="_blank" rel="noopener">
             Agendar
-            <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
-          </a>
-        </article>
-        <article class="svc-card" aria-label="Outros Procedimentos">
-          <h3 class="svc-name">Outros Procedimentos</h3>
-          <p class="svc-desc">Portfólio em constante evolução. Converse com Elis sobre sua necessidade específica e descubra a solução ideal para o seu cuidado feminino.</p>
-          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20conversar%20sobre%20procedimentos." class="svc-cta" target="_blank" rel="noopener">
-            Consultar
             <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
           </a>
         </article>
@@ -1852,10 +1930,10 @@ footer{
 <section id="depoimentos" aria-labelledby="dep-title">
   <div class="dep-head">
     <div class="dep-head-left">
-      <p class="eyebrow reveal" aria-hidden="true">O que dizem as clientes</p>
+      <p class="eyebrow reveal" aria-hidden="true">O que nossas clientes dizem</p>
       <h2 class="sec-title reveal d1" id="dep-title">
-        Quem viveu<br>
-        <em>recomenda.</em>
+        Cada sorriso<br>
+        <em>fala por si.</em>
       </h2>
     </div>
     <div class="reveal d2">
@@ -1864,63 +1942,100 @@ footer{
     </div>
   </div>
 
-  <div class="dep-grid">
-    <article class="dep-card reveal" aria-label="Depoimento de Ana Paula">
-      <div class="dep-stars" aria-label="5 estrelas">
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-      </div>
-      <blockquote class="dep-quote">"Minha sobrancelha nunca tinha ficado tão certa para o meu rosto. Parece que sempre foi assim — e esse é exatamente o efeito que eu queria."</blockquote>
-      <div class="dep-divider" aria-hidden="true"></div>
-      <div class="dep-author">
-        <div class="dep-avatar" aria-hidden="true"><div class="dep-avatar-init">A</div></div>
-        <div>
-          <span class="dep-name">Ana Paula R.</span>
-          <span class="dep-role">Cliente · Micropigmentação</span>
-        </div>
-      </div>
-    </article>
+  <div class="dep-carousel-outer reveal d1">
+    <div class="dep-carousel-track" id="depTrack">
 
-    <article class="dep-card reveal d1" aria-label="Depoimento de Fernanda">
-      <div class="dep-stars" aria-label="5 estrelas">
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-      </div>
-      <blockquote class="dep-quote">"Fico encantada cada vez que acordo e olho no espelho. Os cílios ficaram tão naturais que as pessoas perguntam se são meus — e são! Só que lindos."</blockquote>
-      <div class="dep-divider" aria-hidden="true"></div>
-      <div class="dep-author">
-        <div class="dep-avatar" aria-hidden="true"><div class="dep-avatar-init">F</div></div>
-        <div>
-          <span class="dep-name">Fernanda C.</span>
-          <span class="dep-role">Cliente · Extensão de Cílios</span>
+      <!-- Card 1 — Rita Lopes -->
+      <article class="dep-card" aria-label="Depoimento de Rita Lopes">
+        <div class="dep-stars" aria-label="5 estrelas">
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
         </div>
-      </div>
-    </article>
+        <blockquote class="dep-quote">
+          <span class="dep-quote-text">A experiência foi incrível do início ao fim, e o resultado superou minhas expectativas. Estou muito feliz com a transformação e com a atenção aos detalhes. Sem dúvida, um trabalho realizado com excelência. Gratidão por elevar ainda mais minha autoestima!</span>
+        </blockquote>
+        <div class="dep-divider" aria-hidden="true"></div>
+        <div class="dep-author">
+          <div class="dep-avatar">
+            <img src="img/rita-lopes.jpeg" alt="Foto de Rita Lopes" loading="lazy">
+          </div>
+          <div>
+            <span class="dep-name">Rita Lopes</span>
+            <span class="dep-role">Cliente verificada</span>
+          </div>
+        </div>
+      </article>
 
-    <article class="dep-card reveal d2" aria-label="Depoimento de Mariana">
-      <div class="dep-stars" aria-label="5 estrelas">
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-        <span class="dep-star" aria-hidden="true">★</span>
-      </div>
-      <blockquote class="dep-quote">"Já fiz gel com outras profissionais, mas com a Elis é diferente. O acabamento, o cuidado com a cutícula, a atenção aos detalhes... dá para sentir que ela se importa com o resultado."</blockquote>
-      <div class="dep-divider" aria-hidden="true"></div>
-      <div class="dep-author">
-        <div class="dep-avatar" aria-hidden="true"><div class="dep-avatar-init">M</div></div>
-        <div>
-          <span class="dep-name">Mariana S.</span>
-          <span class="dep-role">Cliente · Esmaltação em Gel</span>
+      <!-- Card 2 — Lucilene Madrid -->
+      <article class="dep-card" aria-label="Depoimento de Lucilene Madrid">
+        <div class="dep-stars" aria-label="5 estrelas">
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
         </div>
-      </div>
-    </article>
+        <blockquote class="dep-quote">
+          <span class="dep-quote-text">Fiquei com medo no começo, mas o resultado ficou natural demais. Me senti muito bem atendida, ótima profissional. Você explicou tudo com calma. Muito obrigada pelo carinho de sempre e por me deixar ainda mais linda!</span>
+        </blockquote>
+        <div class="dep-divider" aria-hidden="true"></div>
+        <div class="dep-author">
+          <div class="dep-avatar">
+            <img src="img/lucilene.jpeg" alt="Foto de Lucilene Madrid" loading="lazy">
+          </div>
+          <div>
+            <span class="dep-name">Lucilene Madrid</span>
+            <span class="dep-role">Cliente verificada</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 — Manuela -->
+      <article class="dep-card" aria-label="Depoimento de Manuela">
+        <div class="dep-stars" aria-label="5 estrelas">
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+        </div>
+        <blockquote class="dep-quote">
+          <span class="dep-quote-text">Os cílios ficaram impecáveis, exatamente do jeitinho que eu gosto. A experiência foi ótima do começo ao fim, me senti confortável e muito bem atendida. Dá para perceber o cuidado e o capricho em cada detalhe. Sem dúvidas, a melhor lash que existe!</span>
+        </blockquote>
+        <div class="dep-divider" aria-hidden="true"></div>
+        <div class="dep-author">
+          <div class="dep-avatar">
+            <img src="img/manuela.jpeg" alt="Foto de Manuela" loading="lazy">
+          </div>
+          <div>
+            <span class="dep-name">Manuela</span>
+            <span class="dep-role">Cliente verificada · Extensão de Cílios</span>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /dep-carousel-track -->
+
+    <!-- Dots (visíveis só no mobile via CSS) -->
+    <div class="dep-dots" id="depDots" aria-label="Navegação do carrossel" role="tablist">
+      <button class="dep-dot active" aria-label="Depoimento 1" data-index="0" role="tab"></button>
+      <button class="dep-dot" aria-label="Depoimento 2" data-index="1" role="tab"></button>
+      <button class="dep-dot" aria-label="Depoimento 3" data-index="2" role="tab"></button>
+    </div>
+  </div>
+
+  <!-- Frase emocional + CTA -->
+  <div class="dep-closing reveal d3">
+    <p class="dep-closing-phrase">
+      Mais do que realçar a beleza, nosso propósito é <em>fortalecer a autoestima</em> e proporcionar momentos de cuidado e confiança.
+    </p>
+    <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20agendar%20meu%20horário." class="dep-closing-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar meu horário
+    </a>
   </div>
 </section>
 
@@ -2343,7 +2458,43 @@ function toggleFaq(btn) {
   }
 }
 
-/* ─── FOCUS TRAP NO DRAWER ─── */
+/* ─── CARROSSEL DEPOIMENTOS (mobile) ─── */
+(function(){
+  const track  = document.getElementById('depTrack');
+  const dots   = document.querySelectorAll('.dep-dot');
+  if (!track) return;
+
+  let current  = 0;
+  let startX   = 0;
+  let isDrag   = false;
+
+  function isMobile(){ return window.innerWidth <= 640; }
+
+  function goTo(idx){
+    if (!isMobile()) return;
+    const cards = track.querySelectorAll('.dep-card');
+    if (!cards.length) return;
+    const cardW = cards[0].offsetWidth + 24; /* gap = 24px */
+    current = Math.max(0, Math.min(idx, cards.length - 1));
+    track.style.transform = `translateX(-${current * cardW}px)`;
+    dots.forEach((d,i)=>d.classList.toggle('active', i===current));
+  }
+
+  dots.forEach(d => d.addEventListener('click',()=>goTo(+d.dataset.index)));
+
+  /* swipe touch */
+  track.addEventListener('touchstart', e=>{ startX=e.touches[0].clientX; isDrag=true; },{passive:true});
+  track.addEventListener('touchend', e=>{
+    if(!isDrag) return; isDrag=false;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 48) goTo(dx < 0 ? current+1 : current-1);
+  },{passive:true});
+
+  /* reset no resize */
+  window.addEventListener('resize',()=>{ if(!isMobile()){ track.style.transform=''; } else { goTo(current); } });
+})();
+
+
 drawer.addEventListener('keydown', e => {
   if (e.key !== 'Tab' || !menuOpen) return;
   const focusable = drawer.querySelectorAll('a, button');
