@@ -710,6 +710,30 @@ ul{list-style:none;}
   padding:4px 10px;
   backdrop-filter:blur(8px);
 }
+/* card único de destaque (não é antes/depois) */
+.ad-single{
+  position:relative;
+  height:380px;
+  overflow:hidden;
+  background:var(--paper-warm);
+}
+.ad-single img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 32%;
+  z-index:1;
+}
+.ad-tag-single{
+  position:absolute;top:var(--sp-sm);left:50%;
+  transform:translateX(-50%);
+  z-index:4;
+  font-family:var(--sans);
+  font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;
+  background:rgba(14,12,10,.65);
+  color:rgba(255,255,255,.72);
+  padding:4px 14px;
+  backdrop-filter:blur(8px);
+}
 .ad-footer{
   padding:20px 24px;
   border:1px solid var(--rule);
@@ -1468,6 +1492,7 @@ footer{
   /* antes/depois */
   .ad-grid{grid-template-columns:1fr;}
   .ad-pair{height:280px;}
+  .ad-single{height:280px;}
 
   /* depoimentos — vira carrossel de 1 card por vez */
   .dep-carousel-outer{overflow:hidden;}
@@ -1888,24 +1913,15 @@ footer{
         <div class="ad-note">Micropigmentação fio a fio</div>
       </div>
     </div>
-    <!-- Card 3 -->
+    <!-- Card 3 — destaque (imagem única, não é antes/depois) -->
     <div class="ad-card reveal d2">
-      <div class="ad-pair">
-        <div class="ad-side">
-          <img src="img/galeria-cilios-sobrancelha-a.jpg" alt="Antes — sobrancelha e cílios">
-        </div>
-        <div class="ad-side">
-          <img src="img/galeria-cilios-sobrancelhas-resultado.jpg" alt="Depois — resultado completo olhar">
-        </div>
-        <div class="ad-divider" aria-hidden="true"></div>
-        <div class="ad-badge" aria-hidden="true">
-          <span>Antes</span>
-          <span>Depois</span>
-        </div>
+      <div class="ad-single">
+        <img src="img/galeria-cilios-sobrancelhas-resultado.jpg" alt="Resultado de extensão de cílios e design de sobrancelhas">
+        <div class="ad-tag-single" aria-hidden="true">Destaque</div>
       </div>
       <div class="ad-footer">
-        <div class="ad-svc">Resultados Surpreendentes</div>
-        <div class="ad-note">Trabalhos reais · Elis Miranda</div>
+        <div class="ad-svc">Olhar Completo</div>
+        <div class="ad-note">Cílios e sobrancelha em harmonia</div>
       </div>
     </div>
   </div>
