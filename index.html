@@ -1,0 +1,2502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elis Miranda — Especialista em Cílios, Sobrancelhas e Estética Feminina · São Leopoldo RS</title>
+<meta name="description" content="Extensão de cílios, design de sobrancelhas, micropigmentação e unhas com Elis Miranda. Atendimento premium com agendamento exclusivo em São Leopoldo, RS.">
+<meta name="keywords" content="extensão de cílios São Leopoldo, design sobrancelhas São Leopoldo, micropigmentação, estética feminina, Elis Miranda">
+<meta property="og:title" content="Elis Miranda — Especialista em Beleza Feminina">
+<meta property="og:description" content="Olhar, beleza e cuidado com a refinamento que você merece. Agende seu atendimento exclusivo.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://elismiranda.com.br/img/eli-hro-new.jpeg">
+<link rel="canonical" href="https://elismiranda.com.br/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════════════════════ */
+:root {
+  /* Paleta */
+  --ink:        #0E0C0A;
+  --ink-mid:    #2A2520;
+  --ink-soft:   #5A534C;
+  --rule:       rgba(14,12,10,.09);
+  --rule-light: rgba(14,12,10,.05);
+  --paper:      #FAFAF8;
+  --paper-off:  #F4F2EE;
+  --paper-warm: #EDE8E0;
+  --accent:     #8B6F4E;
+  --accent-pale:#D4C4B0;
+  --white:      #FFFFFF;
+
+  /* Tipo */
+  --serif:   'Cormorant Garamond', Georgia, serif;
+  --sans:    'DM Sans', system-ui, sans-serif;
+
+  /* Espaço */
+  --sp-xs:  8px;
+  --sp-sm:  16px;
+  --sp-md:  32px;
+  --sp-lg:  64px;
+  --sp-xl:  120px;
+  --sp-2xl: 200px;
+  --max:    1280px;
+
+  /* Tipo scale */
+  --t-xs:   .65rem;
+  --t-sm:   .78rem;
+  --t-base: .88rem;
+  --t-lg:   1.05rem;
+
+  /* Timing */
+  --ease:  cubic-bezier(.25,.46,.45,.94);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto;}
+a{color:inherit;text-decoration:none;}
+button{border:none;background:none;cursor:pointer;font-family:inherit;}
+ul{list-style:none;}
+
+/* ═══════════════════════════════════════════════════════════
+   UTILITÁRIOS
+═══════════════════════════════════════════════════════════ */
+.eyebrow{
+  font-family:var(--sans);
+  font-size:.6rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:500;
+}
+.sec-title{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.8vw,3.4rem);
+  font-weight:300;
+  line-height:1.1;
+  color:var(--ink);
+  letter-spacing:-.01em;
+}
+.sec-title em{font-style:italic;font-weight:300;}
+.sec-title strong{font-weight:500;}
+.sec-body{
+  font-size:var(--t-base);
+  line-height:1.9;
+  color:var(--ink-soft);
+  font-weight:300;
+  letter-spacing:.01em;
+}
+.rule{width:100%;height:1px;background:var(--rule);}
+
+/* Photo slot para área de imagem */
+.photo-slot{
+  position:relative;overflow:hidden;
+  background:var(--paper-warm);
+  display:flex;align-items:center;justify-content:center;
+  width:100%;height:100%;
+}
+.photo-slot img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:1;
+}
+.photo-slot-hint{
+  font-family:var(--sans);
+  font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent-pale);text-align:center;
+  padding:0 20px;z-index:0;
+  pointer-events:none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════════════════ */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:400;
+  padding:28px var(--sp-lg);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:padding .5s var(--ease), background .5s var(--ease), box-shadow .5s;
+}
+#nav.scrolled{
+  padding:14px var(--sp-lg);
+  background:rgba(250,250,248,.96);
+  backdrop-filter:blur(24px) saturate(1.4);
+  -webkit-backdrop-filter:blur(24px) saturate(1.4);
+  box-shadow:0 1px 0 var(--rule);
+}
+.nav-logo{
+  font-family:var(--serif);
+  font-size:1.15rem;
+  font-weight:400;
+  color:var(--white);
+  letter-spacing:.04em;
+  transition:color .4s;
+}
+.nav-logo .dot{color:var(--accent-pale);margin:0 6px;}
+#nav.scrolled .nav-logo{color:var(--ink);}
+#nav.scrolled .nav-logo .dot{color:var(--accent);}
+
+.nav-center{
+  display:flex;gap:var(--sp-md);
+}
+.nav-center a{
+  font-size:var(--t-xs);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.65);
+  transition:color .3s;
+  padding:4px 0;
+}
+.nav-center a:hover{color:rgba(255,255,255,.95);}
+#nav.scrolled .nav-center a{color:var(--ink-soft);}
+#nav.scrolled .nav-center a:hover{color:var(--ink);}
+
+.nav-cta{
+  display:flex;align-items:center;gap:var(--sp-xs);
+  font-family:var(--sans);
+  font-size:var(--t-xs);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--white);
+  border:1px solid rgba(255,255,255,.3);
+  padding:10px 22px;
+  transition:all .35s var(--ease);
+}
+.nav-cta:hover{
+  background:var(--white);
+  border-color:var(--white);
+  color:var(--ink);
+}
+#nav.scrolled .nav-cta{
+  color:var(--ink);
+  border-color:var(--rule);
+}
+#nav.scrolled .nav-cta:hover{
+  background:var(--ink);
+  color:var(--white);
+  border-color:var(--ink);
+}
+.nav-cta svg{width:13px;height:13px;fill:currentColor;}
+
+/* Hamburguer */
+.nav-ham{
+  display:none;flex-direction:column;gap:5px;
+  padding:8px;z-index:410;
+}
+.nav-ham span{
+  display:block;width:22px;height:1px;
+  background:var(--white);transition:all .35s var(--ease);
+}
+#nav.scrolled .nav-ham span{background:var(--ink);}
+.nav-ham.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-ham.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+/* Drawer mobile */
+.nav-drawer{
+  position:fixed;inset:0;z-index:395;
+  background:var(--ink);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:0;
+  opacity:0;pointer-events:none;
+  transition:opacity .4s var(--ease);
+}
+.nav-drawer.open{opacity:1;pointer-events:all;}
+.nav-drawer ul{text-align:center;}
+.nav-drawer li{overflow:hidden;}
+.nav-drawer li a{
+  display:block;padding:18px 48px;
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,5vw,2.8rem);
+  font-weight:300;font-style:italic;
+  color:rgba(255,255,255,.7);
+  transition:color .3s;
+  letter-spacing:.02em;
+}
+.nav-drawer li a:hover{color:var(--white);}
+.nav-drawer-foot{
+  margin-top:40px;
+  display:flex;flex-direction:column;align-items:center;gap:var(--sp-sm);
+}
+.nav-drawer-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--accent);color:var(--white);
+  padding:14px 40px;
+  font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;
+  font-weight:500;transition:background .3s;
+}
+.nav-drawer-cta:hover{background:var(--ink-mid);}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════ */
+#hero{
+  position:relative;
+  height:100svh;min-height:680px;
+  overflow:hidden;
+  background:var(--ink);
+}
+
+/* camada de foto */
+.hero-media{
+  position:absolute;inset:0;z-index:0;
+  background:var(--ink-mid);
+}
+.hero-media .photo-slot{
+  width:100%;height:100%;
+  background:var(--ink-mid);
+}
+.hero-media .photo-slot-hint{color:rgba(255,255,255,.18);}
+.hero-media img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  z-index:1;
+}
+
+/* gradiente sobre a foto — da esquerda, mais suave */
+.hero-veil{
+  position:absolute;inset:0;z-index:2;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(14,12,10,.82) 0%,
+      rgba(14,12,10,.62) 38%,
+      rgba(14,12,10,.22) 68%,
+      rgba(14,12,10,.04) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(14,12,10,.3) 0%,
+      transparent 18%,
+      transparent 72%,
+      rgba(14,12,10,.45) 100%
+    );
+}
+/* fade suave na transição para a seção seguinte */
+.hero-fade{
+  position:absolute;bottom:0;left:0;right:0;
+  height:180px;z-index:3;
+  background:linear-gradient(to top,var(--paper),transparent);
+}
+
+/* conteúdo */
+.hero-body{
+  position:relative;z-index:4;
+  height:100%;
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:0 var(--sp-lg);
+  max-width:860px;
+}
+.hero-tag{
+  display:flex;align-items:center;gap:var(--sp-sm);
+  margin-bottom:var(--sp-md);
+  opacity:0;animation:up .9s .3s var(--ease) forwards;
+}
+.hero-tag-line{width:32px;height:1px;background:rgba(255,255,255,.25);}
+.hero-tag-text{
+  font-family:var(--sans);
+  font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  font-weight:400;
+}
+
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(3.2rem,6.5vw,6.2rem);
+  font-weight:300;
+  line-height:1.02;
+  color:var(--white);
+  letter-spacing:-.02em;
+  margin-bottom:var(--sp-md);
+  opacity:0;animation:up .9s .5s var(--ease) forwards;
+}
+.hero-title em{
+  font-style:italic;
+  font-weight:300;
+  color:rgba(255,255,255,.55);
+}
+
+.hero-sub{
+  font-family:var(--sans);
+  font-size:var(--t-base);
+  font-weight:300;
+  line-height:1.85;
+  color:rgba(255,255,255,.6);
+  max-width:420px;
+  margin-bottom:48px;
+  letter-spacing:.02em;
+  opacity:0;animation:up .9s .7s var(--ease) forwards;
+}
+
+.hero-actions{
+  display:flex;align-items:center;gap:var(--sp-md);
+  flex-wrap:wrap;
+  opacity:0;animation:up .9s .9s var(--ease) forwards;
+}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--white);
+  color:var(--ink);
+  padding:16px 36px;
+  font-family:var(--sans);
+  font-size:var(--t-xs);
+  letter-spacing:.2em;text-transform:uppercase;
+  font-weight:500;
+  transition:all .35s var(--ease);
+}
+.btn-primary svg{width:15px;height:15px;fill:var(--ink);transition:fill .35s;}
+.btn-primary:hover{background:var(--accent);color:var(--white);}
+.btn-primary:hover svg{fill:var(--white);}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--sans);
+  font-size:var(--t-xs);letter-spacing:.2em;text-transform:uppercase;
+  font-weight:400;color:rgba(255,255,255,.55);
+  border-bottom:1px solid rgba(255,255,255,.2);
+  padding-bottom:3px;
+  transition:all .35s;
+}
+.btn-ghost:hover{color:rgba(255,255,255,.9);border-color:rgba(255,255,255,.5);}
+
+/* stat bottom-right */
+.hero-stat{
+  position:absolute;
+  bottom:var(--sp-lg);right:var(--sp-lg);
+  z-index:4;
+  text-align:right;
+  opacity:0;animation:fade .9s 1.1s var(--ease) forwards;
+}
+.hero-stat-n{
+  font-family:var(--serif);
+  font-size:3.2rem;font-weight:300;
+  color:var(--white);line-height:1;
+  letter-spacing:-.02em;
+}
+.hero-stat-l{
+  font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);
+  margin-top:4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MARQUEE STRIP
+═══════════════════════════════════════════════════════════ */
+.strip{
+  overflow:hidden;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  background:var(--paper);
+  padding:14px 0;
+}
+.strip-track{
+  display:flex;
+  animation:marquee 32s linear infinite;
+  white-space:nowrap;
+}
+.strip-item{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.05rem;
+  color:var(--ink-soft);
+  padding:0 40px;
+  letter-spacing:.06em;
+}
+.strip-sep{
+  color:var(--accent);
+  font-size:.5rem;
+  vertical-align:middle;
+  opacity:.5;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SOBRE
+═══════════════════════════════════════════════════════════ */
+#sobre{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:90vh;
+}
+.sobre-media{
+  position:relative;overflow:hidden;
+  background:var(--paper-warm);
+}
+.sobre-media .photo-slot{width:100%;height:100%;}
+.sobre-media img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center 25%;z-index:1;
+}
+/* linha fina de requinte sobre a foto */
+.sobre-media::after{
+  content:'';
+  position:absolute;inset:24px;
+  border:1px solid rgba(255,255,255,.12);
+  z-index:2;pointer-events:none;
+}
+
+.sobre-body{
+  padding:var(--sp-xl) 80px var(--sp-xl) 72px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--paper);
+}
+.sobre-body .eyebrow{margin-bottom:20px;}
+.sobre-body .sec-title{margin-bottom:32px;}
+.sobre-body .sec-body{margin-bottom:var(--sp-md);}
+
+.sobre-line{
+  display:block;width:40px;height:1px;
+  background:var(--rule);
+  margin:32px 0;
+}
+
+.sobre-creds{
+  display:flex;flex-direction:column;gap:var(--sp-sm);
+}
+.sobre-cred{
+  display:flex;align-items:center;gap:14px;
+}
+.sobre-cred-dot{
+  width:5px;height:5px;
+  background:var(--accent);
+  flex-shrink:0;
+}
+.sobre-cred-text{
+  font-family:var(--sans);
+  font-size:var(--t-sm);
+  color:var(--ink-soft);
+  font-weight:300;
+  letter-spacing:.02em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SERVIÇOS
+═══════════════════════════════════════════════════════════ */
+#servicos{
+  padding:var(--sp-xl) var(--sp-lg);
+  background:var(--paper-off);
+}
+.services-head{
+  max-width:var(--max);margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:var(--sp-lg);align-items:end;
+  padding-bottom:var(--sp-lg);
+  border-bottom:1px solid var(--rule);
+  margin-bottom:64px;
+}
+.services-head-left .eyebrow{margin-bottom:20px;}
+.services-head-right .sec-body{max-width:400px;margin-left:auto;}
+
+.services-wrap{max-width:var(--max);margin:0 auto;}
+
+.svc-group{margin-bottom:56px;}
+.svc-group:last-child{margin-bottom:0;}
+
+.svc-group-label{
+  font-family:var(--sans);
+  font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--accent);
+  padding-bottom:20px;
+  border-bottom:1px solid var(--rule);
+  margin-bottom:0;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.svc-group-label span{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:.9rem;letter-spacing:0;text-transform:none;
+  color:var(--accent-pale);font-weight:300;
+}
+
+.svc-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-left:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.svc-grid.cols-2{grid-template-columns:repeat(2,1fr);}
+.svc-grid.cols-1{grid-template-columns:1fr;}
+
+.svc-card{
+  padding:44px 40px;
+  border-right:1px solid var(--rule);
+  border-top:1px solid var(--rule);
+  transition:background .35s var(--ease);
+  position:relative;
+  overflow:hidden;
+}
+.svc-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:2px;
+  background:var(--accent);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .45s var(--ease);
+}
+.svc-card:hover::before{transform:scaleX(1);}
+.svc-card:hover{background:var(--paper);}
+
+.svc-name{
+  font-family:var(--serif);
+  font-size:1.3rem;font-weight:400;
+  color:var(--ink);
+  margin-bottom:12px;line-height:1.2;
+}
+.svc-desc{
+  font-family:var(--sans);
+  font-size:var(--t-sm);
+  line-height:1.85;color:var(--ink-soft);
+  font-weight:300;margin-bottom:20px;
+}
+.svc-cta{
+  font-family:var(--sans);
+  font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);
+  display:inline-flex;align-items:center;gap:8px;
+  transition:gap .3s;
+}
+.svc-cta:hover{gap:14px;}
+.svc-cta svg{width:12px;height:12px;stroke:var(--accent);fill:none;stroke-width:1.5;}
+
+/* ═══════════════════════════════════════════════════════════
+   DIFERENCIAIS
+═══════════════════════════════════════════════════════════ */
+#diferenciais{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:var(--ink);
+}
+.diff-media{
+  position:relative;overflow:hidden;
+  min-height:640px;
+  background:var(--ink-mid);
+}
+.diff-media .photo-slot{width:100%;height:100%;}
+.diff-media .photo-slot-hint{color:rgba(255,255,255,.18);}
+.diff-media img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:1;
+}
+.diff-media-veil{
+  position:absolute;inset:0;z-index:2;
+  background:linear-gradient(to right,transparent 55%,var(--ink));
+}
+
+.diff-body{
+  padding:var(--sp-xl) 80px var(--sp-xl) 72px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.diff-body .eyebrow{
+  color:rgba(255,255,255,.35);
+  margin-bottom:20px;
+}
+.diff-body .sec-title{
+  color:var(--white);
+  margin-bottom:52px;
+}
+
+.diff-list{display:flex;flex-direction:column;}
+.diff-item{
+  display:flex;align-items:flex-start;gap:22px;
+  padding:24px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  transition:opacity .3s;
+}
+.diff-item:last-child{border-bottom:none;}
+.diff-item:hover{opacity:1 !important;}
+.diff-list:hover .diff-item:not(:hover){opacity:.45;}
+
+.diff-icon-wrap{
+  width:36px;height:36px;
+  border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:2px;
+  transition:border-color .3s;
+}
+.diff-item:hover .diff-icon-wrap{border-color:var(--accent);}
+.diff-icon-wrap svg{width:15px;height:15px;stroke:rgba(255,255,255,.4);fill:none;stroke-width:1.5;transition:stroke .3s;}
+.diff-item:hover .diff-icon-wrap svg{stroke:var(--accent);}
+
+.diff-title{
+  font-family:var(--serif);
+  font-size:1.15rem;font-weight:400;
+  color:var(--white);margin-bottom:5px;
+}
+.diff-text{
+  font-family:var(--sans);
+  font-size:var(--t-sm);line-height:1.8;
+  color:rgba(255,255,255,.4);font-weight:300;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ANTES & DEPOIS
+═══════════════════════════════════════════════════════════ */
+#antes-depois{
+  padding:var(--sp-xl) var(--sp-lg);
+  background:var(--paper);
+}
+.ad-head{
+  max-width:var(--max);margin:0 auto;
+  text-align:center;
+  margin-bottom:64px;
+}
+.ad-head .eyebrow{margin-bottom:18px;}
+.ad-head .sec-title{margin-bottom:16px;}
+.ad-head .sec-body{max-width:480px;margin:0 auto;}
+
+.ad-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  max-width:var(--max);margin:0 auto;
+}
+
+.ad-card{position:relative;overflow:hidden;}
+.ad-pair{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  height:380px;
+  position:relative;
+}
+.ad-side{
+  position:relative;overflow:hidden;
+  background:var(--paper-warm);
+}
+.ad-side .photo-slot{width:100%;height:100%;}
+.ad-side .photo-slot-hint{font-size:.5rem;padding:0 12px;}
+.ad-side img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  z-index:1;
+}
+.ad-divider{
+  position:absolute;top:0;bottom:0;
+  left:50%;transform:translateX(-50%);
+  width:1px;background:var(--white);
+  z-index:3;
+}
+.ad-badge{
+  position:absolute;
+  left:50%;transform:translateX(-50%);
+  top:var(--sp-sm);
+  z-index:4;
+  display:flex;gap:1px;
+}
+.ad-badge span{
+  font-family:var(--sans);
+  font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;
+  background:rgba(14,12,10,.65);
+  color:rgba(255,255,255,.7);
+  padding:4px 10px;
+  backdrop-filter:blur(8px);
+}
+.ad-footer{
+  padding:20px 24px;
+  border:1px solid var(--rule);
+  border-top:none;
+  background:var(--paper);
+}
+.ad-svc{
+  font-family:var(--serif);
+  font-size:1rem;font-weight:400;
+  color:var(--ink);
+}
+.ad-note{
+  font-family:var(--sans);
+  font-size:.6rem;color:var(--ink-soft);
+  font-weight:300;margin-top:2px;
+  letter-spacing:.02em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DEPOIMENTOS
+═══════════════════════════════════════════════════════════ */
+#depoimentos{
+  padding:var(--sp-xl) var(--sp-lg);
+  background:var(--paper-off);
+  overflow:hidden;
+}
+.dep-head{
+  max-width:var(--max);margin:0 auto;
+  display:flex;align-items:flex-end;justify-content:space-between;
+  flex-wrap:wrap;gap:var(--sp-md);
+  margin-bottom:64px;
+}
+.dep-head-left .eyebrow{margin-bottom:18px;}
+
+.dep-count{
+  font-family:var(--serif);
+  font-size:3.5rem;font-weight:300;
+  color:var(--ink);line-height:1;
+  letter-spacing:-.02em;
+}
+.dep-count-label{
+  font-family:var(--sans);
+  font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-soft);font-weight:300;margin-top:4px;
+}
+
+/* ── CARROSSEL WRAPPER ── */
+.dep-carousel-outer{
+  max-width:var(--max);margin:0 auto;
+  position:relative;
+}
+.dep-carousel-track{
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  transition:transform .5s var(--ease);
+}
+
+/* ── CARDS ── */
+.dep-card{
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(18px) saturate(1.3);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  border:1px solid rgba(139,111,78,.12);
+  box-shadow:0 8px 32px rgba(14,12,10,.06),0 2px 8px rgba(139,111,78,.08);
+  padding:44px 40px 36px;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+  flex:0 0 calc(33.333% - 16px);
+  min-width:0;
+  position:relative;
+}
+.dep-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--accent-pale),var(--accent),var(--accent-pale));
+  opacity:0;
+  transition:opacity .4s var(--ease);
+}
+.dep-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 56px rgba(14,12,10,.09),0 4px 16px rgba(139,111,78,.12);
+}
+.dep-card:hover::before{opacity:1;}
+
+.dep-stars{
+  display:flex;gap:4px;margin-bottom:22px;
+}
+.dep-star{
+  font-size:.85rem;color:#C9963A;
+}
+.dep-quote{
+  font-family:var(--serif);
+  font-size:1.12rem;font-style:italic;
+  font-weight:300;
+  color:var(--ink-mid);
+  line-height:1.7;
+  margin-bottom:28px;
+  position:relative;
+}
+.dep-quote::before{
+  content:'\201C';
+  font-family:var(--serif);
+  font-size:4rem;
+  line-height:.6;
+  color:var(--accent-pale);
+  position:absolute;
+  top:-4px;left:-8px;
+  pointer-events:none;
+  z-index:0;
+}
+.dep-quote-text{position:relative;z-index:1;}
+
+.dep-divider{
+  width:100%;height:1px;
+  background:var(--rule);
+  margin-bottom:24px;
+}
+.dep-author{
+  display:flex;align-items:center;gap:16px;
+}
+.dep-avatar{
+  width:72px;height:72px;border-radius:50%;
+  background:var(--paper-warm);
+  overflow:hidden;flex-shrink:0;
+  border:2px solid var(--accent-pale);
+  box-shadow:0 0 0 3px rgba(212,196,176,.25);
+}
+.dep-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 15%;}
+.dep-avatar-init{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:1.2rem;
+  color:var(--accent);
+}
+.dep-name{
+  font-family:var(--sans);
+  font-size:var(--t-sm);font-weight:500;
+  color:var(--ink);display:block;
+  letter-spacing:.02em;
+}
+.dep-role{
+  font-size:.58rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);
+  font-weight:400;
+  margin-top:3px;display:block;
+}
+
+/* ── DOTS (indicadores) ── */
+.dep-dots{
+  display:none;
+  justify-content:center;
+  gap:8px;
+  margin-top:32px;
+}
+.dep-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--accent-pale);
+  border:none;cursor:pointer;
+  transition:background .3s,transform .3s;
+  padding:0;
+}
+.dep-dot.active{
+  background:var(--accent);
+  transform:scale(1.35);
+}
+
+/* ── FRASE EMOCIONAL + CTA ── */
+.dep-closing{
+  max-width:680px;
+  margin:72px auto 0;
+  text-align:center;
+}
+.dep-closing-phrase{
+  font-family:var(--serif);
+  font-size:clamp(1.2rem,2.2vw,1.6rem);
+  font-weight:300;font-style:italic;
+  color:var(--ink-mid);
+  line-height:1.55;
+  margin-bottom:36px;
+  letter-spacing:.01em;
+}
+.dep-closing-phrase em{
+  color:var(--accent);
+  font-style:italic;
+}
+.dep-closing-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--accent);
+  color:var(--white);
+  padding:18px 48px;
+  font-family:var(--sans);
+  font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;
+  font-weight:500;
+  transition:all .4s var(--ease);
+  box-shadow:0 8px 28px rgba(139,111,78,.28);
+}
+.dep-closing-btn svg{width:16px;height:16px;fill:var(--white);transition:transform .35s var(--ease);}
+.dep-closing-btn:hover{background:var(--ink);box-shadow:0 8px 32px rgba(14,12,10,.2);}
+.dep-closing-btn:hover svg{transform:translateX(4px);}
+
+/* ═══════════════════════════════════════════════════════════
+   GALERIA
+═══════════════════════════════════════════════════════════ */
+#galeria{
+  padding:var(--sp-xl) var(--sp-lg);
+  background:var(--ink);
+}
+.galeria-head{
+  max-width:var(--max);margin:0 auto;
+  display:flex;align-items:flex-end;justify-content:space-between;
+  flex-wrap:wrap;gap:var(--sp-md);
+  padding-bottom:48px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  margin-bottom:48px;
+}
+.galeria-head .eyebrow{color:rgba(255,255,255,.35);}
+.galeria-head .sec-title{color:var(--white);}
+.galeria-insta{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--sans);
+  font-size:var(--t-xs);letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);
+  transition:color .3s;
+}
+.galeria-insta:hover{color:var(--accent);}
+.galeria-insta svg{width:16px;height:16px;fill:currentColor;}
+
+.galeria-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:260px;
+  gap:3px;
+  max-width:var(--max);margin:0 auto;
+}
+.gal-item{
+  position:relative;overflow:hidden;
+  background:var(--ink-mid);
+}
+.gal-item.tall{grid-row:span 2;}
+.gal-item img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--ease);
+}
+.gal-item:hover img{transform:scale(1.04);}
+.gal-overlay{
+  position:absolute;inset:0;z-index:2;
+  background:linear-gradient(to top,rgba(14,12,10,.6) 0%,transparent 50%);
+  opacity:0;transition:opacity .4s var(--ease);
+}
+.gal-item:hover .gal-overlay{opacity:1;}
+.gal-label{
+  position:absolute;bottom:16px;left:16px;z-index:3;
+  font-family:var(--serif);
+  font-size:.95rem;font-style:italic;
+  color:var(--white);
+  opacity:0;transform:translateY(6px);
+  transition:all .4s var(--ease);
+}
+.gal-item:hover .gal-label{opacity:1;transform:translateY(0);}
+
+@media(max-width:1024px){
+  .galeria-grid{grid-template-columns:repeat(3,1fr);grid-auto-rows:220px;}
+}
+@media(max-width:640px){
+  .galeria-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px;}
+  .gal-item.tall{grid-row:span 1;}
+  .galeria-head{flex-direction:column;align-items:flex-start;}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COMO FUNCIONA
+═══════════════════════════════════════════════════════════ */
+#como-funciona{
+  padding:var(--sp-xl) var(--sp-lg);
+  background:var(--ink);
+}
+.cf-head{
+  max-width:var(--max);margin:0 auto;
+  padding-bottom:64px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  margin-bottom:64px;
+}
+.cf-head .eyebrow{color:rgba(255,255,255,.35);margin-bottom:18px;}
+.cf-head .sec-title{color:var(--white);}
+
+.cf-steps{
+  max-width:var(--max);margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+.cf-step{
+  padding:40px 36px;
+  border-right:1px solid rgba(255,255,255,.06);
+  transition:background .35s;
+}
+.cf-step:last-child{border-right:none;}
+.cf-step:hover{background:rgba(255,255,255,.025);}
+
+.cf-n{
+  font-family:var(--serif);
+  font-size:3rem;font-weight:300;
+  color:rgba(255,255,255,.08);
+  line-height:1;
+  margin-bottom:20px;
+  letter-spacing:-.02em;
+}
+.cf-title{
+  font-family:var(--serif);
+  font-size:1.2rem;font-weight:400;
+  color:var(--white);margin-bottom:10px;
+}
+.cf-text{
+  font-family:var(--sans);
+  font-size:var(--t-sm);line-height:1.85;
+  color:rgba(255,255,255,.4);font-weight:300;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════════════════════ */
+#faq{
+  padding:var(--sp-xl) var(--sp-lg);
+  background:var(--paper);
+}
+.faq-wrap{
+  max-width:800px;
+  margin:0 auto;
+}
+.faq-head{
+  margin-bottom:56px;
+}
+.faq-head .eyebrow{margin-bottom:18px;}
+.faq-head .sec-title{margin-bottom:12px;}
+
+.faq-list{display:flex;flex-direction:column;}
+.faq-item{
+  border-bottom:1px solid var(--rule);
+  overflow:hidden;
+}
+.faq-q{
+  width:100%;text-align:left;
+  padding:24px 0;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:var(--sp-md);
+  cursor:pointer;
+  transition:color .3s;
+}
+.faq-q:hover{color:var(--accent);}
+.faq-q-text{
+  font-family:var(--serif);
+  font-size:1.1rem;font-weight:400;
+  color:inherit;line-height:1.3;
+}
+.faq-toggle{
+  width:28px;height:28px;flex-shrink:0;
+  border:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .4s var(--ease),background .3s,border-color .3s;
+}
+.faq-toggle svg{
+  width:11px;height:11px;
+  stroke:var(--ink-soft);fill:none;stroke-width:1.5;
+  transition:transform .4s var(--ease);
+}
+.faq-item.open .faq-toggle{
+  background:var(--ink);
+  border-color:var(--ink);
+}
+.faq-item.open .faq-toggle svg{
+  stroke:var(--white);
+  transform:rotate(45deg);
+}
+
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .5s var(--ease),padding .4s var(--ease);
+}
+.faq-item.open .faq-a{max-height:400px;padding-bottom:28px;}
+.faq-a p{
+  font-family:var(--sans);
+  font-size:var(--t-base);line-height:1.9;
+  color:var(--ink-soft);font-weight:300;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LOCALIZAÇÃO
+═══════════════════════════════════════════════════════════ */
+#localizacao{
+  background:var(--paper-off);
+  padding:var(--sp-xl) var(--sp-lg);
+}
+.loc-wrap{
+  max-width:var(--max);margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+.loc-left .eyebrow{margin-bottom:20px;}
+.loc-left .sec-title{margin-bottom:36px;}
+
+.loc-details{
+  display:flex;flex-direction:column;
+  gap:var(--sp-md);
+  margin-bottom:40px;
+}
+.loc-row{
+  display:flex;align-items:flex-start;gap:16px;
+}
+.loc-ico{
+  width:34px;height:34px;
+  border:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:2px;
+}
+.loc-ico svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:1.5;}
+.loc-label{
+  font-family:var(--sans);
+  font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:3px;font-weight:500;
+}
+.loc-value{
+  font-family:var(--sans);
+  font-size:var(--t-sm);color:var(--ink-soft);
+  font-weight:300;line-height:1.6;
+}
+
+.btn-outline{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--sans);
+  font-size:var(--t-xs);letter-spacing:.2em;text-transform:uppercase;
+  font-weight:500;color:var(--ink);
+  border:1px solid var(--rule);
+  padding:14px 28px;
+  transition:all .35s var(--ease);
+}
+.btn-outline svg{width:14px;height:14px;fill:var(--ink);transition:fill .35s;}
+.btn-outline:hover{background:var(--ink);color:var(--white);border-color:var(--ink);}
+.btn-outline:hover svg{fill:var(--white);}
+
+.loc-right{
+  position:relative;
+  background:var(--paper-warm);
+  aspect-ratio:4/3;
+  overflow:hidden;
+}
+.loc-map-card{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:48px;
+  text-align:center;
+  background:
+    linear-gradient(135deg, rgba(139,111,78,.05) 0%, transparent 60%),
+    var(--paper-warm);
+}
+.loc-map-pin{
+  width:52px;height:52px;
+  border:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+  background:var(--paper);
+}
+.loc-map-pin svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.5;}
+.loc-map-title{
+  font-family:var(--serif);
+  font-size:1.6rem;font-weight:300;
+  color:var(--ink);line-height:1.2;
+  margin-bottom:8px;
+}
+.loc-map-address{
+  font-family:var(--sans);
+  font-size:var(--t-sm);color:var(--ink-soft);
+  font-weight:300;line-height:1.7;
+  margin-bottom:var(--sp-md);
+}
+.loc-maps-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--sans);
+  font-size:var(--t-xs);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;
+  border-bottom:1px solid var(--accent-pale);
+  padding-bottom:3px;
+  transition:border-color .3s;
+}
+.loc-maps-link:hover{border-color:var(--accent);}
+
+/* ═══════════════════════════════════════════════════════════
+   CTA FINAL
+═══════════════════════════════════════════════════════════ */
+#cta{
+  position:relative;
+  overflow:hidden;
+  background:var(--ink);
+  padding:var(--sp-2xl) var(--sp-lg);
+  text-align:center;
+}
+.cta-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(139,111,78,.08) 0%, transparent 70%);
+  pointer-events:none;
+}
+.cta-body{
+  position:relative;z-index:1;
+  max-width:680px;margin:0 auto;
+}
+.cta-kicker{
+  font-family:var(--sans);
+  font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;
+  color:rgba(255,255,255,.3);
+  margin-bottom:var(--sp-md);
+}
+.cta-title{
+  font-family:var(--serif);
+  font-size:clamp(2.5rem,5vw,4.8rem);
+  font-weight:300;font-style:italic;
+  color:var(--white);
+  line-height:1.08;letter-spacing:-.01em;
+  margin-bottom:20px;
+}
+.cta-sub{
+  font-family:var(--sans);
+  font-size:var(--t-base);
+  font-weight:300;line-height:1.85;
+  color:rgba(255,255,255,.4);
+  margin-bottom:48px;
+  letter-spacing:.02em;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--white);color:var(--ink);
+  padding:18px 52px;
+  font-family:var(--sans);
+  font-size:var(--t-xs);letter-spacing:.2em;text-transform:uppercase;
+  font-weight:500;
+  transition:all .4s var(--ease);
+}
+.cta-btn svg{width:16px;height:16px;fill:var(--ink);transition:fill .4s;}
+.cta-btn:hover{background:var(--accent);color:var(--white);}
+.cta-btn:hover svg{fill:var(--white);}
+.cta-note{
+  margin-top:20px;
+  font-family:var(--sans);
+  font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.18);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════ */
+footer{
+  background:#090807;
+  padding:72px var(--sp-lg) 0;
+  border-top:1px solid rgba(255,255,255,.04);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:60px;
+  max-width:var(--max);margin:0 auto;
+  padding-bottom:60px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.footer-brand{
+  font-family:var(--serif);
+  font-size:1.2rem;font-weight:300;
+  color:var(--white);
+  letter-spacing:.06em;
+  margin-bottom:14px;
+}
+.footer-brand .dot{color:var(--accent);margin:0 6px;}
+.footer-tagline{
+  font-family:var(--sans);
+  font-size:var(--t-sm);
+  color:rgba(255,255,255,.25);
+  line-height:1.8;font-weight:300;
+  max-width:240px;
+  margin-bottom:var(--sp-md);
+}
+.footer-social{display:flex;gap:10px;}
+.footer-social a{
+  width:36px;height:36px;
+  border:1px solid rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .3s,background .3s;
+}
+.footer-social a:hover{border-color:var(--accent);background:rgba(139,111,78,.08);}
+.footer-social a svg{width:14px;height:14px;fill:rgba(255,255,255,.4);}
+.footer-social a:hover svg{fill:var(--accent);}
+.footer-col-title{
+  font-family:var(--sans);
+  font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(255,255,255,.2);
+  margin-bottom:var(--sp-md);font-weight:500;
+}
+.footer-list li{margin-bottom:10px;}
+.footer-list a{
+  font-family:var(--sans);
+  font-size:var(--t-sm);
+  color:rgba(255,255,255,.38);
+  font-weight:300;
+  transition:color .3s;
+}
+.footer-list a:hover{color:rgba(255,255,255,.75);}
+
+.footer-bottom{
+  max-width:var(--max);margin:0 auto;
+  padding:24px 0;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-copy{
+  font-family:var(--sans);
+  font-size:.6rem;letter-spacing:.1em;
+  color:rgba(255,255,255,.15);
+  font-weight:300;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FLOAT WHATSAPP
+═══════════════════════════════════════════════════════════ */
+.float{
+  position:fixed;bottom:var(--sp-md);right:var(--sp-md);
+  z-index:500;
+  display:flex;align-items:center;gap:10px;
+}
+.float-label{
+  font-family:var(--sans);
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--ink);color:rgba(255,255,255,.7);
+  padding:8px 14px;
+  opacity:0;transform:translateX(8px);
+  transition:all .3s var(--ease);
+  pointer-events:none;white-space:nowrap;
+}
+.float:hover .float-label{opacity:1;transform:translateX(0);}
+.float-btn{
+  width:52px;height:52px;
+  background:var(--accent);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(139,111,78,.35);
+  transition:background .3s,transform .3s;
+  animation:pulse 4s ease-in-out infinite;
+}
+.float-btn:hover{background:var(--ink);transform:scale(1.05);}
+.float-btn svg{width:24px;height:24px;fill:var(--white);}
+
+/* ═══════════════════════════════════════════════════════════
+   REVEAL
+═══════════════════════════════════════════════════════════ */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:
+    opacity .75s var(--ease),
+    transform .75s var(--ease);
+}
+.reveal.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}
+.d2{transition-delay:.2s;}
+.d3{transition-delay:.3s;}
+.d4{transition-delay:.4s;}
+.d5{transition-delay:.5s;}
+
+/* ═══════════════════════════════════════════════════════════
+   KEYFRAMES
+═══════════════════════════════════════════════════════════ */
+@keyframes up{
+  from{opacity:0;transform:translateY(22px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes fade{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+@keyframes marquee{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 8px 24px rgba(139,111,78,.35);}
+  50%{box-shadow:0 8px 36px rgba(139,111,78,.55);}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   REDUCED MOTION
+═══════════════════════════════════════════════════════════ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;}
+  .reveal{opacity:1;transform:none;}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤1024px)
+═══════════════════════════════════════════════════════════ */
+@media(max-width:1024px){
+  :root{--sp-lg:32px;--sp-xl:80px;--sp-2xl:120px;}
+  #nav,#nav.scrolled{padding:16px 32px;}
+  .nav-center{display:none;}
+  .nav-ham{display:flex;}
+
+  #sobre,#diferenciais,
+  .loc-wrap{grid-template-columns:1fr;}
+
+  .sobre-media{min-height:55vw;}
+  .sobre-body{padding:64px 40px;}
+
+  .diff-media{min-height:55vw;order:0;}
+  .diff-media-veil{background:linear-gradient(to bottom,transparent 55%,var(--ink));}
+  .diff-body{padding:60px 40px;order:1;}
+
+  .services-head{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:repeat(2,1fr);}
+  .svc-grid.cols-1{grid-template-columns:1fr;}
+
+  .ad-grid{grid-template-columns:1fr 1fr;}
+  .dep-card{flex:0 0 calc(50% - 12px);}
+  .cf-steps{grid-template-columns:repeat(2,1fr);}
+
+  .cf-step:nth-child(2){border-right:none;}
+  .cf-step:nth-child(3){border-right:1px solid rgba(255,255,255,.06);}
+  .cf-step:last-child{border-right:none;}
+
+  footer{padding:60px 32px 0;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤640px)
+═══════════════════════════════════════════════════════════ */
+@media(max-width:640px){
+  :root{--sp-lg:20px;--sp-xl:60px;--sp-2xl:80px;}
+
+  /* hero */
+  #hero{min-height:100svh;}
+  .hero-body{padding:0 20px;padding-top:72px;}
+  .hero-title{font-size:clamp(2.6rem,9vw,3.5rem);}
+  .hero-sub{font-size:.82rem;max-width:100%;}
+  .hero-stat{display:none;}
+  .hero-actions{gap:14px;}
+  .btn-primary{padding:15px 28px;font-size:.62rem;}
+
+  /* sobre */
+  .sobre-media{min-height:80vw;}
+  .sobre-body{padding:48px 24px;}
+  .sobre-media::after{inset:12px;}
+
+  /* serviços */
+  .svc-grid,
+  .svc-grid.cols-2{grid-template-columns:1fr;}
+
+  /* antes/depois */
+  .ad-grid{grid-template-columns:1fr;}
+  .ad-pair{height:280px;}
+
+  /* depoimentos — vira carrossel de 1 card por vez */
+  .dep-carousel-outer{overflow:hidden;}
+  .dep-carousel-track{flex-wrap:nowrap;}
+  .dep-card{flex:0 0 100%;padding:36px 28px;}
+  .dep-dots{display:flex;}
+  .dep-head{flex-direction:column;align-items:flex-start;}
+
+  /* como funciona */
+  .cf-steps{grid-template-columns:1fr;}
+  .cf-step{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);}
+  .cf-step:last-child{border-bottom:none;}
+
+  /* footer */
+  footer{padding:48px 20px 0;}
+  .footer-grid{grid-template-columns:1fr;gap:32px;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+
+  /* float */
+  .float-label{display:none;}
+  .float{bottom:20px;right:16px;}
+
+  /* nav cta */
+  .nav-cta{display:none;}
+}
+
+@media(max-width:400px){
+  .hero-title{font-size:2.4rem;}
+  .dep-card{padding:32px 24px;}
+  .svc-card{padding:32px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ FLOAT WHATSAPP ═══ -->
+<div class="float">
+  <span class="float-label">Agendar agora</span>
+  <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20agendar%20um%20atendimento." class="float-btn" target="_blank" rel="noopener" aria-label="Agendar via WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- ═══ NAV DRAWER MOBILE ═══ -->
+<div class="nav-drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <ul>
+    <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+    <li><a href="#servicos" onclick="closeMenu()">Serviços</a></li>
+    <li><a href="#antes-depois" onclick="closeMenu()">Resultados</a></li>
+    <li><a href="#depoimentos" onclick="closeMenu()">Depoimentos</a></li>
+    <li><a href="#faq" onclick="closeMenu()">Dúvidas</a></li>
+    <li><a href="#localizacao" onclick="closeMenu()">Localização</a></li>
+  </ul>
+  <div class="nav-drawer-foot">
+    <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20agendar%20um%20atendimento." class="nav-drawer-cta" target="_blank" rel="noopener" onclick="closeMenu()">
+      <svg style="width:14px;height:14px;fill:#fff;flex-shrink:0" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar pelo WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav" role="navigation">
+  <a href="#" class="nav-logo" aria-label="Elis Miranda — início">
+    Elis Miranda<span class="dot">·</span>Beleza &amp; Estética
+  </a>
+  <ul class="nav-center" role="navigation" aria-label="Navegação principal">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#localizacao">Localização</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20agendar%20um%20atendimento." class="nav-cta" target="_blank" rel="noopener" aria-label="Agendar atendimento via WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar
+    </a>
+    <button class="nav-ham" id="hamburger" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false" aria-controls="navDrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Apresentação">
+  <!-- Foto da Elis — coloca o arquivo aqui -->
+  <div class="hero-media">
+    <img src="img/eli-hro-new.jpeg" alt="Elis Miranda — especialista em beleza feminina, no seu estúdio em São Leopoldo RS">
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-fade" aria-hidden="true"></div>
+
+  <div class="hero-body">
+    <div class="hero-tag">
+      <div class="hero-tag-line"></div>
+      <span class="hero-tag-text">São Leopoldo · RS</span>
+    </div>
+    <h1 class="hero-title">
+      O olhar que você<br>
+      merece <em>sempre</em><br>
+      teve um nome.
+    </h1>
+    <p class="hero-sub">
+      Especialista em extensão de cílios, design de sobrancelhas
+      e estética feminina. Atendimento exclusivo com técnica refinada
+      e atenção a cada detalhe.
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20agendar%20um%20atendimento." class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar atendimento
+      </a>
+      <a href="#servicos" class="btn-ghost">
+        Ver serviços
+        <svg viewBox="0 0 16 16" style="width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5" aria-hidden="true"><path d="M8 3l5 5-5 5M3 8h10"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stat" aria-label="Mais de 7 anos de experiência">
+    <div class="hero-stat-n">7+</div>
+    <div class="hero-stat-l">anos de experiência</div>
+  </div>
+</section>
+
+<!-- ═══ STRIP ═══ -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span class="strip-item">Extensão de Cílios <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Design de Sobrancelhas <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Micropigmentação <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Esmaltação em Gel <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Alongamento de Unhas <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Estética Corporal <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Atendimento Exclusivo <span class="strip-sep">✦</span></span>
+    <span class="strip-item">São Leopoldo · RS <span class="strip-sep">✦</span></span>
+    <!-- duplicata para loop infinito -->
+    <span class="strip-item">Extensão de Cílios <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Design de Sobrancelhas <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Micropigmentação <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Esmaltação em Gel <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Alongamento de Unhas <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Estética Corporal <span class="strip-sep">✦</span></span>
+    <span class="strip-item">Atendimento Exclusivo <span class="strip-sep">✦</span></span>
+    <span class="strip-item">São Leopoldo · RS <span class="strip-sep">✦</span></span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SOBRE
+═══════════════════════════════════════════════════════════ -->
+<section id="sobre" aria-labelledby="sobre-title">
+  <div class="sobre-media elis-about-photo">
+    <img src="img/nova-cilios-sobrancelha-par.jpg" alt="Elis Miranda realizando atendimento no seu estúdio" style="object-position:center center;">
+  </div>
+
+  <div class="sobre-body">
+    <p class="eyebrow reveal" aria-hidden="true">Quem é Elis Miranda</p>
+    <h2 class="sec-title reveal d1" id="sobre-title">
+      Técnica que<br>
+      <em>transforma</em><br>
+      com precisão.
+    </h2>
+    <p class="sec-body reveal d2">
+      Elis Miranda construiu sua carreira sobre uma convicção simples: beleza real é aquela que parece natural, que você acorda usando. Especialista em cílios e sobrancelhas, Elis combina precisão técnica com sensibilidade estética para criar resultados que valorizam sua fisionomia — não um padrão genérico.
+    </p>
+    <span class="sobre-line reveal d2" aria-hidden="true"></span>
+    <p class="sec-body reveal d3" style="margin-bottom:0;">
+      Com anos de especialização e centenas de atendimentos realizados, ela desenvolveu um método próprio de leitura facial que garante que cada procedimento seja personalizado à estrutura e ao estilo de vida de cada cliente.
+    </p>
+
+    <div class="sobre-creds reveal d4" style="margin-top:32px;">
+      <div class="sobre-cred">
+        <span class="sobre-cred-dot" aria-hidden="true"></span>
+        <span class="sobre-cred-text">Especialista em Extensão de Cílios e Micropigmentação</span>
+      </div>
+      <div class="sobre-cred">
+        <span class="sobre-cred-dot" aria-hidden="true"></span>
+        <span class="sobre-cred-text">Certificada em técnicas nacionais e internacionais</span>
+      </div>
+      <div class="sobre-cred">
+        <span class="sobre-cred-dot" aria-hidden="true"></span>
+        <span class="sobre-cred-text">Studio próprio · Bairro Scharlau, São Leopoldo RS</span>
+      </div>
+      <div class="sobre-cred">
+        <span class="sobre-cred-dot" aria-hidden="true"></span>
+        <span class="sobre-cred-text">Produtos importados e materiais certificados</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SERVIÇOS
+═══════════════════════════════════════════════════════════ -->
+<section id="servicos" aria-labelledby="servicos-title">
+  <div class="services-head">
+    <div class="services-head-left">
+      <p class="eyebrow reveal" aria-hidden="true">Especialidades</p>
+      <h2 class="sec-title reveal d1" id="servicos-title">
+        Cada serviço,<br>
+        um <em>resultado</em>.
+      </h2>
+    </div>
+    <div class="services-head-right reveal d2">
+      <p class="sec-body">
+        Procedimentos selecionados com base na excelência técnica. Cada especialidade é executada com produtos premium e atenção minuciosa ao detalhe.
+      </p>
+    </div>
+  </div>
+
+  <div class="services-wrap">
+
+    <!-- CÍLIOS & SOBRANCELHAS -->
+    <div class="svc-group reveal">
+      <div class="svc-group-label">
+        Olhar
+        <span>Cílios &amp; Sobrancelhas</span>
+      </div>
+      <div class="svc-grid cols-2">
+        <article class="svc-card" aria-label="Extensão de Cílios">
+          <h3 class="svc-name">Extensão de Cílios</h3>
+          <p class="svc-desc">Há mais de 5 anos dedicada a valorizar o olhar de cada cliente. Cada fio é aplicado com atenção e precisão, respeitando a saúde dos cílios naturais. O resultado: leve, bonito e natural.</p>
+          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Extensão%20de%20Cílios." class="svc-cta" target="_blank" rel="noopener">
+            Agendar
+            <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
+          </a>
+        </article>
+        <article class="svc-card" aria-label="Brow Lamination e Lash Lifting">
+          <h3 class="svc-name">Brow Lamination &amp; Lash Lifting</h3>
+          <p class="svc-desc">Sobrancelhas alinhadas, cílios curvados e um olhar naturalmente mais bonito. Um procedimento delicado que valoriza seus traços e realça sua beleza sem perder a naturalidade.</p>
+          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Brow%20Lamination%20e%20Lash%20Lifting." class="svc-cta" target="_blank" rel="noopener">
+            Agendar
+            <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+
+    <!-- MICROPIGMENTAÇÃO -->
+    <div class="svc-group reveal d1">
+      <div class="svc-group-label">
+        Micropigmentação
+        <span>Resultado duradouro</span>
+      </div>
+      <div class="svc-grid cols-2">
+        <article class="svc-card" aria-label="Micropigmentação de Sobrancelhas">
+          <h3 class="svc-name">Micropigmentação de Sobrancelhas</h3>
+          <p class="svc-desc">O trabalho vai além de desenhar sobrancelhas: é realçar a beleza de forma natural, respeitando os traços e a expressão de cada cliente. Realizado com dermógrafo, sem cortes, sem sangue e com total conforto.</p>
+          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Micropigmentação%20de%20Sobrancelhas." class="svc-cta" target="_blank" rel="noopener">
+            Agendar
+            <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
+          </a>
+        </article>
+        <article class="svc-card" aria-label="Correções de Micropigmentações Antigas">
+          <h3 class="svc-name">Correções de Micropigmentações Antigas</h3>
+          <p class="svc-desc">Sobrancelhas com tom indesejado, azulado ou envelhecido têm solução. Com pigmentos de alta performance, Elis corrige e equilibra o resultado, devolvendo naturalidade ao olhar — sem necessidade de laser na maioria dos casos.</p>
+          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Correção%20de%20Micropigmentação." class="svc-cta" target="_blank" rel="noopener">
+            Agendar
+            <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+
+    <!-- UNHAS -->
+    <div class="svc-group reveal d2">
+      <div class="svc-group-label">
+        Unhas
+        <span>Cuidado completo</span>
+      </div>
+      <div class="svc-grid cols-1">
+        <article class="svc-card" aria-label="Alongamento, Blindagem e Esmaltação em Gel">
+          <h3 class="svc-name">Alongamento, Blindagem &amp; Esmaltação em Gel</h3>
+          <p class="svc-desc">Unhas bonitas vão além da estética — elas refletem cuidado e autoestima. Cada procedimento é realizado com técnica e capricho, respeitando a saúde das unhas naturais e buscando acabamento elegante e resistente.</p>
+          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20Unhas%20em%20Gel." class="svc-cta" target="_blank" rel="noopener">
+            Agendar
+            <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+
+    <!-- ESTÉTICA CORPORAL -->
+    <div class="svc-group reveal d3">
+      <div class="svc-group-label">
+        Estética Corporal
+        <span>Cuidado além do rosto</span>
+      </div>
+      <div class="svc-grid cols-1">
+        <article class="svc-card" aria-label="Método Microderme — Tratamento de Estrias">
+          <h3 class="svc-name">Método Microderme — Tratamento de Estrias</h3>
+          <p class="svc-desc">Por trás de cada estria existe uma história. Com o Método Microderme, o objetivo é estimular a regeneração da pele e suavizar a aparência das estrias, ajudando a cliente a recuperar confiança e liberdade para se sentir bem em sua própria pele.</p>
+          <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Método%20Microderme." class="svc-cta" target="_blank" rel="noopener">
+            Agendar
+            <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+
+  </div><!-- /services-wrap -->
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     DIFERENCIAIS
+═══════════════════════════════════════════════════════════ -->
+<section id="diferenciais" aria-labelledby="diff-title">
+  <div class="diff-media">
+    <img src="img/nova-cilios-close.jpg" alt="Detalhe de extensão de cílios">
+    <div class="diff-media-veil" aria-hidden="true"></div>
+  </div>
+
+  <div class="diff-body">
+    <p class="eyebrow reveal" aria-hidden="true">Por que escolher Elis</p>
+    <h2 class="sec-title reveal d1" id="diff-title">
+      O padrão que<br>
+      <em>você percebe</em><br>
+      na diferença.
+    </h2>
+
+    <div class="diff-list">
+      <div class="diff-item reveal d2">
+        <div class="diff-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+        </div>
+        <div>
+          <div class="diff-title">Leitura Facial Personalizada</div>
+          <div class="diff-text">Cada atendimento começa com uma análise da sua estrutura e estilo de vida. O resultado que fica bem em outra pessoa pode não ser o seu — e Elis sabe disso.</div>
+        </div>
+      </div>
+
+      <div class="diff-item reveal d3">
+        <div class="diff-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <div class="diff-title">Naturalidade como Princípio</div>
+          <div class="diff-text">Técnicas que valorizam sua beleza sem excessos. O objetivo é que você se reconheça no espelho — mais descansada, mais você.</div>
+        </div>
+      </div>
+
+      <div class="diff-item reveal d4">
+        <div class="diff-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0l-4-4m4 4l-4 4"/></svg>
+        </div>
+        <div>
+          <div class="diff-title">Atendimento Completo em Um Só Lugar</div>
+          <div class="diff-text">Do olhar às unhas e à estética corporal. Uma profissional de confiança que conhece seu histórico e cuida de você de forma integrada.</div>
+        </div>
+      </div>
+
+      <div class="diff-item reveal d5">
+        <div class="diff-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414A1 1 0 0120 9.414V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <div>
+          <div class="diff-title">Materiais Certificados e Protocolos Seguros</div>
+          <div class="diff-text">Produtos importados e materiais testados dermatologicamente. Higiene rigorosa em todos os procedimentos. Sua segurança não é opcional.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ANTES & DEPOIS
+═══════════════════════════════════════════════════════════ -->
+<section id="antes-depois" aria-labelledby="ad-title">
+  <div class="ad-head">
+    <p class="eyebrow reveal" aria-hidden="true">Resultados reais</p>
+    <h2 class="sec-title reveal d1" id="ad-title">
+      O antes e <em>depois</em><br>que você não esquece.
+    </h2>
+    <p class="sec-body reveal d2">Cada resultado abaixo é de uma cliente real. Sem filtros excessivos, sem edições irreais.</p>
+  </div>
+
+  <div class="ad-grid">
+    <!-- Card 1 -->
+    <div class="ad-card reveal">
+      <div class="ad-pair">
+        <div class="ad-side">
+          <img src="img/antes-cilios-velhos.jpg" alt="Antes — cílios naturais">
+        </div>
+        <div class="ad-side">
+          <img src="img/depois-cilios-novos.jpg" alt="Depois — extensão de cílios">
+        </div>
+        <div class="ad-divider" aria-hidden="true"></div>
+        <div class="ad-badge" aria-hidden="true">
+          <span>Antes</span>
+          <span>Depois</span>
+        </div>
+      </div>
+      <div class="ad-footer">
+        <div class="ad-svc">Extensão de Cílios</div>
+        <div class="ad-note">Volume russo · olhar amendoado</div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="ad-card reveal d1">
+      <div class="ad-pair">
+        <div class="ad-side">
+          <img src="img/antes-correcao-sobrancelha.jpg" alt="Antes — sobrancelha natural">
+        </div>
+        <div class="ad-side">
+          <img src="img/depois-correcao-sobrancelha.jpg" alt="Depois — micropigmentação de sobrancelha">
+        </div>
+        <div class="ad-divider" aria-hidden="true"></div>
+        <div class="ad-badge" aria-hidden="true">
+          <span>Antes</span>
+          <span>Depois</span>
+        </div>
+      </div>
+      <div class="ad-footer">
+        <div class="ad-svc">Design de Sobrancelhas</div>
+        <div class="ad-note">Micropigmentação fio a fio</div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="ad-card reveal d2">
+      <div class="ad-pair">
+        <div class="ad-side">
+          <img src="img/galeria-cilios-sobrancelha-a.jpg" alt="Antes — sobrancelha e cílios">
+        </div>
+        <div class="ad-side">
+          <img src="img/galeria-cilios-sobrancelhas-resultado.jpg" alt="Depois — resultado completo olhar">
+        </div>
+        <div class="ad-divider" aria-hidden="true"></div>
+        <div class="ad-badge" aria-hidden="true">
+          <span>Antes</span>
+          <span>Depois</span>
+        </div>
+      </div>
+      <div class="ad-footer">
+        <div class="ad-svc">Resultados Surpreendentes</div>
+        <div class="ad-note">Trabalhos reais · Elis Miranda</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     DEPOIMENTOS
+═══════════════════════════════════════════════════════════ -->
+<section id="depoimentos" aria-labelledby="dep-title">
+  <div class="dep-head">
+    <div class="dep-head-left">
+      <p class="eyebrow reveal" aria-hidden="true">O que nossas clientes dizem</p>
+      <h2 class="sec-title reveal d1" id="dep-title">
+        Cada sorriso<br>
+        <em>fala por si.</em>
+      </h2>
+    </div>
+    <div class="reveal d2">
+      <div class="dep-count">500+</div>
+      <div class="dep-count-label">atendimentos realizados</div>
+    </div>
+  </div>
+
+  <div class="dep-carousel-outer reveal d1">
+    <div class="dep-carousel-track" id="depTrack">
+
+      <!-- Card 1 — Rita Lopes -->
+      <article class="dep-card" aria-label="Depoimento de Rita Lopes">
+        <div class="dep-stars" aria-label="5 estrelas">
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+        </div>
+        <blockquote class="dep-quote">
+          <span class="dep-quote-text">A experiência foi incrível do início ao fim, e o resultado superou minhas expectativas. Estou muito feliz com a transformação e com a atenção aos detalhes. Sem dúvida, um trabalho realizado com excelência. Gratidão por elevar ainda mais minha autoestima!</span>
+        </blockquote>
+        <div class="dep-divider" aria-hidden="true"></div>
+        <div class="dep-author">
+          <div class="dep-avatar">
+            <img src="img/rita-lopes.jpeg" alt="Foto de Rita Lopes" loading="lazy">
+          </div>
+          <div>
+            <span class="dep-name">Rita Lopes</span>
+            <span class="dep-role">Cliente verificada</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 — Lucilene Madrid -->
+      <article class="dep-card" aria-label="Depoimento de Lucilene Madrid">
+        <div class="dep-stars" aria-label="5 estrelas">
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+        </div>
+        <blockquote class="dep-quote">
+          <span class="dep-quote-text">Fiquei com medo no começo, mas o resultado ficou natural demais. Me senti muito bem atendida, ótima profissional. Você explicou tudo com calma. Muito obrigada pelo carinho de sempre e por me deixar ainda mais linda!</span>
+        </blockquote>
+        <div class="dep-divider" aria-hidden="true"></div>
+        <div class="dep-author">
+          <div class="dep-avatar">
+            <img src="img/lucilene.jpeg" alt="Foto de Lucilene Madrid" loading="lazy">
+          </div>
+          <div>
+            <span class="dep-name">Lucilene Madrid</span>
+            <span class="dep-role">Cliente verificada</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 — Manuela -->
+      <article class="dep-card" aria-label="Depoimento de Manuela">
+        <div class="dep-stars" aria-label="5 estrelas">
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+          <span class="dep-star" aria-hidden="true">★</span>
+        </div>
+        <blockquote class="dep-quote">
+          <span class="dep-quote-text">Meu nome é Manuela e eu simplesmente amo os resultados de sempre! Os cílios ficam impecáveis, exatamente do jeitinho que eu gosto. A experiência é sempre ótima do começo ao fim, me sinto super confortável e muito bem atendida. Dá para ver o cuidado e o capricho em cada detalhe. Sem dúvidas, a melhor lash que existe!</span>
+        </blockquote>
+        <div class="dep-divider" aria-hidden="true"></div>
+        <div class="dep-author">
+          <div class="dep-avatar">
+            <img src="img/manuela.jpeg" alt="Foto de Manuela" loading="lazy">
+          </div>
+          <div>
+            <span class="dep-name">Manuela</span>
+            <span class="dep-role">Cliente verificada · Extensão de Cílios</span>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /dep-carousel-track -->
+
+    <!-- Dots (visíveis só no mobile via CSS) -->
+    <div class="dep-dots" id="depDots" aria-label="Navegação do carrossel" role="tablist">
+      <button class="dep-dot active" aria-label="Depoimento 1" data-index="0" role="tab"></button>
+      <button class="dep-dot" aria-label="Depoimento 2" data-index="1" role="tab"></button>
+      <button class="dep-dot" aria-label="Depoimento 3" data-index="2" role="tab"></button>
+    </div>
+  </div>
+
+  <!-- Frase emocional + CTA -->
+  <div class="dep-closing reveal d3">
+    <p class="dep-closing-phrase">
+      Mais do que realçar a beleza, nosso propósito é <em>fortalecer a autoestima</em> e proporcionar momentos de cuidado e confiança.
+    </p>
+    <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20agendar%20meu%20horário." class="dep-closing-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar meu horário
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     GALERIA — desativada no momento.
+     Para reativar: apague a linha "INICIO-COMENTARIO" abaixo e a
+     linha "FIM-COMENTARIO" que fica logo após o fechamento da section.
+═══════════════════════════════════════════════════════════ -->
+<!-- INICIO-COMENTARIO
+<section id="galeria" aria-labelledby="galeria-title">
+  <div class="galeria-head">
+    <div>
+      <p class="eyebrow reveal" aria-hidden="true">Trabalhos recentes</p>
+      <h2 class="sec-title reveal d1" id="galeria-title">
+        O olhar<br><em>em detalhe.</em>
+      </h2>
+    </div>
+    <a href="https://www.instagram.com/elismiranda.olharperfeito" target="_blank" rel="noopener" class="galeria-insta reveal d2">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      @elismiranda.olharperfeito
+    </a>
+  </div>
+
+  <div class="galeria-grid">
+    <div class="gal-item tall reveal">
+      <img src="img/galeria-extensao-cilios-volume.jpg" alt="Extensão de cílios volume russo" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Volume Russo</span>
+    </div>
+    <div class="gal-item reveal d1">
+      <img src="img/nova-cilios-sobrancelha-par.jpg" alt="Cílios e sobrancelha design" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Olhar Completo</span>
+    </div>
+    <div class="gal-item reveal d2">
+      <img src="img/nova-design-sobrancelha.jpg" alt="Resultado design de sobrancelha" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Design de Sobrancelha</span>
+    </div>
+    <div class="gal-item tall reveal d3">
+      <img src="img/galeria-unhas-nude.jpg" alt="Unhas nude esmaltação gel" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Gel Nude</span>
+    </div>
+    <div class="gal-item reveal d1">
+      <img src="img/galeria-extensao-cilios-natural.jpg" alt="Extensão de cílios natural" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Extensão Natural</span>
+    </div>
+    <div class="gal-item reveal d2">
+      <img src="img/galeria-extensao-cilios-dois-olhos.jpg" alt="Par de olhos extensão de cílios" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Par de Olhos</span>
+    </div>
+    <div class="gal-item reveal d1">
+      <img src="img/galeria-cilios-sobrancelhas-resultado.jpg" alt="Resultado cílios e sobrancelhas" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Cílios &amp; Sobrancelha</span>
+    </div>
+    <div class="gal-item tall reveal d2">
+      <img src="img/galeria-unhas-rosa-cristal.jpg" alt="Unhas rosa cristal gel" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Rosa Cristal</span>
+    </div>
+    <div class="gal-item reveal d3">
+      <img src="img/galeria-unhas-azul-gel.jpg" alt="Unhas azul esmaltação gel" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Azul Gel</span>
+    </div>
+    <div class="gal-item reveal d1">
+      <img src="img/nova-cilios-sobrancelha-par.jpg" alt="Close extensão de cílios" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Close Extensão</span>
+    </div>
+    <div class="gal-item tall reveal d2">
+      <img src="img/galeria-unhas-azul-glitter.jpg" alt="Unhas azul glitter" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Azul Glitter</span>
+    </div>
+    <div class="gal-item reveal d3">
+      <img src="img/nova-unhas-acabamento.jpg" alt="Unhas acabamento gel" loading="lazy">
+      <div class="gal-overlay" aria-hidden="true"></div>
+      <span class="gal-label">Branca Glitter</span>
+    </div>
+  </div>
+</section>
+FIM-COMENTARIO -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     COMO FUNCIONA
+═══════════════════════════════════════════════════════════ -->
+<section id="como-funciona" aria-labelledby="cf-title">
+  <div class="cf-head">
+    <p class="eyebrow reveal" aria-hidden="true">Seu atendimento</p>
+    <h2 class="sec-title reveal d1" id="cf-title">
+      Do primeiro contato<br>
+      <em>ao resultado perfeito.</em>
+    </h2>
+  </div>
+
+  <div class="cf-steps">
+    <div class="cf-step reveal">
+      <div class="cf-n" aria-hidden="true">1</div>
+      <h3 class="cf-title">Contato pelo WhatsApp</h3>
+      <p class="cf-text">Envie uma mensagem e receba retorno rápido. Tire suas dúvidas, conheça os procedimentos e encontre a data ideal para você.</p>
+    </div>
+    <div class="cf-step reveal d1">
+      <div class="cf-n" aria-hidden="true">2</div>
+      <h3 class="cf-title">Avaliação do seu perfil</h3>
+      <p class="cf-text">Antes de qualquer procedimento, Elis avalia sua fisionomia, histórico e expectativas para indicar o tratamento mais adequado.</p>
+    </div>
+    <div class="cf-step reveal d2">
+      <div class="cf-n" aria-hidden="true">3</div>
+      <h3 class="cf-title">Procedimento com cuidado total</h3>
+      <p class="cf-text">Ambiente preparado, materiais certificados e atenção plena durante todo o atendimento. Conforto e segurança do início ao fim.</p>
+    </div>
+    <div class="cf-step reveal d3">
+      <div class="cf-n" aria-hidden="true">4</div>
+      <h3 class="cf-title">Resultado e acompanhamento</h3>
+      <p class="cf-text">Orientações de cuidado pós-procedimento e suporte direto pelo WhatsApp. Porque o atendimento não termina quando você sai do studio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════════════════ -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="faq-wrap">
+    <div class="faq-head reveal">
+      <p class="eyebrow" aria-hidden="true">Dúvidas frequentes</p>
+      <h2 class="sec-title" id="faq-title">Tudo que você precisa <em>saber.</em></h2>
+    </div>
+
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Quanto tempo dura a extensão de cílios?</span>
+          <span class="faq-toggle" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Em média 3 a 4 semanas, dependendo do ciclo natural de queda dos seus cílios e dos cuidados pós-procedimento. Com manutenção regular a cada 3 semanas, você mantém o volume e a aparência sempre frescos.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          <span class="faq-q-text">A micropigmentação é permanente?</span>
+          <span class="faq-toggle" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>A micropigmentação é semi-permanente. O pigmento se dissipa gradualmente em 1 a 3 anos, dependendo do tipo de pele, exposição solar e cuidados. Isso é uma vantagem: permite ajustes ao longo do tempo conforme seu estilo evolui.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Preciso fazer alguma preparação antes do atendimento?</span>
+          <span class="faq-toggle" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Sim. Para extensão de cílios: retire o removedor à prova d'água 48 horas antes e chegue sem maquiagem nos olhos. Para micropigmentação: evite sol intenso, álcool e medicamentos anticoagulantes nos 3 dias anteriores. Elis orienta em detalhes via WhatsApp após o agendamento.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Como funciona o pagamento?</span>
+          <span class="faq-toggle" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>São aceitos Pix, cartão de débito e crédito. Para procedimentos de maior valor, pergunte sobre as condições de parcelamento. Consulte os valores e formas de pagamento diretamente pelo WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Onde fica o studio?</span>
+          <span class="faq-toggle" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>O studio fica na Rua Eugênio Berger, 108, Bairro Scharlau, São Leopoldo – RS. Com estacionamento próximo e fácil acesso. O endereço completo e orientações de chegada são enviados após o agendamento.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Quais os cuidados após a extensão de cílios?</span>
+          <span class="faq-toggle" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Nas primeiras 24h: evite molhar, vapor e suor excessivo. Após isso, use somente demaquilante a base d'água, nunca oleoso. Não friccione os cílios e durma de lado ou de costas quando possível. Elis fornece um guia de cuidados completo após o procedimento.</p>
+        </div>
+      </div>
+
+    </div><!-- /faq-list -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     LOCALIZAÇÃO
+═══════════════════════════════════════════════════════════ -->
+<section id="localizacao" aria-labelledby="loc-title">
+  <div class="loc-wrap">
+    <div class="loc-left">
+      <p class="eyebrow reveal" aria-hidden="true">Como chegar</p>
+      <h2 class="sec-title reveal d1" id="loc-title">
+        Studio em<br>
+        <em>São Leopoldo.</em>
+      </h2>
+      <div class="loc-details reveal d2">
+        <div class="loc-row">
+          <div class="loc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <div class="loc-label">Endereço</div>
+            <div class="loc-value">Rua Eugênio Berger, 108<br>Bairro Scharlau · São Leopoldo, RS</div>
+          </div>
+        </div>
+        <div class="loc-row">
+          <div class="loc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <div class="loc-label">Horários</div>
+            <div class="loc-value">Segunda a Sexta: 9h às 19h<br>Sábados: 9h às 17h<br>Atendimento apenas com agendamento</div>
+          </div>
+        </div>
+        <div class="loc-row">
+          <div class="loc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div>
+            <div class="loc-label">Contato</div>
+            <div class="loc-value">(51) 9 9596-4848<br>@elismiranda.olharperfeito</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal d3">
+        <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20agendar%20um%20atendimento." class="btn-outline" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="loc-right reveal d2">
+      <div class="loc-map-card">
+        <div class="loc-map-pin" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div class="loc-map-title">Bairro Scharlau<br>São Leopoldo</div>
+        <div class="loc-map-address">
+          Rua Eugênio Berger, 108<br>São Leopoldo · RS · CEP 93030-000
+        </div>
+        <a href="https://maps.google.com/?q=Rua+Eugênio+Berger+108+Scharlau+São+Leopoldo+RS" target="_blank" rel="noopener" class="loc-maps-link">
+          Abrir no Google Maps
+          <svg viewBox="0 0 14 14" style="width:10px;height:10px;stroke:var(--accent);fill:none;stroke-width:1.5"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA FINAL
+═══════════════════════════════════════════════════════════ -->
+<section id="cta" aria-labelledby="cta-title">
+  <div class="cta-bg" aria-hidden="true"></div>
+  <div class="cta-body">
+    <p class="cta-kicker reveal" aria-hidden="true">Pronta para o próximo passo?</p>
+    <h2 class="cta-title reveal d1" id="cta-title">
+      Seu melhor olhar<br>começa com<br>uma mensagem.
+    </h2>
+    <p class="cta-sub reveal d2">
+      Vagas limitadas para garantir atenção exclusiva em cada atendimento.<br>
+      Agende agora e reserve o seu horário.
+    </p>
+    <div class="reveal d3">
+      <a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20agendar%20um%20atendimento." class="cta-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar atendimento
+      </a>
+      <p class="cta-note">Atendimento exclusivo com agendamento prévio</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Elis Miranda<span class="dot">·</span>Beleza &amp; Estética</div>
+      <p class="footer-tagline">Especialista em cílios, sobrancelhas, unhas e estética feminina em São Leopoldo, RS.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/elismiranda.olharperfeito" target="_blank" rel="noopener" aria-label="Instagram da Elis Miranda">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/5551995964848" target="_blank" rel="noopener" aria-label="WhatsApp da Elis Miranda">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Especialidades</div>
+      <ul class="footer-list">
+        <li><a href="#servicos">Extensão de Cílios</a></li>
+        <li><a href="#servicos">Lash Lifting</a></li>
+        <li><a href="#servicos">Design de Sobrancelhas</a></li>
+        <li><a href="#servicos">Micropigmentação</a></li>
+        <li><a href="#servicos">Unhas em Gel</a></li>
+        <li><a href="#servicos">Estética Corporal</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contato</div>
+      <ul class="footer-list">
+        <li><a href="https://wa.me/5551995964848" target="_blank" rel="noopener">(51) 9 9596-4848</a></li>
+        <li><a href="https://www.instagram.com/elismiranda.olharperfeito" target="_blank" rel="noopener">@elismiranda.olharperfeito</a></li>
+        <li><a href="#localizacao">Rua Eugênio Berger, 108</a></li>
+        <li><a href="#localizacao">Bairro Scharlau · São Leopoldo RS</a></li>
+        <li style="margin-top:16px;"><a href="https://wa.me/5551995964848?text=Olá%20Elis!%20Gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener" style="color:var(--accent);">Agendar atendimento →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Elis Miranda · São Leopoldo RS · Todos os direitos reservados</span>
+    <span class="footer-copy">Desenvolvido por <a href="https://ezstudio.com.br" target="_blank" rel="noopener" style="color:rgba(255,255,255,.3);transition:color .3s;" onmouseover="this.style.color='rgba(255,255,255,.6)'" onmouseout="this.style.color='rgba(255,255,255,.3)'">EzStudio</a></span>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════════ -->
+<script>
+/* ─── NAV SCROLL ─── */
+const nav = document.getElementById('nav');
+const onScroll = () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+
+/* ─── MENU MOBILE ─── */
+const ham = document.getElementById('hamburger');
+const drawer = document.getElementById('navDrawer');
+let menuOpen = false;
+
+function toggleMenu() {
+  menuOpen = !menuOpen;
+  ham.classList.toggle('open', menuOpen);
+  drawer.classList.toggle('open', menuOpen);
+  ham.setAttribute('aria-expanded', menuOpen);
+  document.body.style.overflow = menuOpen ? 'hidden' : '';
+}
+function closeMenu() {
+  menuOpen = false;
+  ham.classList.remove('open');
+  drawer.classList.remove('open');
+  ham.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+/* Fechar drawer com ESC */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && menuOpen) closeMenu();
+});
+
+/* ─── SCROLL REVEAL ─── */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ─── SMOOTH SCROLL ─── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = nav.offsetHeight + 8;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+/* ─── FAQ ACCORDION ─── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+
+  /* Fecha todos */
+  document.querySelectorAll('.faq-item.open').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+  });
+
+  /* Abre o clicado se estava fechado */
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+/* ─── CARROSSEL DEPOIMENTOS (mobile) ─── */
+(function(){
+  const track  = document.getElementById('depTrack');
+  const dots   = document.querySelectorAll('.dep-dot');
+  if (!track) return;
+
+  let current  = 0;
+  let startX   = 0;
+  let isDrag   = false;
+
+  function isMobile(){ return window.innerWidth <= 640; }
+
+  function goTo(idx){
+    if (!isMobile()) return;
+    const cards = track.querySelectorAll('.dep-card');
+    if (!cards.length) return;
+    const cardW = cards[0].offsetWidth + 24; /* gap = 24px */
+    current = Math.max(0, Math.min(idx, cards.length - 1));
+    track.style.transform = `translateX(-${current * cardW}px)`;
+    dots.forEach((d,i)=>d.classList.toggle('active', i===current));
+  }
+
+  dots.forEach(d => d.addEventListener('click',()=>goTo(+d.dataset.index)));
+
+  /* swipe touch */
+  track.addEventListener('touchstart', e=>{ startX=e.touches[0].clientX; isDrag=true; },{passive:true});
+  track.addEventListener('touchend', e=>{
+    if(!isDrag) return; isDrag=false;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 48) goTo(dx < 0 ? current+1 : current-1);
+  },{passive:true});
+
+  /* reset no resize */
+  window.addEventListener('resize',()=>{ if(!isMobile()){ track.style.transform=''; } else { goTo(current); } });
+})();
+
+
+drawer.addEventListener('keydown', e => {
+  if (e.key !== 'Tab' || !menuOpen) return;
+  const focusable = drawer.querySelectorAll('a, button');
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault(); last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault(); first.focus();
+  }
+});
+</script>
+</body>
+</html>
