@@ -574,6 +574,66 @@ ul{list-style:none;}
   color:var(--accent);
   margin-bottom:16px;
   display:none;
+  cursor:pointer;
+}
+.svc-preco:hover{text-decoration:underline;text-underline-offset:3px;}
+
+/* ── Modal Preços ── */
+#preco-modal{
+  position:fixed;inset:0;
+  background:rgba(14,12,10,.62);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;
+  z-index:9000;padding:24px;
+  opacity:0;pointer-events:none;
+  transition:opacity .3s var(--ease);
+}
+#preco-modal.open{opacity:1;pointer-events:all;}
+#preco-modal-panel{
+  background:var(--paper);
+  max-width:420px;width:100%;
+  padding:52px 44px 44px;
+  position:relative;
+  transform:translateY(14px);
+  transition:transform .35s var(--ease);
+}
+#preco-modal.open #preco-modal-panel{transform:translateY(0);}
+#preco-modal-close{
+  position:absolute;top:18px;right:18px;
+  width:32px;height:32px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink-soft);transition:color .2s;
+}
+#preco-modal-close:hover{color:var(--ink);}
+#preco-modal-close svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;}
+#preco-modal-eyebrow{
+  font-family:var(--sans);
+  font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:10px;
+}
+#preco-modal-title{
+  font-family:var(--serif);
+  font-size:1.55rem;font-weight:400;font-style:italic;
+  color:var(--accent);
+  margin-bottom:28px;line-height:1.2;
+}
+#preco-modal-list{margin:0;}
+.preco-item{
+  display:flex;align-items:baseline;
+  justify-content:space-between;gap:16px;
+  padding:13px 0;
+  border-bottom:1px solid var(--rule);
+}
+.preco-item:last-child{border-bottom:none;}
+.preco-item-nome{
+  font-family:var(--sans);
+  font-size:var(--t-sm);font-weight:400;
+  color:var(--accent);flex:1;
+}
+.preco-item-valor{
+  font-family:var(--sans);
+  font-size:var(--t-sm);font-weight:500;
+  color:var(--ink);white-space:nowrap;
 }
 .svc-cta{
   font-family:var(--sans);
@@ -2553,9 +2613,54 @@ drawer.addEventListener('keydown', e => {
   }
 });
 </script>
+<div id="preco-modal" role="dialog" aria-modal="true" aria-labelledby="preco-modal-title">
+  <div id="preco-modal-panel">
+    <button id="preco-modal-close" aria-label="Fechar">
+      <svg viewBox="0 0 16 16"><path d="M3 3l10 10M13 3L3 13"/></svg>
+    </button>
+    <p id="preco-modal-eyebrow">Serviços &amp; Preços</p>
+    <h2 id="preco-modal-title"></h2>
+    <ul id="preco-modal-list"></ul>
+  </div>
+</div>
+
 <script>
 (function(){
   var SHEETS='https://script.google.com/macros/s/AKfycbysYdOKGxNN_II8nWIAmxnflex5qPcBioGHuIxtk5K-SjqUOVX67Ecw2HpQhwCFp0M/exec';
+  var modal=document.getElementById('preco-modal');
+  var modalTitle=document.getElementById('preco-modal-title');
+  var modalList=document.getElementById('preco-modal-list');
+
+  function parsePreco(str){
+    var n=parseFloat((str+'').replace(/[R$\s.]/g,'').replace(',','.'));
+    return isNaN(n)?null:n;
+  }
+  function openModal(title,items){
+    modalTitle.textContent=title;
+    modalList.innerHTML='';
+    items.forEach(function(s){
+      var li=document.createElement('li');
+      li.className='preco-item';
+      var nome=document.createElement('span');
+      nome.className='preco-item-nome';
+      nome.textContent=s.servico;
+      var valor=document.createElement('span');
+      valor.className='preco-item-valor';
+      valor.textContent=s.preco;
+      li.appendChild(nome);li.appendChild(valor);
+      modalList.appendChild(li);
+    });
+    modal.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  document.getElementById('preco-modal-close').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
   fetch(SHEETS+'?action=servicos')
     .then(function(r){return r.json();})
     .then(function(data){
@@ -2566,15 +2671,18 @@ drawer.addEventListener('keydown', e => {
         var matches=servicos.filter(function(s){return s.categoria===cat;});
         if(filtro)matches=matches.filter(function(s){return s.servico&&s.servico.toLowerCase().indexOf(filtro)>-1;});
         if(!matches.length)return;
-        var prices=matches.map(function(s){
-          var n=parseFloat((s.preco+'').replace(/[R$\s.]/g,'').replace(',','.'));
-          return isNaN(n)?null:n;
-        }).filter(function(p){return p!==null;});
+        var prices=matches.map(function(s){return parsePreco(s.preco);}).filter(function(p){return p!==null;});
         if(!prices.length)return;
         var min=Math.min.apply(null,prices);
         var label=(prices.length>1?'A partir de ':'')+'R$ '+min.toLocaleString('pt-BR');
         var el=card.querySelector('.svc-preco');
-        if(el){el.textContent=label;el.style.display='block';}
+        if(!el)return;
+        el.textContent=label;
+        el.style.display='block';
+        el.setAttribute('title','Ver todos os preços');
+        var cardTitle=(card.querySelector('.svc-name')||{}).textContent||cat;
+        var captured=matches.slice();
+        el.addEventListener('click',function(){openModal(cardTitle,captured);});
       });
     })
     .catch(function(){});
