@@ -565,7 +565,15 @@ ul{list-style:none;}
   font-family:var(--sans);
   font-size:var(--t-sm);
   line-height:1.85;color:var(--ink-soft);
-  font-weight:300;margin-bottom:20px;
+  font-weight:300;margin-bottom:12px;
+}
+.svc-preco{
+  font-family:var(--sans);
+  font-size:.72rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:16px;
+  display:none;
 }
 .svc-cta{
   font-family:var(--sans);
@@ -1724,9 +1732,10 @@ footer{
         <span>Cílios &amp; Sobrancelhas</span>
       </div>
       <div class="svc-grid cols-2">
-        <article class="svc-card" aria-label="Extensão de Cílios">
+        <article class="svc-card" aria-label="Extensão de Cílios" data-preco-cat="Extensão de Cílios">
           <h3 class="svc-name">Extensão de Cílios</h3>
           <p class="svc-desc">Há mais de 5 anos dedicada a valorizar o olhar de cada cliente. Cada fio é aplicado com atenção e precisão, respeitando a saúde dos cílios naturais. O resultado: leve, bonito e natural.</p>
+          <p class="svc-preco"></p>
           <a href="https://agenda.elismiranda.com.br?servico=Extensão de Cílios" class="svc-cta">
             Agendar
             <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
@@ -1750,17 +1759,19 @@ footer{
         <span>Resultado duradouro</span>
       </div>
       <div class="svc-grid cols-2">
-        <article class="svc-card" aria-label="Micropigmentação de Sobrancelhas">
+        <article class="svc-card" aria-label="Micropigmentação de Sobrancelhas" data-preco-cat="Micropigmentação" data-preco-filtro="Sobrancelha">
           <h3 class="svc-name">Micropigmentação de Sobrancelhas</h3>
           <p class="svc-desc">O trabalho vai além de desenhar sobrancelhas: é realçar a beleza de forma natural, respeitando os traços e a expressão de cada cliente. Realizado com dermógrafo, sem cortes, sem sangue e com total conforto.</p>
+          <p class="svc-preco"></p>
           <a href="https://agenda.elismiranda.com.br?servico=Micropigmentação de Sobrancelhas" class="svc-cta">
             Agendar
             <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
           </a>
         </article>
-        <article class="svc-card" aria-label="Correções de Micropigmentações Antigas">
+        <article class="svc-card" aria-label="Correções de Micropigmentações Antigas" data-preco-cat="Micropigmentação" data-preco-filtro="Corre">
           <h3 class="svc-name">Correções de Micropigmentações Antigas</h3>
           <p class="svc-desc">Sobrancelhas com tom indesejado, azulado ou envelhecido têm solução. Com pigmentos de alta performance, Elis corrige e equilibra o resultado, devolvendo naturalidade ao olhar — sem necessidade de laser na maioria dos casos.</p>
+          <p class="svc-preco"></p>
           <a href="https://agenda.elismiranda.com.br?servico=Correções de Micropigmentações Antigas" class="svc-cta">
             Agendar
             <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
@@ -1776,9 +1787,10 @@ footer{
         <span>Cuidado completo</span>
       </div>
       <div class="svc-grid cols-1">
-        <article class="svc-card" aria-label="Alongamento, Blindagem e Esmaltação em Gel">
+        <article class="svc-card" aria-label="Alongamento, Blindagem e Esmaltação em Gel" data-preco-cat="Manicure e Unhas">
           <h3 class="svc-name">Alongamento, Blindagem &amp; Esmaltação em Gel</h3>
           <p class="svc-desc">Unhas bonitas vão além da estética — elas refletem cuidado e autoestima. Cada procedimento é realizado com técnica e capricho, respeitando a saúde das unhas naturais e buscando acabamento elegante e resistente.</p>
+          <p class="svc-preco"></p>
           <a href="https://agenda.elismiranda.com.br?servico=Alongamento, Blindagem e Esmaltação em Gel" class="svc-cta">
             Agendar
             <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
@@ -1794,9 +1806,10 @@ footer{
         <span>Cuidado além do rosto</span>
       </div>
       <div class="svc-grid cols-1">
-        <article class="svc-card" aria-label="Método Microderme — Tratamento de Estrias">
+        <article class="svc-card" aria-label="Método Microderme — Tratamento de Estrias" data-preco-cat="Estética">
           <h3 class="svc-name">Método Microderme — Tratamento de Estrias</h3>
           <p class="svc-desc">Por trás de cada estria existe uma história. Com o Método Microderme, o objetivo é estimular a regeneração da pele e suavizar a aparência das estrias, ajudando a cliente a recuperar confiança e liberdade para se sentir bem em sua própria pele.</p>
+          <p class="svc-preco"></p>
           <a href="https://agenda.elismiranda.com.br?servico=Método Microderme — Tratamento de Estrias" class="svc-cta">
             Agendar
             <svg viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M8 3l5 5-5 5"/></svg>
@@ -2539,6 +2552,33 @@ drawer.addEventListener('keydown', e => {
     e.preventDefault(); first.focus();
   }
 });
+</script>
+<script>
+(function(){
+  var SHEETS='https://script.google.com/macros/s/AKfycbysYdOKGxNN_II8nWIAmxnflex5qPcBioGHuIxtk5K-SjqUOVX67Ecw2HpQhwCFp0M/exec';
+  fetch(SHEETS+'?action=servicos')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      var servicos=(data.servicos||[]).filter(function(s){return s.ativo!==false&&s.preco;});
+      document.querySelectorAll('.svc-card[data-preco-cat]').forEach(function(card){
+        var cat=card.dataset.precoCat;
+        var filtro=(card.dataset.precoFiltro||'').toLowerCase();
+        var matches=servicos.filter(function(s){return s.categoria===cat;});
+        if(filtro)matches=matches.filter(function(s){return s.servico&&s.servico.toLowerCase().indexOf(filtro)>-1;});
+        if(!matches.length)return;
+        var prices=matches.map(function(s){
+          var n=parseFloat((s.preco+'').replace(/[R$\s.]/g,'').replace(',','.'));
+          return isNaN(n)?null:n;
+        }).filter(function(p){return p!==null;});
+        if(!prices.length)return;
+        var min=Math.min.apply(null,prices);
+        var label=(prices.length>1?'A partir de ':'')+'R$ '+min.toLocaleString('pt-BR');
+        var el=card.querySelector('.svc-preco');
+        if(el){el.textContent=label;el.style.display='block';}
+      });
+    })
+    .catch(function(){});
+})();
 </script>
 </body>
 </html>
