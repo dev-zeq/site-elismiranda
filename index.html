@@ -1600,8 +1600,8 @@ footer{
   .agendar-inner { max-width: 860px; margin: 0 auto; }
   .agendar-sub { color: rgba(255,255,255,.55); font-size: .95rem; margin: 16px 0 40px; max-width: 480px; line-height: 1.7; }
   .agendar-frame { border-radius: 16px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,.5); }
-  .agendar-frame iframe { width: 100%; height: 780px; border: none; display: block; }
-  @media (max-width: 600px) { .agendar-frame iframe { height: 860px; } }
+  .agendar-frame iframe { width: 100%; height: 900px; border: none; display: block; transition: height .3s ease; }
+  @media (max-width: 600px) { .agendar-frame iframe { height: 1000px; } }
 
 </style>
 </head>
@@ -2743,6 +2743,14 @@ drawer.addEventListener('keydown', e => {
     })
     .catch(function(){});
 })();
+
+// Auto-resize do iframe de agendamento
+window.addEventListener('message', function(e) {
+    if (!e.data || e.data.type !== 'agendaHeight') return;
+    if (e.origin !== 'https://agenda.elismiranda.com.br') return;
+    var iframe = document.getElementById('agenda-iframe');
+    if (iframe) iframe.style.height = (e.data.height + 24) + 'px';
+});
 </script>
 </body>
 </html>
