@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Apostila Lash Design — Elis Miranda</title>
+<meta name="description" content="Apostila online do curso Lash Design por Elis Miranda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1416; --ink-soft:#5d4f54; --rule:rgba(28,20,22,.12);
+  --paper:#fffafb; --paper-off:#f8eef1; --paper-card:#ffffff;
+  --rose:#d9819f; --rose-deep:#a94468; --rose-pale:#f4d6df; --rose-wash:#fbeaf0;
+  --warn:#b4472f; --warn-wash:#fcece8;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+  --side:300px; --measure:760px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#f6eaee; --ink-soft:#c3aeb5; --rule:rgba(246,234,238,.14);
+    --paper:#171113; --paper-off:#1f171a; --paper-card:#221a1d;
+    --rose:#e590ad; --rose-deep:#f0a8c1; --rose-pale:#3a2530; --rose-wash:#2a1c22;
+    --warn:#f08a70; --warn-wash:#33201b;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#f6eaee; --ink-soft:#c3aeb5; --rule:rgba(246,234,238,.14);
+  --paper:#171113; --paper-off:#1f171a; --paper-card:#221a1d;
+  --rose:#e590ad; --rose-deep:#f0a8c1; --rose-pale:#3a2530; --rose-wash:#2a1c22;
+  --warn:#f08a70; --warn-wash:#33201b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(--ink);line-height:1.75;font-size:1.02rem;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--rose);z-index:60;transition:width .1s}
+
+/* menu lateral */
+#side{position:fixed;inset:0 auto 0 0;width:var(--side);background:var(--paper-off);border-right:1px solid var(--rule);overflow-y:auto;z-index:50;padding:28px 0 40px;transition:transform .3s}
+.brand{padding:0 24px 18px;border-bottom:1px solid var(--rule);margin-bottom:12px}
+.brand small{display:block;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rose-deep);font-weight:500}
+.brand strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.7rem;line-height:1.1;margin-top:6px}
+.brand a{font-size:.72rem;color:var(--ink-soft);text-decoration:none;display:inline-block;margin-top:8px}
+.toc-part{padding:18px 24px 6px;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+#side nav>a{display:flex;gap:12px;padding:7px 24px;font-size:.86rem;line-height:1.4;text-decoration:none;color:var(--ink-soft);border-left:3px solid transparent}
+#side nav>a .n{font-variant-numeric:tabular-nums;color:var(--rose);font-weight:500;min-width:1.5em}
+#side nav>a:hover{color:var(--ink);background:var(--rose-wash)}
+#side nav>a.on{color:var(--rose-deep);border-left-color:var(--rose);background:var(--rose-wash);font-weight:500}
+.side-tools{display:flex;gap:8px;padding:14px 24px 0}
+.side-tools button{flex:1;font:inherit;font-size:.74rem;padding:8px;border:1px solid var(--rule);border-radius:8px;background:var(--paper-card);color:var(--ink);cursor:pointer}
+.side-tools button:hover{border-color:var(--rose)}
+#menuBtn{display:none;position:fixed;top:12px;left:12px;z-index:70;width:44px;height:44px;border-radius:50%;border:1px solid var(--rule);background:var(--paper-card);color:var(--ink);font-size:1.2rem;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+#scrim{display:none}
+
+/* conteúdo */
+main{margin-left:var(--side)}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 28px}
+
+.cover{position:relative;min-height:100vh;display:grid;align-items:end;color:#fff;overflow:hidden;background:#2a1a20}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% 30%;opacity:.9}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,12,20,.25) 0%,rgba(30,12,20,.0) 35%,rgba(30,12,20,.82) 100%)}
+.cover-inner{position:relative;z-index:2;padding:60px 48px 64px;max-width:760px}
+.cover .tag{display:inline-block;background:var(--rose);color:#fff;padding:6px 18px;letter-spacing:.34em;text-transform:uppercase;font-size:.68rem}
+.cover h1{font-family:var(--serif);font-weight:500;font-size:clamp(3.4rem,9vw,6.6rem);line-height:.92;margin:18px 0 12px}
+.cover h1 em{display:block;font-weight:400;font-style:italic;color:var(--rose-pale)}
+.cover p{letter-spacing:.3em;text-transform:uppercase;font-size:.78rem}
+.cover .go{display:inline-block;margin-top:28px;padding:12px 26px;border:1px solid rgba(255,255,255,.7);color:#fff;text-decoration:none;font-size:.82rem;letter-spacing:.1em}
+.cover .go:hover{background:#fff;color:var(--rose-deep)}
+
+.intro-block{padding:80px 0 20px}
+.intro-block h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.2rem);color:var(--rose-deep);line-height:1.1;margin-bottom:24px}
+.intro-block p{margin-bottom:1.1em}
+.sign{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--rose-deep)}
+.pull{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:30px}
+.pull img{border-radius:6px;aspect-ratio:4/5;object-fit:cover}
+
+.part-label{margin:96px auto 0;max-width:var(--measure);padding:0 28px;font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--rose-deep);font-weight:700;display:flex;gap:16px;align-items:center}
+.part-label::after{content:"";flex:1;height:1px;background:var(--rule)}
+.chapter{max-width:var(--measure);margin:0 auto;padding:36px 28px 40px}
+.chapter+.chapter{border-top:1px solid var(--rule)}
+.chapter header{display:flex;align-items:baseline;gap:18px;margin-bottom:26px}
+.chap-n{font-family:var(--serif);font-size:3.4rem;line-height:1;color:var(--rose);font-weight:400}
+.chapter h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.12}
+.chapter h3{font-family:var(--serif);font-weight:600;font-size:1.55rem;color:var(--rose-deep);margin:2em 0 .5em;line-height:1.2}
+.chapter p{margin-bottom:1.05em}
+.lead{font-family:var(--serif);font-size:1.45rem;line-height:1.45;color:var(--ink)}
+.term{color:var(--rose-deep);font-weight:700}
+.chapter ul,.chapter ol{margin:0 0 1.2em 1.4em}
+.chapter li{margin-bottom:.4em;padding-left:.2em}
+.chapter li::marker{color:var(--rose);font-weight:700}
+
+figure{margin:1.6em 0;text-align:center}
+figure img{margin:0 auto;border-radius:6px;background:#fff;max-height:420px;width:auto;cursor:zoom-in}
+figcaption{font-size:.8rem;color:var(--ink-soft);margin-top:8px}
+.figrow{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;margin:1.6em 0}
+.figrow figure{margin:0;flex:1 1 200px}
+.figrow figure img{max-height:300px}
+
+.note{margin:1.6em 0;padding:18px 22px;border-left:4px solid var(--rose);background:var(--rose-wash);border-radius:0 8px 8px 0;font-size:.97rem}
+.note.warn{border-left-color:var(--warn);background:var(--warn-wash)}
+.tablewrap{overflow-x:auto;margin:1.4em 0;border:1px solid var(--rule);border-radius:8px;background:var(--paper-card)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:420px}
+th{background:var(--rose-wash);text-align:left;font-weight:700;color:var(--rose-deep);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+th,td{padding:11px 16px;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{white-space:nowrap}
+.checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px 16px;margin:1em 0 1.6em}
+.checks label{display:flex;gap:10px;align-items:center;cursor:pointer;padding:6px 0}
+.checks input{accent-color:var(--rose-deep);width:18px;height:18px}
+.formula{margin:1.4em 0;padding:22px;text-align:center;background:var(--paper-off);border-radius:10px;font-family:var(--serif);font-size:1.25rem}
+.formula span{display:inline-block;padding:2px 10px}
+.formula strong{color:var(--rose-deep)}
+.calc{margin:2.4em 0 0;padding:26px;border:1px solid var(--rule);border-radius:12px;background:var(--paper-card)}
+.calc h3{margin-top:0}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc label{display:flex;flex-direction:column;gap:6px;font-size:.82rem;color:var(--ink-soft)}
+.calc input{font:inherit;font-size:1rem;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink)}
+.calc input:focus{outline:2px solid var(--rose);border-color:transparent}
+.calc-out{margin:18px 0 0;font-size:1.05rem}
+.calc-out strong{font-family:var(--serif);font-size:2rem;color:var(--rose-deep)}
+
+footer{margin-top:60px;padding:46px 28px 70px;text-align:center;background:var(--paper-off);border-top:1px solid var(--rule)}
+footer .t{font-family:var(--serif);font-size:2rem;color:var(--rose-deep)}
+footer p{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px}
+#top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--rule);background:var(--paper-card);color:var(--rose-deep);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s;z-index:40;font-size:1.1rem}
+#top.show{opacity:1;pointer-events:auto}
+#lb{position:fixed;inset:0;background:rgba(15,8,11,.88);display:none;align-items:center;justify-content:center;z-index:100;cursor:zoom-out;padding:20px}
+#lb.on{display:flex}
+#lb img{max-width:95vw;max-height:92vh;border-radius:6px;background:#fff}
+
+@media (max-width:960px){
+  #side{transform:translateX(-100%);width:min(86vw,330px)}
+  body.open #side{transform:none;box-shadow:0 0 40px rgba(0,0,0,.3)}
+  body.open #scrim{display:block;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:45}
+  #menuBtn{display:block}
+  main{margin-left:0}
+  .cover-inner{padding:40px 24px 48px}
+  .pull{grid-template-columns:1fr;gap:24px}
+  .calc-grid{grid-template-columns:1fr}
+  .chap-n{font-size:2.6rem}
+  td:first-child{white-space:normal}
+}
+@media print{
+  #side,#menuBtn,#progress,#top,.go,.calc{display:none!important}
+  main{margin:0}
+  body{background:#fff;color:#000;font-size:11pt}
+  .cover{min-height:auto;page-break-after:always}
+  .chapter{page-break-inside:auto;padding-top:20px}
+  figure,.tablewrap,.note{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<button id="menuBtn" aria-label="Abrir índice">☰</button>
+<div id="scrim"></div>
+
+<aside id="side" aria-label="Índice da apostila">
+  <div class="brand">
+    <small>Apostila</small>
+    <strong>Lash Design</strong>
+    <a href="#inicio">por Elis Miranda</a>
+  </div>
+  <nav>
+{{TOC}}
+  </nav>
+  <div class="side-tools">
+    <button id="theme" type="button">Modo escuro</button>
+    <button id="print" type="button">Imprimir / PDF</button>
+  </div>
+</aside>
+
+<main>
+  <header class="cover" id="inicio">
+    <img src="img/capa.webp" alt="Elis Miranda no seu studio">
+    <div class="cover-inner">
+      <span class="tag">Curso</span>
+      <h1>Lash <em>Design</em></h1>
+      <p>Apostila · por Elis Miranda</p>
+      <a class="go" href="#boas-vindas">Começar a leitura ↓</a>
+    </div>
+  </header>
+
+  <section class="wrap intro-block" id="boas-vindas">
+    <h2>Seja bem-vinda</h2>
+    <p>É uma alegria ter você aqui! Seja bem-vinda ao universo da beleza e ao início de uma nova jornada profissional.</p>
+    <p>Preparei este curso com muito carinho, dedicação e responsabilidade, para compartilhar com você não apenas técnicas, mas também conhecimentos importantes para construir uma carreira segura, consciente e de sucesso no mundo da extensão de cílios.</p>
+    <p>Ao longo dessa jornada, vamos aprender muito mais do que aplicar fios. Vamos falar sobre cuidados, segurança, higiene, preparação, técnicas e todos os detalhes que fazem a diferença na rotina de uma verdadeira profissional.</p>
+    <p>Acredito que a beleza está nos detalhes, no cuidado e, principalmente, na forma como fazemos cada pessoa se sentir. Por isso, quero que você aproveite cada aprendizado, perca o medo de tentar, descubra seu potencial e entenda que toda grande profissional um dia também foi iniciante.</p>
+    <p>Estarei aqui para compartilhar minha experiência, orientar seus primeiros passos e mostrar que, com dedicação, amor pelo que se faz e vontade de aprender, é possível transformar conhecimento em oportunidades.</p>
+    <p>Que estes dias sejam apenas o começo de uma linda trajetória, cheia de descobertas, conquistas e realizações!</p>
+    <p class="sign">Com carinho, Elis Miranda Glow.<br>Seu brilho. Minha missão.</p>
+  </section>
+
+  <section class="wrap intro-block" id="historia" style="padding-top:40px">
+    <h2>Minha história como instrutora</h2>
+    <div class="pull">
+      <div>
+        <p>Minha história com o ensino começou muito antes de eu me tornar professora.</p>
+        <p>Cresci acompanhando meus pais pelo Brasil, enquanto eles ensinavam corte e costura e ajudavam milhares de mulheres a conquistar uma profissão e transformar suas vidas. Desde pequena, aprendi a enxergar o poder que o conhecimento tem de abrir caminhos e criar novas oportunidades.</p>
+        <p>Aos 21 anos, depois de me casar, comecei a viajar pelo Brasil divulgando cursos profissionalizantes de lingerie. Fazia propagandas no rádio e na televisão e descobri uma das minhas grandes paixões: comunicar, palestrar e estar perto de mulheres que buscavam uma nova oportunidade.</p>
+      </div>
+      <img src="img/atendimento.webp" alt="Elis Miranda atendendo" loading="lazy">
+    </div>
+    <p style="margin-top:1.4em">Com o tempo, também me tornei professora, compartilhando conhecimentos e experiências com minhas próprias alunas.</p>
+    <p>A vida me levou por novos caminhos, incluindo uma pausa nas viagens para me dedicar ao meu filho. Mais tarde, encontrei na área da beleza uma nova forma de trabalhar, crescer e transformar a autoestima das mulheres.</p>
+    <p>Hoje, ao ensinar outras profissionais, sinto que continuo uma missão que começou lá na minha infância: compartilhar conhecimento, abrir caminhos e ajudar mulheres a acreditarem no próprio potencial.</p>
+    <p>Porque ensinar, para mim, nunca foi apenas transmitir uma técnica. É também inspirar, acolher e mostrar que sempre podemos construir novas possibilidades para a nossa vida.</p>
+  </section>
+
+{{BODY}}
+
+  <footer>
+    <div class="t">Lash Design</div>
+    <p>Elis Miranda · Beauty Academy</p>
+  </footer>
+</main>
+
+<button id="top" aria-label="Voltar ao topo">↑</button>
+<div id="lb"><img alt=""></div>
+
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  function safe(fn){try{return fn()}catch(e){}}
+
+  // progresso e botão de topo
+  var bar=$('#progress'), top=$('#top');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?h.scrollTop/max*100:0)+'%';
+    top.classList.toggle('show',h.scrollTop>900);
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  top.onclick=function(){scrollTo({top:0,behavior:'smooth'})};
+
+  // menu móvel
+  $('#menuBtn').onclick=function(){document.body.classList.toggle('open')};
+  $('#scrim').onclick=function(){document.body.classList.remove('open')};
+  $$('#side nav a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('open')})});
+
+  // capítulo ativo no índice
+  var links={}; $$('#side nav a').forEach(function(a){links[a.dataset.id]=a});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        $$('#side nav a.on').forEach(function(x){x.classList.remove('on')});
+        var l=links[e.target.id]; if(l){l.classList.add('on'); safe(function(){l.scrollIntoView({block:'nearest'})})}
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  $$('.chapter').forEach(function(s){io.observe(s)});
+
+  // tema
+  var root=document.documentElement, tb=$('#theme');
+  function dark(){return root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+  function label(){tb.textContent=dark()?'Modo claro':'Modo escuro'}
+  safe(function(){var t=localStorage.getItem('apostila-theme'); if(t) root.dataset.theme=t});
+  label();
+  tb.onclick=function(){var n=dark()?'light':'dark'; root.dataset.theme=n; safe(function(){localStorage.setItem('apostila-theme',n)}); label()};
+  $('#print').onclick=function(){print()};
+
+  // zoom nas imagens
+  var lb=$('#lb'), lbi=$('img',lb);
+  $$('figure img').forEach(function(i){i.addEventListener('click',function(){lbi.src=i.src; lb.classList.add('on')})});
+  lb.onclick=function(){lb.classList.remove('on')};
+  addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+
+  // lista de materiais lembra o que foi marcado
+  var boxes=$$('.checks input');
+  var saved=safe(function(){return JSON.parse(localStorage.getItem('apostila-materiais')||'[]')})||[];
+  boxes.forEach(function(b,i){
+    b.checked=saved.indexOf(i)>-1;
+    b.addEventListener('change',function(){
+      var s=boxes.map(function(x,j){return x.checked?j:-1}).filter(function(j){return j>-1});
+      safe(function(){localStorage.setItem('apostila-materiais',JSON.stringify(s))});
+    });
+  });
+
+  // calculadora de preço
+  function calc(){
+    var f=+$('#c-fixo').value||0, m=Math.max(+$('#c-meta').value||1,1), v=+$('#c-var').value||0, l=+$('#c-lucro').value||0;
+    var r=(f/m+v)*(1+l/100);
+    $('#c-res').textContent='R$ '+r.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+  }
+  $$('.calc input').forEach(function(i){i.addEventListener('input',calc)}); calc();
+})();
+</script>
+</body>
+</html>

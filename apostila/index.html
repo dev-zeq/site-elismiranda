@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Apostila Lash Design — Elis Miranda</title>
+<meta name="description" content="Apostila online do curso Lash Design por Elis Miranda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1416; --ink-soft:#5d4f54; --rule:rgba(28,20,22,.12);
+  --paper:#fffafb; --paper-off:#f8eef1; --paper-card:#ffffff;
+  --rose:#d9819f; --rose-deep:#a94468; --rose-pale:#f4d6df; --rose-wash:#fbeaf0;
+  --warn:#b4472f; --warn-wash:#fcece8;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+  --side:300px; --measure:760px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#f6eaee; --ink-soft:#c3aeb5; --rule:rgba(246,234,238,.14);
+    --paper:#171113; --paper-off:#1f171a; --paper-card:#221a1d;
+    --rose:#e590ad; --rose-deep:#f0a8c1; --rose-pale:#3a2530; --rose-wash:#2a1c22;
+    --warn:#f08a70; --warn-wash:#33201b;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#f6eaee; --ink-soft:#c3aeb5; --rule:rgba(246,234,238,.14);
+  --paper:#171113; --paper-off:#1f171a; --paper-card:#221a1d;
+  --rose:#e590ad; --rose-deep:#f0a8c1; --rose-pale:#3a2530; --rose-wash:#2a1c22;
+  --warn:#f08a70; --warn-wash:#33201b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(--ink);line-height:1.75;font-size:1.02rem;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--rose);z-index:60;transition:width .1s}
+
+/* menu lateral */
+#side{position:fixed;inset:0 auto 0 0;width:var(--side);background:var(--paper-off);border-right:1px solid var(--rule);overflow-y:auto;z-index:50;padding:28px 0 40px;transition:transform .3s}
+.brand{padding:0 24px 18px;border-bottom:1px solid var(--rule);margin-bottom:12px}
+.brand small{display:block;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rose-deep);font-weight:500}
+.brand strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.7rem;line-height:1.1;margin-top:6px}
+.brand a{font-size:.72rem;color:var(--ink-soft);text-decoration:none;display:inline-block;margin-top:8px}
+.toc-part{padding:18px 24px 6px;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+#side nav>a{display:flex;gap:12px;padding:7px 24px;font-size:.86rem;line-height:1.4;text-decoration:none;color:var(--ink-soft);border-left:3px solid transparent}
+#side nav>a .n{font-variant-numeric:tabular-nums;color:var(--rose);font-weight:500;min-width:1.5em}
+#side nav>a:hover{color:var(--ink);background:var(--rose-wash)}
+#side nav>a.on{color:var(--rose-deep);border-left-color:var(--rose);background:var(--rose-wash);font-weight:500}
+.side-tools{display:flex;gap:8px;padding:14px 24px 0}
+.side-tools button{flex:1;font:inherit;font-size:.74rem;padding:8px;border:1px solid var(--rule);border-radius:8px;background:var(--paper-card);color:var(--ink);cursor:pointer}
+.side-tools button:hover{border-color:var(--rose)}
+#menuBtn{display:none;position:fixed;top:12px;left:12px;z-index:70;width:44px;height:44px;border-radius:50%;border:1px solid var(--rule);background:var(--paper-card);color:var(--ink);font-size:1.2rem;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+#scrim{display:none}
+
+/* conteúdo */
+main{margin-left:var(--side)}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 28px}
+
+.cover{position:relative;min-height:100vh;display:grid;align-items:end;color:#fff;overflow:hidden;background:#2a1a20}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% 30%;opacity:.9}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,12,20,.25) 0%,rgba(30,12,20,.0) 35%,rgba(30,12,20,.82) 100%)}
+.cover-inner{position:relative;z-index:2;padding:60px 48px 64px;max-width:760px}
+.cover .tag{display:inline-block;background:var(--rose);color:#fff;padding:6px 18px;letter-spacing:.34em;text-transform:uppercase;font-size:.68rem}
+.cover h1{font-family:var(--serif);font-weight:500;font-size:clamp(3.4rem,9vw,6.6rem);line-height:.92;margin:18px 0 12px}
+.cover h1 em{display:block;font-weight:400;font-style:italic;color:var(--rose-pale)}
+.cover p{letter-spacing:.3em;text-transform:uppercase;font-size:.78rem}
+.cover .go{display:inline-block;margin-top:28px;padding:12px 26px;border:1px solid rgba(255,255,255,.7);color:#fff;text-decoration:none;font-size:.82rem;letter-spacing:.1em}
+.cover .go:hover{background:#fff;color:var(--rose-deep)}
+
+.intro-block{padding:80px 0 20px}
+.intro-block h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.2rem);color:var(--rose-deep);line-height:1.1;margin-bottom:24px}
+.intro-block p{margin-bottom:1.1em}
+.sign{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--rose-deep)}
+.pull{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:30px}
+.pull img{border-radius:6px;aspect-ratio:4/5;object-fit:cover}
+
+.part-label{margin:96px auto 0;max-width:var(--measure);padding:0 28px;font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--rose-deep);font-weight:700;display:flex;gap:16px;align-items:center}
+.part-label::after{content:"";flex:1;height:1px;background:var(--rule)}
+.chapter{max-width:var(--measure);margin:0 auto;padding:36px 28px 40px}
+.chapter+.chapter{border-top:1px solid var(--rule)}
+.chapter header{display:flex;align-items:baseline;gap:18px;margin-bottom:26px}
+.chap-n{font-family:var(--serif);font-size:3.4rem;line-height:1;color:var(--rose);font-weight:400}
+.chapter h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.12}
+.chapter h3{font-family:var(--serif);font-weight:600;font-size:1.55rem;color:var(--rose-deep);margin:2em 0 .5em;line-height:1.2}
+.chapter p{margin-bottom:1.05em}
+.lead{font-family:var(--serif);font-size:1.45rem;line-height:1.45;color:var(--ink)}
+.term{color:var(--rose-deep);font-weight:700}
+.chapter ul,.chapter ol{margin:0 0 1.2em 1.4em}
+.chapter li{margin-bottom:.4em;padding-left:.2em}
+.chapter li::marker{color:var(--rose);font-weight:700}
+
+figure{margin:1.6em 0;text-align:center}
+figure img{margin:0 auto;border-radius:6px;background:#fff;max-height:420px;width:auto;cursor:zoom-in}
+figcaption{font-size:.8rem;color:var(--ink-soft);margin-top:8px}
+.figrow{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;margin:1.6em 0}
+.figrow figure{margin:0;flex:1 1 200px}
+.figrow figure img{max-height:300px}
+
+.note{margin:1.6em 0;padding:18px 22px;border-left:4px solid var(--rose);background:var(--rose-wash);border-radius:0 8px 8px 0;font-size:.97rem}
+.note.warn{border-left-color:var(--warn);background:var(--warn-wash)}
+.tablewrap{overflow-x:auto;margin:1.4em 0;border:1px solid var(--rule);border-radius:8px;background:var(--paper-card)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:420px}
+th{background:var(--rose-wash);text-align:left;font-weight:700;color:var(--rose-deep);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+th,td{padding:11px 16px;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{white-space:nowrap}
+.checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px 16px;margin:1em 0 1.6em}
+.checks label{display:flex;gap:10px;align-items:center;cursor:pointer;padding:6px 0}
+.checks input{accent-color:var(--rose-deep);width:18px;height:18px}
+.formula{margin:1.4em 0;padding:22px;text-align:center;background:var(--paper-off);border-radius:10px;font-family:var(--serif);font-size:1.25rem}
+.formula span{display:inline-block;padding:2px 10px}
+.formula strong{color:var(--rose-deep)}
+.calc{margin:2.4em 0 0;padding:26px;border:1px solid var(--rule);border-radius:12px;background:var(--paper-card)}
+.calc h3{margin-top:0}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc label{display:flex;flex-direction:column;gap:6px;font-size:.82rem;color:var(--ink-soft)}
+.calc input{font:inherit;font-size:1rem;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink)}
+.calc input:focus{outline:2px solid var(--rose);border-color:transparent}
+.calc-out{margin:18px 0 0;font-size:1.05rem}
+.calc-out strong{font-family:var(--serif);font-size:2rem;color:var(--rose-deep)}
+
+footer{margin-top:60px;padding:46px 28px 70px;text-align:center;background:var(--paper-off);border-top:1px solid var(--rule)}
+footer .t{font-family:var(--serif);font-size:2rem;color:var(--rose-deep)}
+footer p{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px}
+#top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--rule);background:var(--paper-card);color:var(--rose-deep);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s;z-index:40;font-size:1.1rem}
+#top.show{opacity:1;pointer-events:auto}
+#lb{position:fixed;inset:0;background:rgba(15,8,11,.88);display:none;align-items:center;justify-content:center;z-index:100;cursor:zoom-out;padding:20px}
+#lb.on{display:flex}
+#lb img{max-width:95vw;max-height:92vh;border-radius:6px;background:#fff}
+
+@media (max-width:960px){
+  #side{transform:translateX(-100%);width:min(86vw,330px)}
+  body.open #side{transform:none;box-shadow:0 0 40px rgba(0,0,0,.3)}
+  body.open #scrim{display:block;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:45}
+  #menuBtn{display:block}
+  main{margin-left:0}
+  .cover-inner{padding:40px 24px 48px}
+  .pull{grid-template-columns:1fr;gap:24px}
+  .calc-grid{grid-template-columns:1fr}
+  .chap-n{font-size:2.6rem}
+  td:first-child{white-space:normal}
+}
+@media print{
+  #side,#menuBtn,#progress,#top,.go,.calc{display:none!important}
+  main{margin:0}
+  body{background:#fff;color:#000;font-size:11pt}
+  .cover{min-height:auto;page-break-after:always}
+  .chapter{page-break-inside:auto;padding-top:20px}
+  figure,.tablewrap,.note{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<button id="menuBtn" aria-label="Abrir índice">☰</button>
+<div id="scrim"></div>
+
+<aside id="side" aria-label="Índice da apostila">
+  <div class="brand">
+    <small>Apostila</small>
+    <strong>Lash Design</strong>
+    <a href="#inicio">por Elis Miranda</a>
+  </div>
+  <nav>
+<div class="toc-part">Fundamentos</div>
+<a href="#introducao" data-id="introducao"><span class="n">01</span>Introdução</a>
+<a href="#origem" data-id="origem"><span class="n">02</span>A origem das extensões de cílios</a>
+<a href="#anatomia" data-id="anatomia"><span class="n">03</span>Anatomia do olho e importância dos cílios</a>
+<a href="#tricologia" data-id="tricologia"><span class="n">04</span>Tricologia dos cílios</a>
+<a href="#ciclo" data-id="ciclo"><span class="n">05</span>Ciclo de crescimento dos fios</a>
+<a href="#saude-ocular" data-id="saude-ocular"><span class="n">06</span>Saúde ocular</a>
+<div class="toc-part">Segurança</div>
+<a href="#biosseguranca" data-id="biosseguranca"><span class="n">07</span>Biossegurança</a>
+<a href="#esterilizacao" data-id="esterilizacao"><span class="n">08</span>Limpeza, higienização e esterilização</a>
+<a href="#nocoes" data-id="nocoes"><span class="n">09</span>Noções básicas e contraindicações</a>
+<div class="toc-part">Fios e materiais</div>
+<a href="#fios-sinteticos" data-id="fios-sinteticos"><span class="n">10</span>Tipos de fios sintéticos</a>
+<a href="#fios-tecnologicos" data-id="fios-tecnologicos"><span class="n">11</span>Fios tecnológicos</a>
+<a href="#premade" data-id="premade"><span class="n">12</span>Fans premade</a>
+<a href="#curvaturas" data-id="curvaturas"><span class="n">13</span>Curvaturas</a>
+<a href="#diametro-comprimento" data-id="diametro-comprimento"><span class="n">14</span>Comprimento e diâmetro</a>
+<a href="#mapping" data-id="mapping"><span class="n">15</span>Mapping</a>
+<a href="#materiais" data-id="materiais"><span class="n">16</span>Descrição de materiais</a>
+<div class="toc-part">Química e retenção</div>
+<a href="#ph" data-id="ph"><span class="n">17</span>pH do fio natural</a>
+<a href="#retencao" data-id="retencao"><span class="n">18</span>Retenção</a>
+<a href="#adesivos" data-id="adesivos"><span class="n">19</span>Adesivos</a>
+<a href="#temperatura-umidade" data-id="temperatura-umidade"><span class="n">20</span>Temperatura e umidade</a>
+<a href="#polimerizacao" data-id="polimerizacao"><span class="n">21</span>Polimerização e cura do adesivo</a>
+<a href="#alergias" data-id="alergias"><span class="n">22</span>Alergias e irritações</a>
+<div class="toc-part">Técnica de aplicação</div>
+<a href="#mergulho" data-id="mergulho"><span class="n">23</span>Forma correta de mergulhar os fios</a>
+<a href="#isolamento" data-id="isolamento"><span class="n">24</span>Isolamento, acoplagem, distanciamento e direcionamento</a>
+<a href="#camadas" data-id="camadas"><span class="n">25</span>Camadas</a>
+<a href="#transicao" data-id="transicao"><span class="n">26</span>Transição de curvaturas, top line e perfect line</a>
+<a href="#complicacoes" data-id="complicacoes"><span class="n">27</span>Como evitar possíveis complicações</a>
+<a href="#preparacao" data-id="preparacao"><span class="n">28</span>Preparação, fatores externos e microdrop</a>
+<a href="#passo-a-passo" data-id="passo-a-passo"><span class="n">29</span>Passo a passo da aplicação</a>
+<a href="#manutencao" data-id="manutencao"><span class="n">30</span>Manutenção</a>
+<a href="#remocao" data-id="remocao"><span class="n">31</span>Remoção</a>
+<a href="#pos" data-id="pos"><span class="n">32</span>Orientações pós-procedimento e lista de materiais</a>
+<a href="#capping" data-id="capping"><span class="n">33</span>Técnica de capping e empilhamento</a>
+<div class="toc-part">Atendimento e negócio</div>
+<a href="#atendimento" data-id="atendimento"><span class="n">34</span>Atendimento: passo a passo (Master em Durabilidade)</a>
+<a href="#preco" data-id="preco"><span class="n">35</span>Preço × valor</a>
+<a href="#precificacao" data-id="precificacao"><span class="n">36</span>Como precificar seu trabalho</a>
+  </nav>
+  <div class="side-tools">
+    <button id="theme" type="button">Modo escuro</button>
+    <button id="print" type="button">Imprimir / PDF</button>
+  </div>
+</aside>
+
+<main>
+  <header class="cover" id="inicio">
+    <img src="img/capa.webp" alt="Elis Miranda no seu studio">
+    <div class="cover-inner">
+      <span class="tag">Curso</span>
+      <h1>Lash <em>Design</em></h1>
+      <p>Apostila · por Elis Miranda</p>
+      <a class="go" href="#boas-vindas">Começar a leitura ↓</a>
+    </div>
+  </header>
+
+  <section class="wrap intro-block" id="boas-vindas">
+    <h2>Seja bem-vinda</h2>
+    <p>É uma alegria ter você aqui! Seja bem-vinda ao universo da beleza e ao início de uma nova jornada profissional.</p>
+    <p>Preparei este curso com muito carinho, dedicação e responsabilidade, para compartilhar com você não apenas técnicas, mas também conhecimentos importantes para construir uma carreira segura, consciente e de sucesso no mundo da extensão de cílios.</p>
+    <p>Ao longo dessa jornada, vamos aprender muito mais do que aplicar fios. Vamos falar sobre cuidados, segurança, higiene, preparação, técnicas e todos os detalhes que fazem a diferença na rotina de uma verdadeira profissional.</p>
+    <p>Acredito que a beleza está nos detalhes, no cuidado e, principalmente, na forma como fazemos cada pessoa se sentir. Por isso, quero que você aproveite cada aprendizado, perca o medo de tentar, descubra seu potencial e entenda que toda grande profissional um dia também foi iniciante.</p>
+    <p>Estarei aqui para compartilhar minha experiência, orientar seus primeiros passos e mostrar que, com dedicação, amor pelo que se faz e vontade de aprender, é possível transformar conhecimento em oportunidades.</p>
+    <p>Que estes dias sejam apenas o começo de uma linda trajetória, cheia de descobertas, conquistas e realizações!</p>
+    <p class="sign">Com carinho, Elis Miranda Glow.<br>Seu brilho. Minha missão.</p>
+  </section>
+
+  <section class="wrap intro-block" id="historia" style="padding-top:40px">
+    <h2>Minha história como instrutora</h2>
+    <div class="pull">
+      <div>
+        <p>Minha história com o ensino começou muito antes de eu me tornar professora.</p>
+        <p>Cresci acompanhando meus pais pelo Brasil, enquanto eles ensinavam corte e costura e ajudavam milhares de mulheres a conquistar uma profissão e transformar suas vidas. Desde pequena, aprendi a enxergar o poder que o conhecimento tem de abrir caminhos e criar novas oportunidades.</p>
+        <p>Aos 21 anos, depois de me casar, comecei a viajar pelo Brasil divulgando cursos profissionalizantes de lingerie. Fazia propagandas no rádio e na televisão e descobri uma das minhas grandes paixões: comunicar, palestrar e estar perto de mulheres que buscavam uma nova oportunidade.</p>
+      </div>
+      <img src="img/atendimento.webp" alt="Elis Miranda atendendo" loading="lazy">
+    </div>
+    <p style="margin-top:1.4em">Com o tempo, também me tornei professora, compartilhando conhecimentos e experiências com minhas próprias alunas.</p>
+    <p>A vida me levou por novos caminhos, incluindo uma pausa nas viagens para me dedicar ao meu filho. Mais tarde, encontrei na área da beleza uma nova forma de trabalhar, crescer e transformar a autoestima das mulheres.</p>
+    <p>Hoje, ao ensinar outras profissionais, sinto que continuo uma missão que começou lá na minha infância: compartilhar conhecimento, abrir caminhos e ajudar mulheres a acreditarem no próprio potencial.</p>
+    <p>Porque ensinar, para mim, nunca foi apenas transmitir uma técnica. É também inspirar, acolher e mostrar que sempre podemos construir novas possibilidades para a nossa vida.</p>
+  </section>
+
+<div class="part-label" id="parte-fundamentos">Fundamentos</div>
+<section class="chapter" id="introducao"><header><span class="chap-n">01</span><h2>Introdução</h2></header>
+<p class="lead">Cada vez mais mulheres desejam cílios volumosos e alongados com praticidade, sem precisar usar rímel.</p>
+<p>A extensão de cílios consiste na aplicação de um fio sintético sobre cada fio natural. O resultado são cílios volumosos e alongados que realçam o olhar, elevam a autoestima e, quando bem feitos, têm excelente durabilidade.</p>
+<p>Desejo a você um excelente curso. Está preparada para mergulhar no mundo das extensões de cílios e elevar a autoestima de milhares de mulheres?</p>
+<h3>O que é uma Lash Designer?</h3>
+<p>É a profissional que se capacita em uma das técnicas de extensão de cílios e busca sempre aprimorar o conhecimento, acompanhando o que há de mais moderno e atualizado no mercado de cílios e visagismo. Deve ser detalhista e procurar ser um diferencial no mercado.</p>
+<h3>Não procure atalhos</h3>
+<p>Para ter sucesso na carreira de lash, não pule etapas. Esteja disposta a estudar, treinar e investir em você. Não se prenda a um único curso: busque sempre a evolução.</p>
+<aside class="note "><strong>O estudo vai te levar a lugares surpreendentes.</strong></aside>
+</section>
+<section class="chapter" id="origem"><header><span class="chap-n">02</span><h2>A origem das extensões de cílios</h2></header>
+<p>A história dos cílios fio a fio remonta ao século 20. Em <strong>1927</strong>, o maquiador <strong>Max Factor</strong> inventou os cílios postiços, e a atriz Phyllis Haver foi a primeira a usá-los. Os primeiros postiços estavam longe do ideal, mas o público ficou cativado pelo olhar dramático da atriz, e logo todas as divas de Hollywood passaram a desejá-los. Max Factor, que havia sido assistente de maquiagem artística no Teatro Bolshoi de Moscou, tornou-se estilista e maquiador de sucesso nos Estados Unidos e criou a primeira marca de maquiagem do mundo, que leva seu nome.</p>
+<p>No início do século 21, os japoneses criaram um cílio artificial que reproduzia com precisão a forma e a curvatura dos cílios naturais. Dali surgiu o fio a fio como conhecemos hoje. A primeira pessoa a realizar uma extensão fio a fio foi <strong>Shu Uemura</strong>, que presenteou a Madonna com um olhar inesquecível, usando essa nova tecnologia em 2003.</p>
+<h3>Postiço × fio a fio</h3>
+<div class="tablewrap"><table><thead><tr><th></th><th>Cílios postiços</th><th>Extensão fio a fio</th></tr></thead><tbody><tr><td>Onde é colado</td><td>Na pálpebra</td><td>Em cada cílio natural</td></tr><tr><td>Cola</td><td>Cola de pele</td><td>Adesivo específico de cianoacrilato</td></tr><tr><td>Duração</td><td>Um dia</td><td>Cerca de um mês, com manutenções</td></tr></tbody></table></div>
+<p>O procedimento virou uma verdadeira febre entre as japonesas, porque o formato único da pálpebra asiática tornava as extensões praticamente invisíveis, permitindo fios muito mais longos. Desde então, o alongamento de cílios conquistou o mundo, com diferentes curvaturas, tamanhos, espessuras e materiais.</p>
+<figure class=""><img src="img/resultado-2.webp" alt="Extensão de cílios realizada no studio da Elis Miranda." loading="lazy"><figcaption>Extensão de cílios realizada no studio da Elis Miranda.</figcaption></figure>
+</section>
+<section class="chapter" id="anatomia"><header><span class="chap-n">03</span><h2>Anatomia do olho e importância dos cílios</h2></header>
+<p>Em formato esférico, os olhos são protegidos pela cavidade óssea do crânio. As pálpebras dificultam a entrada de sujeira e as sobrancelhas impedem que o suor chegue ao globo ocular.</p>
+<p><strong class="term">Esclera:</strong> parte branca do olho, camada fibrosa que reveste o globo ocular. Nela ficam os músculos extraoculares responsáveis pelo movimento dos olhos.</p>
+<p><strong class="term">Córnea:</strong> calota cristalina e transparente, contínua com a esclera. É delicada, muito sensível e cheia de terminações nervosas. Desvia a luz que chega ao olho em direção à retina. Juntas, córnea e esclera protegem as estruturas internas.</p>
+<p><strong class="term">Pupila:</strong> fica no centro da íris e tem abertura regulável, que permite a entrada de mais ou menos luz.</p>
+<p><strong class="term">Íris:</strong> parte colorida do olho. É um músculo circular que controla o tamanho da pupila: relaxa sob luz fraca (a pupila aumenta) e contrai sob luz forte (a pupila diminui), protegendo a retina.</p>
+<p><strong class="term">Retina:</strong> fica na parte interna do olho e envia sinais pelo nervo óptico ao cérebro, formando as imagens que vemos.</p>
+<p><strong class="term">Conjuntiva:</strong> lubrifica e protege contra agentes externos que possam prejudicar a visão.</p>
+<div class="figrow "><figure class=""><img src="img/olho-anatomia.webp" alt="olho-anatomia" loading="lazy"></figure><figure class=""><img src="img/olho-corte.webp" alt="olho-corte" loading="lazy"></figure></div>
+</section>
+<section class="chapter" id="tricologia"><header><span class="chap-n">04</span><h2>Tricologia dos cílios</h2></header>
+<p>Os cílios existem para proteger os olhos: são uma barreira contra poeira e microrganismos e funcionam como sensores de alto reflexo, que fazem a pálpebra fechar antes que algo atinja o olho. São semelhantes aos cabelos, com cerca de 0,25 micrômetro de diâmetro, e por isso merecem cuidado.</p>
+<p>O fio do cílio é composto por três partes:</p>
+<p><strong class="term">Medula:</strong> camada central, que dá sustentação ao fio. Formada por células provenientes do córtex.</p>
+<p><strong class="term">Cutícula:</strong> camada externa, formada por células em escamas sobrepostas e queratinizadas, ricas em enxofre. É a barreira protetora do córtex e da medula, responsável pelo brilho e pela maciez.</p>
+<p><strong class="term">Córtex:</strong> segunda camada e principal do fio, considerado o “coração” do cílio: concentra a maior quantidade de proteína, além de hidrogênio e oxigênio responsáveis pela hidratação interna. É formado por células cilíndricas (a matriz), onde ficam a queratina e outras proteínas.</p>
+<h3>Composição química</h3>
+<p>O cílio é formado por carbono, hidrogênio, nitrogênio, oxigênio e enxofre, que se unem em uma proteína chamada <strong>queratina</strong>: 65% a 95% de proteínas, mais cerca de 12% de água e 3% de lipídios.</p>
+<div class="tablewrap"><table><thead><tr><th>Elemento</th><th>Proporção</th></tr></thead><tbody><tr><td>Carbono</td><td>45%</td></tr><tr><td>Oxigênio</td><td>28%</td></tr><tr><td>Nitrogênio</td><td>15%</td></tr><tr><td>Hidrogênio</td><td>7%</td></tr><tr><td>Enxofre</td><td>5%</td></tr></tbody></table></div>
+<div class="figrow "><figure class=""><img src="img/cilio-estrutura.webp" alt="cilio-estrutura" loading="lazy"></figure><figure class=""><img src="img/cilio-camadas.webp" alt="cilio-camadas" loading="lazy"></figure></div>
+<h3>As 3 ligações químicas do fio</h3>
+<p><strong class="term">Pontes de hidrogênio (temporárias):</strong> são as mais fracas e as mais numerosas. Toda vez que molhamos o cílio, elas se desfazem e podemos dar uma nova forma ao fio ao secá-lo.</p>
+<p><strong class="term">Pontes salinas (intermediárias):</strong> têm cargas positivas e negativas nas cadeias polipeptídicas. São um pouco mais fortes que as de hidrogênio e se alteram quando mudamos o pH. Só voltam à estrutura normal quando o pH retorna ao natural do fio.</p>
+<p><strong class="term">Pontes dissulfeto (permanentes):</strong> ligações de enxofre, as mais fortes do fio, responsáveis pela estrutura permanente (liso, crespo ou encaracolado). Só são rompidas por processos químicos.</p>
+<p>A cor natural vem da <strong>melanina</strong>: a eumelanina dá a coloração escura e a feomelanina, a avermelhada. A presença, ausência ou mistura desses pigmentos explica a variedade de cores existentes (em pessoas albinas, o fio é amarelado por não haver melanina).</p>
+<p>A pele tem papel fundamental na produção dos cílios, por isso é essencial compreender a saúde da pele e a estrutura dos pelos para obter bons resultados.</p>
+<h3>Glândulas de Meibômio</h3>
+<p>São glândulas sebáceas das pálpebras, localizadas nas margens, e produzem o <strong>meibo</strong>, substância gordurosa que forma uma das camadas do filme lacrimal. Ele mantém o olho lubrificado, impede que a lágrima evapore rápido e protege e nutre a superfície ocular.</p>
+</section>
+<section class="chapter" id="ciclo"><header><span class="chap-n">05</span><h2>Ciclo de crescimento dos fios</h2></header>
+<p>Os cílios duram em média <strong>90 a 150 dias</strong> até cair e serem substituídos. Na pálpebra superior temos cerca de <strong>160 fios</strong> por olho, distribuídos em 2 a 5 camadas (nos cantos interno e externo há menos camadas, em média 2 a 3). Todo dia surge cerca de um fio novo para substituir os que caíram, seguindo um ciclo de três fases:</p>
+<div class="tablewrap"><table><thead><tr><th>Fase</th><th>O que acontece</th><th>Duração</th></tr></thead><tbody><tr><td><strong>Anágena</strong></td><td>Fase de crescimento</td><td>30 a 45 dias</td></tr><tr><td><strong>Catágena</strong></td><td>Os cílios param de crescer por contenção do folículo</td><td>2 a 3 semanas</td></tr><tr><td><strong>Telógena</strong></td><td>Repouso antes da queda</td><td>Até cerca de 7 semanas</td></tr></tbody></table></div>
+<div class="figrow "><figure class=""><img src="img/ciclo-olho.webp" alt="ciclo-olho" loading="lazy"></figure><figure class=""><img src="img/ciclo-crescimento.webp" alt="ciclo-crescimento" loading="lazy"></figure></div>
+<p>Devemos preservar os cílios em fase anágena (<em>baby lashes</em>), pois muitas vezes não suportam o peso dos fios sintéticos. Na manutenção, eles já estarão na fase ideal para receber a extensão.</p>
+<aside class="note "><strong>Perdemos naturalmente de 3 a 5 fios por dia</strong>, independentemente de usar extensões. Esclareça isso para sua cliente: não se assuste se ela relatar a queda após aplicar.</aside>
+</section>
+<section class="chapter" id="saude-ocular"><header><span class="chap-n">06</span><h2>Saúde ocular</h2></header>
+<p>Os cílios vão além da estética: protegem o globo ocular como barreira física contra microrganismos e partículas e funcionam como sensores que disparam o fechamento da pálpebra quando algo se aproxima. Conhecer as principais alterações oculares ajuda você a identificar quando <strong>não</strong> atender e quando encaminhar para um médico.</p>
+<h3>Conjuntivite</h3>
+<p>Inflamação da membrana transparente (conjuntiva) que recobre a parte branca do olho e a face interna das pálpebras. Normalmente atinge os dois olhos e pode durar até 15 dias. As causas incluem alergias, infecções (virais, bacterianas ou fúngicas), corpo estranho e contato com substâncias químicas.</p>
+<p><strong class="term">Alérgica:</strong> a mais comum, afeta em geral os dois olhos e é mais frequente em pessoas com rinite ou bronquite. Pólen, poeira e pelos de animais podem provocar. <strong>Não é contagiosa</strong> e é tratada com colírio antialérgico.</p>
+<p><strong class="term">Infecciosa:</strong> causada por vírus, bactérias ou fungos e <strong>altamente contagiosa</strong>. O contágio ocorre pelo contato com secreções. Previna lavando as mãos e evitando compartilhar toalhas e roupas de cama. A bacteriana produz secreção amarelada e espessa; o tratamento (colírios ou pomadas com antibiótico) deve ser feito <strong>exclusivamente por oftalmologista</strong>.</p>
+<p><strong class="term">Tóxica:</strong> causada pelo contato direto com agente tóxico (produtos de limpeza, tinta de cabelo, fumaça de cigarro, cloro, maquiagens, colírios). Causa lacrimejamento e vermelhidão, que costumam desaparecer em 2 a 4 dias. Na nossa profissão, ocorre quando o fume liberado pela polimerização do adesivo (cianoacrilato) atinge o olho.</p>
+<h3>Blefarite</h3>
+<p>Inflamação das bordas das pálpebras, com escamas, crostas, vermelhidão e inchaço. Pode ser causada por infecção bacteriana ou fúngica, disfunção das glândulas meibomianas, olho seco ou parasitas (ácaros <em>Demodex</em>). Pálpebras superior e inferior podem ser afetadas, e pessoas com pele oleosa, caspa e olho seco têm maior chance de desenvolver.</p>
+<figure class=""><img src="img/blefarite.webp" alt="blefarite" loading="lazy"></figure>
+<h3>Abrasão corneana</h3>
+<p>Arranhão na superfície frontal transparente do olho (córnea). Causa dor, vermelhidão, fotofobia e sensação de corpo estranho. Em geral vem de poeira, lentes de contato ou objetos estranhos. Nas extensões, acontece quando o <strong>pad é posicionado incorretamente</strong> e se movimenta. Pequenas abrasões podem ser tratadas com colírios lubrificantes sem conservantes, mas somente um profissional habilitado pode indicar o tratamento.</p>
+<figure class=""><img src="img/abrasao.webp" alt="abrasao" loading="lazy"></figure>
+<aside class="note ">Durante o atendimento, fique atenta para que o pad não machuque os olhos da sua cliente.</aside>
+<h3>Terçol × calázio</h3>
+<div class="tablewrap"><table><thead><tr><th></th><th>Terçol</th><th>Calázio</th></tr></thead><tbody><tr><td>Natureza</td><td>Infecção bacteriana</td><td>Inflamação (sem infecção)</td></tr><tr><td>Causa</td><td>Bactérias</td><td>Obstrução do canal de saída de uma glândula sebácea</td></tr><tr><td>Aspecto</td><td>“Bolinha” vermelha na borda externa da pálpebra, perto dos cílios</td><td>Caroço avermelhado na pálpebra, logo após os cílios</td></tr><tr><td>Sintomas</td><td>Olhos inchados, dor, vermelhidão, calor, coceira, lacrimejamento, sensibilidade à luz</td><td>Inchaço (edema) avermelhado, mais comum em quem tem acne, seborreia ou rosácea</td></tr></tbody></table></div>
+<div class="figrow "><figure class=""><img src="img/tercol.webp" alt="tercol" loading="lazy"></figure><figure class=""><img src="img/calazio.webp" alt="calazio" loading="lazy"></figure></div>
+<p>Embora os sintomas sejam parecidos, exigem cuidados distintos. <strong>Somente um oftalmologista pode fazer o diagnóstico correto.</strong></p>
+<h3>Demodex</h3>
+<p>Ácaros são os menores animais do grupo dos aracnídeos e só são vistos ao microscópio. Duas espécies habitam as pálpebras: o <em>Demodex folliculorum</em> (base dos cílios, o que acomete cílios humanos) e o <em>Demodex brevis</em> (glândulas meibomianas). Alimentam-se de células da pele, hormônios e sebo, e estão ligados à blefarite e à meibomite. Os problemas surgem quando há falta de higienização.</p>
+<p><strong>Sintomas:</strong> coceira intensa nas pálpebras, crostas na base dos cílios, olhos grudados e com secreção (principalmente pela manhã), inchaço e vermelhidão, sensibilidade à luz, ardência, perda de cílios, olho seco e sensação de areia nos olhos.</p>
+<div class="figrow "><figure class=""><img src="img/demodex.webp" alt="demodex" loading="lazy"></figure><figure class=""><img src="img/demodex-olho.webp" alt="demodex-olho" loading="lazy"></figure></div>
+<aside class="note ">Oriente sua cliente sobre a importância da higienização diária dos cílios, para evitar complicações e manter a saúde dos cílios e dos olhos.</aside>
+</section>
+<div class="part-label" id="parte-segurana">Segurança</div>
+<section class="chapter" id="biosseguranca"><header><span class="chap-n">07</span><h2>Biossegurança</h2></header>
+<p>Na estética, biossegurança é a consciência de prevenir doenças no ambiente de trabalho. Profissional e cliente ficam expostos a patógenos (hepatite B e C, herpes, gripe, tuberculose, micoses, conjuntivite, HIV, entre outros) e a produtos que exalam odores tóxicos, como o adesivo. O Brasil é o terceiro maior mercado de beleza do mundo, o que torna o cuidado ainda mais necessário.</p>
+<h3>EPIs usados nas extensões de cílios</h3>
+<p>São materiais de uso individual, geralmente descartáveis, que <strong>não devem ser reutilizados</strong>, nem para a mesma cliente.</p>
+<ul><li><strong>Luvas:</strong> em todos os procedimentos, descartadas ao final de cada um.</li><li><strong>Touca:</strong> evita contaminação cruzada, por microrganismos que possam estar no cabelo, entre profissional e cliente.</li><li><strong>Jaleco ou uniforme:</strong> sempre apresentável, evita que você se suje.</li><li><strong>Máscara:</strong> protege boca e nariz da profissional; descartável.</li><li><strong>Sapatos fechados:</strong> evitam o risco de queda de materiais e perfuração.</li></ul>
+<figure class=""><img src="img/epis.webp" alt="epis" loading="lazy"></figure>
+<aside class="note ">É essencial conhecer a legislação sanitária vigente para que, seguindo as boas práticas, você garanta sua saúde e a do próximo, de forma ética.</aside>
+</section>
+<section class="chapter" id="esterilizacao"><header><span class="chap-n">08</span><h2>Limpeza, higienização e esterilização</h2></header>
+<p>A limpeza e desinfecção do ambiente e dos materiais devem ser <strong>diárias</strong>. Todo estabelecimento deve respeitar a legislação sanitária vigente do seu município.</p>
+<p><strong class="term">Limpeza:</strong> remoção de sujidades orgânicas e inorgânicas (óleo, gordura, sangue ou pus) com água, detergentes e ação mecânica, deixando o produto seguro para manuseio e preparado para desinfecção ou esterilização.</p>
+<p><strong class="term">Higienização / sanitização:</strong> conjunto de operações físicas ou químicas que reduzem a contaminação por microrganismos e proteínas tóxicas em superfícies inanimadas (instalações, equipamentos e utensílios).</p>
+<p><strong class="term">Desinfecção:</strong> eliminação de formas vegetativas em superfícies inanimadas, por agentes químicos e/ou físicos.</p>
+<p><strong class="term">Esterilização:</strong> processo que promove a completa eliminação ou destruição de todas as formas de microrganismos (vírus, bactérias, fungos, protozoários, esporos). É o único meio que garante trabalhar com segurança e prevenir contaminações.</p>
+<h3>O fluxo unidirecional de processamento em 7 etapas</h3>
+<ol><li>Limpeza</li><li>Inspeção visual</li><li>Embalagem</li><li>Esterilização</li><li>Monitorização da esterilização</li><li>Registros da monitorização</li><li>Armazenamento</li></ol>
+<figure class=""><img src="img/esterilizacao.webp" alt="esterilizacao" loading="lazy"></figure>
+<aside class="note ">É importante elaborar um manual de rotinas e procedimentos, com rotinas escritas e padronizadas, para que nenhum requisito seja esquecido. Use os EPIs adequados em cada etapa da esterilização.</aside>
+</section>
+<section class="chapter" id="nocoes"><header><span class="chap-n">09</span><h2>Noções básicas e contraindicações</h2></header>
+<h3>Técnica clássica fio a fio</h3>
+<p>Consiste na aplicação de um fio sintético para cada fio natural da cliente, com um adesivo específico. Dentro desta categoria podemos trabalhar com fio a fio, volume brasileiro (Y) e volume egípcio (W). O procedimento alonga, levanta, disfarça ou realça, além de dar volume. São aplicados em média <strong>160 fios em cada olho</strong>.</p>
+<p>O tamanho, a curvatura e a espessura devem ser escolhidos conforme as características do fio natural de cada cliente, sem sobrecarregá-lo. Avalie também o formato dos olhos, das sobrancelhas e do rosto: o <strong>visagismo</strong> é essencial.</p>
+<p>Neste curso também abordamos a técnica de <strong>capping</strong>, que entrega retenção e volume superiores a 30 dias, e a técnica com <strong>fans premade</strong>, que oferece volume de 3D até 16D sem que você precise montar os fans.</p>
+<aside class="note ">Em média, este procedimento leva cerca de <strong>2h30</strong>. Quem está começando normalmente demora mais no início.</aside>
+<h3>Contraindicações</h3>
+<ul><li>Cirurgias oculares: solicitar liberação médica se feitas há menos de 3 meses.</li><li>Gestantes e lactantes: solicitar liberação médica por escrito.</li><li>Alergia ao cianoacrilato.</li><li>Doenças oculares ou processos inflamatórios.</li><li>Cirurgia recente nos olhos.</li></ul>
+</section>
+<div class="part-label" id="parte-fiosemateriais">Fios e materiais</div>
+<section class="chapter" id="fios-sinteticos"><header><span class="chap-n">10</span><h2>Tipos de fios sintéticos</h2></header>
+<p>O diferencial dos fios está na composição e no processo de fabricação. O material é o <strong>PBT</strong> (polibutileno tereftalato), um termoplástico sintético semicristalino do grupo dos poliésteres, com boa resistência química, térmica e estabilidade dimensional. A maior parte das fábricas fica na Ásia e a qualidade varia conforme o controle de produção.</p>
+<h3>Seda, mink sintético, vison, cashmere e mink real</h3>
+<p><strong class="term">Silk (seda):</strong> produzido para imitar a seda, é brilhante e maleável, mas <strong>não retém a curvatura</strong> por muitos dias. Geralmente é PBT puro. Em dias quentes tende a relaxar e ficar mais reto, e o brilho preto pode ficar parecido com plástico.</p>
+<p><strong class="term">Mink sintético (synthetic mink):</strong> o mais usado. Muito leve e macio, confortável, com preto intenso e efeito matte. Feito de uma mistura de poli/fibra, também conhecido comercialmente como vison ou cashmere.</p>
+<h3>Fio elipse × fio cônico</h3>
+<p><strong class="term">Fio elipse (flat):</strong> base achatada, abraça maior ângulo do cílio natural, com bifurcação sutil nas pontas e melhor aderência por ter maior área de acoplagem.</p>
+<p><strong class="term">Fio cônico (classic):</strong> base circular, mais difícil de acoplar. É o fio exigido em campeonatos de técnica clássica.</p>
+<div class="figrow "><figure class=""><img src="img/flat-classic.webp" alt="flat-classic" loading="lazy"></figure><figure class=""><img src="img/elipse.webp" alt="elipse" loading="lazy"></figure><figure class=""><img src="img/elipse-cola.webp" alt="elipse-cola" loading="lazy"></figure></div>
+</section>
+<section class="chapter" id="fios-tecnologicos"><header><span class="chap-n">11</span><h2>Fios tecnológicos</h2></header>
+<p>Os fios tecnológicos permitem a iniciantes aplicar extensões com muito mais volume e rapidez. Antes, isso só era possível, com segurança, pelo volume russo ou mega volume. São fabricados com <strong>Nano PBT</strong>, muito mais leve. Nesta categoria estão o fio Y, o fio W e a mais nova evolução, os fans premade.</p>
+<h3>Fio W e suas variações (volume egípcio)</h3>
+<p>Destacam-se pela variedade de fios presos em uma única base, com opções de <strong>3D até 10D</strong>. A aplicação segue o mesmo procedimento dos fios individuais, com resultado duradouro.</p>
+<div class="figrow "><figure class=""><img src="img/fio-w.webp" alt="fio-w" loading="lazy"></figure><figure class=""><img src="img/fio-w-resultado.webp" alt="fio-w-resultado" loading="lazy"></figure></div>
+<h3>Fio Y e suas variações (volume brasileiro)</h3>
+<p>Possui duas variedades no mercado, que se diferenciam pela quantidade de fios presos em uma única base e de bifurcações nas pontas (4 a 6). Dá mais volume que o fio a fio e é aplicado da mesma forma.</p>
+<div class="figrow "><figure class=""><img src="img/fio-y.webp" alt="fio-y" loading="lazy"></figure><figure class=""><img src="img/fio-y-resultado.webp" alt="fio-y-resultado" loading="lazy"></figure></div>
+<aside class="note "><strong>Lembre-se:</strong> avalie a estrutura do fio natural da cliente para preservar a saúde. Quanto mais pontas o fio tiver, mais volume entrega, mas a base fica mais grossa e o peso aumenta.</aside>
+</section>
+<section class="chapter" id="premade"><header><span class="chap-n">12</span><h2>Fans premade</h2></header>
+<p>A mais nova evolução das extensões: fans montados manualmente, perfeitos, comercializados desde <strong>3D até 24D</strong>, de material coreano, com leveza e delicadeza. Como já vêm prontos, você aplica da mesma forma que os fios tecnológicos e entrega do volume russo ao mega volume. Encontrados nas espessuras <strong>0,03 / 0,05 / 0,07</strong>.</p>
+<p>Há curvaturas tradicionais (C, D), curvaturas criativas (L, L+, M) e versões já prontas para criar o efeito <em>wisp</em>, em caixas mix e individuais, pretos e coloridos.</p>
+<div class="figrow "><figure class=""><img src="img/premade-d.webp" alt="premade-d" loading="lazy"></figure><figure class=""><img src="img/premade-curvas.webp" alt="premade-curvas" loading="lazy"></figure></div>
+<p>Para aplicar, você encontra os fans soltos ou fixados em uma fita. Para removê-los da fita sem desmontá-los, use uma pinça de boa precisão e pegue pela <strong>base</strong>.</p>
+<aside class="note ">Mesmo com fans prontos, a técnica é considerada clássica: você entrega volume russo ou mega volume (3D a 16D). Os fans já vêm com pouco adesivo, então atenção à quantidade na hora de acoplar.</aside>
+</section>
+<section class="chapter" id="curvaturas"><header><span class="chap-n">13</span><h2>Curvaturas</h2></header>
+<p>As curvaturas existem em grande variedade e devem ser escolhidas conforme o trabalho proposto, com atenção ao biótipo facial de cada cliente. Além das tradicionais, há as <strong>criativas</strong>, a tendência mais recente (as mais usadas hoje são L e M), para efeitos como fox e seta. Aparecem no fio a fio, nos tecnológicos e nos premades.</p>
+<div class="figrow "><figure class=""><img src="img/curvas-tabela.webp" alt="curvas-tabela" loading="lazy"></figure><figure class=""><img src="img/curvas-tradicionais.webp" alt="curvas-tradicionais" loading="lazy"></figure></div>
+<h3>Efeito de cada curvatura</h3>
+<div class="tablewrap"><table><thead><tr><th>Curvatura</th><th>Indicação e efeito</th></tr></thead><tbody><tr><td><strong>B</strong></td><td>Cílios voltados para cima, para um efeito perceptível mas natural. Mais reta na base e curva suave perto da ponta. Indicada também para olhos profundos.</td></tr><tr><td><strong>C</strong></td><td>A mais popular: ideal para a maioria das clientes, sem exagero. Abre e levanta o olhar com qualquer estilo de mapping. Alonga o olhar.</td></tr><tr><td><strong>CC</strong></td><td>Abre, arredonda e levanta o olhar.</td></tr><tr><td><strong>D / DD</strong></td><td>As mais dramáticas, para um look ousado. Melhor em cílios retos ou voltados para baixo. Projetam o olhar para trás, levantam e abrem.</td></tr><tr><td><strong>L</strong></td><td>Base plana com curva acentuada, ponta voltada para frente. Ótima para cílios retos ou voltados para baixo; levanta e cria efeito gatinho com elevação no canto externo.</td></tr><tr><td><strong>L+</strong></td><td>Ideal para mapping que promove alongamento e deixa o olhar mais sensual. Evitar no mapping boneca.</td></tr><tr><td><strong>LC</strong></td><td>Projeta o olhar para frente e promove alongamento.</td></tr><tr><td><strong>M</strong></td><td>Boa para quase todas as clientes, em especial cílios retos ou caídos; projeta o olho para frente e para cima, com visual de olho de gato.</td></tr></tbody></table></div>
+<div class="figrow "><figure class=""><img src="img/curvas-criativas.webp" alt="curvas-criativas" loading="lazy"></figure><figure class=""><img src="img/curvas-efeito.webp" alt="curvas-efeito" loading="lazy"></figure></div>
+<aside class="note ">Para trabalhar com efeitos, as curvaturas mais indicadas são <strong>B, C, CC, M e L</strong>. Para usá-las corretamente, observe o crescimento natural dos cílios: ele influencia o resultado final.</aside>
+</section>
+<section class="chapter" id="diametro-comprimento"><header><span class="chap-n">14</span><h2>Comprimento e diâmetro</h2></header>
+<h3>Diâmetro</h3>
+<p>É a espessura de cada fio. Os fios sintéticos têm variações e devem ser escolhidos conforme a técnica e a estrutura do fio natural. <strong>O diâmetro da extensão deve ser o mais próximo possível do diâmetro do cílio natural.</strong></p>
+<div class="tablewrap"><table><thead><tr><th>Técnica</th><th>Diâmetros usuais</th></tr></thead><tbody><tr><td>Fio a fio</td><td>0,10 · 0,12 · 0,15 · 0,18 · 0,20 · 0,25</td></tr><tr><td>Fio tecnológico</td><td>0,05 · 0,07 · 0,10</td></tr><tr><td>Volume russo</td><td>0,05 · 0,07 (fans de 2 a 7 fios para cada fio natural)</td></tr><tr><td>Mega volume</td><td>0,03 · 0,05</td></tr></tbody></table></div>
+<div class="figrow "><figure class=""><img src="img/diametros.webp" alt="diametros" loading="lazy"></figure><figure class=""><img src="img/espessura.webp" alt="espessura" loading="lazy"></figure></div>
+<h3>Comprimento</h3>
+<p>Tamanho de cada fio sintético. No Brasil é mais comum usar de <strong>7 a 14 mm</strong>, mas avalie sempre o fio natural, evitando sobrecarregá-lo, tanto no diâmetro quanto no comprimento.</p>
+<aside class="note ">O comprimento da extensão não deve ultrapassar <strong>2 a 3 mm</strong> o comprimento dos cílios naturais.</aside>
+<figure class=""><img src="img/comprimentos.webp" alt="comprimentos" loading="lazy"></figure>
+</section>
+<section class="chapter" id="mapping"><header><span class="chap-n">15</span><h2>Mapping</h2></header>
+<p>O mapeamento é altamente personalizado: não existe uma abordagem que sirva para todo mundo. Ele define o olhar desejado e a construção de um olhar único, combinando tamanhos e curvaturas conforme o formato dos olhos e as preferências da cliente. Sem ele, o trabalho não resulta em harmonia visual.</p>
+<p>Para precisão, prefira mapear com a cliente de <strong>olhos abertos</strong>: peça que fixe o olhar em linha reta, marque a parte superior da pálpebra e transfira para o pad. Outra técnica é dividir os olhos em quadrantes iguais e traçar o mapeamento. Mantenha conversa constante com a cliente sobre expectativas e avalie com segurança se é possível atendê-las.</p>
+<h3>Pontos de referência</h3>
+<ul><li>Canto interno: primeiro fio</li><li>Canto externo natural: último fio</li><li>Início e final da íris</li><li>Pupila</li></ul>
+<figure class=""><img src="img/mapping-olho.webp" alt="mapping-olho" loading="lazy"></figure>
+<h3>O que cada região proporciona</h3>
+<div class="tablewrap"><table><thead><tr><th>Ponto</th><th>Região</th><th>Efeito e indicação</th></tr></thead><tbody><tr><td><strong>A</strong></td><td>Canto interno (A → D1)</td><td>Perfeito para olhos afastados: aproxima o olhar pelo direcionamento dos fios.</td></tr><tr><td><strong>B</strong></td><td>Canto externo (B → D2)</td><td>Alonga, estreita e afasta o olhar. Efeito gatinho, fox, delineado, sereia.</td></tr><tr><td><strong>C</strong></td><td>Meio (início ao final da íris, D1 → D2)</td><td>Abre o olhar. Camufla olhos profundos, pálpebras caídas e olhos pequenos. Usado no mapping boneca.</td></tr><tr><td><strong>D2</strong></td><td>Final da íris (C → D2)</td><td>Mapping coringa: levanta o olhar e camufla o caimento das pálpebras. Usado no mapping esquilo.</td></tr></tbody></table></div>
+<div class="figrow "><figure class=""><img src="img/mapping-quadrantes.webp" alt="mapping-quadrantes" loading="lazy"></figure><figure class=""><img src="img/mapping-quadrantes-2.webp" alt="mapping-quadrantes-2" loading="lazy"></figure></div>
+<h3>Análises principais</h3>
+<p>Antes de mapear, identifique: formato dos olhos; posicionamento (distância entre os olhos); profundidade (proeminentes ou profundos); linha horizontal (ascendentes ou descendentes); e altura dos olhos e sobrancelhas.</p>
+<figure class=""><img src="img/tipos-olhos.webp" alt="Tipos de olhos: treine a indicação de mapping para cada um." loading="lazy"><figcaption>Tipos de olhos: treine a indicação de mapping para cada um.</figcaption></figure>
+<h3>Tipos de mapping</h3>
+<div class="tablewrap"><table><thead><tr><th>Mapping</th><th>Efeito</th><th>Indicado para</th></tr></thead><tbody><tr><td>Boneca</td><td>Abre o olhar</td><td>Olhos separados, pequenos ou caídos</td></tr><tr><td>Esquilo</td><td>Levanta e alonga o olhar</td><td>Olhos juntos ou com caimento de pálpebras</td></tr><tr><td>Coringa</td><td>Fica bom em qualquer tipo de olho</td><td>Quando houver dúvida</td></tr><tr><td>Gatinho</td><td>Estreita e alonga (direcione em ângulo de 130° a 180°, a partir do meio do olho)</td><td>Olhos que pedem alongamento</td></tr></tbody></table></div>
+<aside class="note ">Quando a lash consegue fazer o mapeamento correto, ela cria sua <strong>assinatura artística</strong>: o mapeamento entrega harmonização do olhar. Você pode dominar qualquer técnica, mas se não souber escolher o mapping, seu trabalho não vai se destacar.</aside>
+</section>
+<section class="chapter" id="materiais"><header><span class="chap-n">16</span><h2>Descrição de materiais</h2></header>
+<p>Antes da lista completa (no fim da apostila), conheça a função de cada material.</p>
+<h3>Pinças</h3>
+<p>As <strong>retas</strong> são usadas no isolamento dos fios; as <strong>curvas</strong>, na retirada e acoplagem. Evite que caiam no chão: perdem a precisão e entortam as pontas, que são super finas.</p>
+<figure class=""><img src="img/pincas.webp" alt="pincas" loading="lazy"></figure>
+<h3>Higrômetro</h3>
+<p>Uso essencial: é o único acessório que mostra a <strong>umidade e a temperatura</strong> do ambiente de trabalho, para o adesivo funcionar corretamente e as aplicações durarem. Deixe-o sempre próximo de onde atende.</p>
+<figure class=""><img src="img/higrometro.webp" alt="higrometro" loading="lazy"></figure>
+<h3>Primer / Cleanser</h3>
+<p>Higieniza os cílios e melhora a fixação: remove a oleosidade natural, resíduos de maquiagem e sujidades que o shampoo não retirou, além de elevar o pH do fio natural, favorecendo uma acoplagem mais rápida e eficaz.</p>
+<figure class=""><img src="img/primer.webp" alt="primer" loading="lazy"></figure>
+<h3>Pad e micropore</h3>
+<p>O <strong>pad</strong> tem formato anatômico e é livre de fiapos, o mais confortável para a cliente. Protege a pálpebra inferior, ajuda a isolar os cílios inferiores e dá melhor visão do campo de trabalho, além de proteger a região das pontas das pinças. O <strong>micropore</strong> auxilia no isolamento dos fios inferiores, no levantamento das pálpebras e no afastamento do canto interno dos olhos.</p>
+<div class="figrow "><figure class=""><img src="img/pad-aplicacao.webp" alt="pad-aplicacao" loading="lazy"></figure><figure class=""><img src="img/pad-certo-errado.webp" alt="pad-certo-errado" loading="lazy"></figure><figure class=""><img src="img/micropore.webp" alt="micropore" loading="lazy"></figure></div>
+<aside class="note ">Se a cliente lacrimejar ou relatar incômodo ou ardência, <strong>pare o atendimento</strong> e verifique se pad e fitas estão na posição correta e se os olhos não estão entreabertos.</aside>
+<h3>Nano mister</h3>
+<p>Acelera a cura do adesivo, dispersando nanopartículas de água em movimentos circulares, a distância do rosto. Hoje já existem produtos que o substituem, como os finalizadores, que curam o adesivo rapidamente.</p>
+<figure class=""><img src="img/nano-mister.webp" alt="nano-mister" loading="lazy"></figure>
+<h3>Suporte para fixação dos fios</h3>
+<p>Há grande variedade: de apoio na bancada ou fixados na mão. Não existe regra; escolha o que mais se adaptar. Se optar pelo de apoio, prefira os mais pesados, que dão estabilidade.</p>
+<div class="figrow "><figure class=""><img src="img/paleta-fios.webp" alt="paleta-fios" loading="lazy"></figure><figure class=""><img src="img/suporte-mao.webp" alt="suporte-mao" loading="lazy"></figure></div>
+<h3>Suporte para adesivo</h3>
+<p>Use o que mais se adaptar e que conserve o adesivo. Quanto menos o adesivo ficar exposto, melhor a fixação: prefira recipientes com orifício.</p>
+<div class="figrow "><figure class=""><img src="img/suporte-cola.webp" alt="suporte-cola" loading="lazy"></figure><figure class=""><img src="img/jade.webp" alt="jade" loading="lazy"></figure></div>
+<h3>Microbrush, aplicador, escovinha e caneta</h3>
+<ul><li><strong>Microbrush descartável:</strong> para aplicar removedores, primer e finalizadores.</li><li><strong>Aplicador descartável:</strong> bastonete de fibra sintética para higienizar os cílios antes da aplicação; também serve para aplicar removedor.</li><li><strong>Escovinha descartável:</strong> penteia as extensões durante o procedimento e facilita o alinhamento. Uso individual; após a aplicação, ofereça à cliente para manter os cuidados.</li><li><strong>Caneta:</strong> de ponta fina, de preferência preta (para o mapping no pad) e branca (para marcar a pele).</li></ul>
+<div class="figrow "><figure class=""><img src="img/microbrush.webp" alt="microbrush" loading="lazy"></figure><figure class=""><img src="img/aplicador.webp" alt="aplicador" loading="lazy"></figure><figure class=""><img src="img/escovinha.webp" alt="escovinha" loading="lazy"></figure><figure class=""><img src="img/caneta.webp" alt="caneta" loading="lazy"></figure></div>
+<h3>Espuma para limpeza e pump</h3>
+<p>É o primeiro passo antes de iniciar o alongamento: higienize a região dos olhos. Comece removendo resíduos de maquiagem com água micelar e coloque uma quantidade adequada no pump para criar espuma. Existem shampoos específicos para cílios; um shampoo com <strong>pH entre 7,3 e 7,5</strong> remove impurezas com mais eficácia, mantendo os fios mais alcalinos.</p>
+<div class="figrow "><figure class=""><img src="img/agua-micelar.webp" alt="agua-micelar" loading="lazy"></figure><figure class=""><img src="img/pump.webp" alt="pump" loading="lazy"></figure><figure class=""><img src="img/espuma.webp" alt="espuma" loading="lazy"></figure></div>
+<h3>Removedor</h3>
+<p>Remove as extensões. Há em gel e em pasta. Os de textura densa tendem a ser mais confortáveis por não escorrerem.</p>
+<figure class=""><img src="img/removedor.webp" alt="removedor" loading="lazy"></figure>
+<h3>Finalizadores</h3>
+<p>Ao aplicar o finalizador, ele <strong>encapsula imediatamente os fumos</strong> e acelera a cura do ponto de ligação do adesivo, evitando que os olhos fiquem expostos ao processo de cura e reduzindo o risco de irritação e alergia. Também dá flexibilidade às ligações e aumenta a retenção.</p>
+<ul><li>Sem choque de cura</li><li>Aumenta a retenção</li><li>Funciona com todas as colas</li><li>Reduz irritação e desenvolvimento de processos alérgicos</li></ul>
+<figure class=""><img src="img/finalizador.webp" alt="finalizador" loading="lazy"></figure>
+<aside class="note ">Aplique o finalizador somente na ligação do adesivo com o fio natural, afastado da pele e sem excesso. Após a aplicação, ofereça à cliente para manter os cuidados.</aside>
+</section>
+<div class="part-label" id="parte-qumicaereteno">Química e retenção</div>
+<section class="chapter" id="ph"><header><span class="chap-n">17</span><h2>pH do fio natural</h2></header>
+<p><strong>pH</strong> é a sigla de “potencial hidrogeniônico”: indica a quantidade de H⁺ presente em toda matéria (cabelo, pele, saliva, água...). É medido em uma escala de <strong>0 a 14</strong>.</p>
+<div class="tablewrap"><table><thead><tr><th>Faixa</th><th>Tipo de produto</th><th>Efeito na cutícula</th></tr></thead><tbody><tr><td>0 a 6,9</td><td>Ácido</td><td>Cutícula fechada</td></tr><tr><td>7,0</td><td>Neutro</td><td>Cutícula normal: não proporciona boa retenção, pois não está porosa</td></tr><tr><td>7,1 a 14</td><td>Alcalino</td><td>Cutícula aberta</td></tr></tbody></table></div>
+<p>O ideal é deixar o fio <strong>levemente poroso</strong>: a margem é de <strong>7,3 a 7,5</strong>, para não danificar o fio e ter excelente retenção. Nossos olhos têm pH próximo de 7,0, por isso o produto final precisa ser equilibrado para não causar irritação.</p>
+<div class="figrow "><figure class=""><img src="img/ph-tabela.webp" alt="ph-tabela" loading="lazy"></figure><figure class=""><img src="img/ph-escala.webp" alt="ph-escala" loading="lazy"></figure></div>
+<h3>Como interpretar</h3>
+<ul><li><strong>pH ácido (1 a 6,9):</strong> o natural e recomendado para o fio fica entre 4,2 e 5,8. Um pH levemente ácido indica fio saudável.</li><li><strong>pH alcalino (7 a 14):</strong> precisamos do fio levemente alcalino para boa retenção, mas é ideal manter <strong>abaixo de 8</strong> para preservar o fio.</li><li><strong>pH neutro (7):</strong> é o do olho; não há grande prejuízo ao fio, mas também não há porosidade para boa retenção.</li></ul>
+<p>É primordial que a lash conheça esta tabela: assim saberá o pH do cílio e da região dos olhos e escolherá com segurança cada produto. Se quiser higienizar e já preparar o fio, opte por shampoo com pH de <strong>7,1 a 7,5</strong>.</p>
+<p>Naturalmente, o cílio saudável é ácido, mas alguns shampoos e componentes do dia a dia são alcalinos e podem afetar essa condição. Quanto mais alcalino, mais aberta a cutícula, e as substâncias penetram melhor. Um fio brilhante e forte provavelmente está no pH adequado. Já um fio com pH alcalino alto é frágil, com cutícula sempre aberta, textura áspera e desgasta mais fácil.</p>
+<aside class="note ">A avaliação é <strong>individual</strong>. Clientes com fios fragilizados pedem shampoo de pH mais baixo. Se precisar alcalinizar mais por causa de um fio grosso e oleoso, use shampoo de pH 7,5 (evita irritações nos olhos) e primer de pH 8,0, apenas nesses casos.</aside>
+<h3>Desequilíbrio de pH</h3>
+<div class="tablewrap"><table><thead><tr><th>Possíveis causas</th><th>Detalhe</th></tr></thead><tbody><tr><td>Características naturais de cada pessoa</td><td>Diferenças individuais na composição e no pH dos cílios</td></tr><tr><td>Problemas de saúde ou uso de medicação</td><td>Condições ou tratamentos que afetam o pH</td></tr><tr><td>Estilo de vida</td><td>Alimentação, hábitos de higiene e outros hábitos</td></tr><tr><td>Produtos incorretos de preparo</td><td>Produtos que alteram o pH ou não são compatíveis com o fio</td></tr></tbody></table></div>
+<div class="tablewrap"><table><thead><tr><th>Problema causado</th><th>Consequência</th></tr></thead><tbody><tr><td>A cola leva mais tempo para secar, mesmo com o ambiente adequado</td><td>Atraso na aplicação</td></tr><tr><td>A cola escorrega e não adere</td><td>Menor aderência das extensões</td></tr><tr><td>Desempenho inconsistente</td><td>Queda prematura</td></tr><tr><td>Clientes diferentes com resultados diferentes no mesmo procedimento</td><td>Variação na durabilidade</td></tr><tr><td>Em casos extremos, a cola não adere</td><td>Desprendimento precoce</td></tr></tbody></table></div>
+</section>
+<section class="chapter" id="retencao"><header><span class="chap-n">18</span><h2>Retenção</h2></header>
+<p><strong>Retenção</strong> é manter e prolongar a durabilidade das extensões, que tipicamente duram até cerca de <strong>21 dias</strong> antes de começarem a cair, pela troca de fase dos cílios naturais ou pelos cuidados da cliente. É possível ter durabilidade superior quando você domina a técnica de aplicação, usa corretamente cada produto conforme a necessidade da cliente e se baseia no pH do fio natural.</p>
+<p>Como os cílios filtram impurezas, uma boa durabilidade exige higienização adequada. Para o adesivo aderir, é importante abrir suavemente a cutícula do fio, deixando-o mais poroso. Quando o pH está desequilibrado, a aderência cai e não há retenção.</p>
+<h3>Os 3 princípios da retenção</h3>
+<ol><li>Entender o pH do fio natural.</li><li>Escolher assertivamente os produtos adequados.</li><li>Higienizar e preparar corretamente os fios naturais.</li></ol>
+<h3>Passo a passo para o sucesso na retenção</h3>
+<ol><li><strong>Pré-limpeza:</strong> use água micelar em um pump e faça a espuma; enxágue muito bem para remover resíduos de maquiagem. Apenas isso não prepara o fio: é preciso produtos de pH que alcalinizem os fios naturais.</li><li><strong>Shampoo específico para extensões:</strong> com microbrush ou lipgloss, faça movimentos de fricção sobre os fios naturais e na linha ciliar, onde há maior concentração de sujeira pelas glândulas sebáceas. Faça duas vezes. Use água filtrada ou mineral em todo o processo.</li><li><strong>Cleanser:</strong> produto específico para remover a oleosidade. Aplique em todos os cílios, com palito e lipgloss (ou dois lipgloss), sempre com fricção.</li></ol>
+<p>Repita a limpeza de 2 a 3 vezes durante a aplicação, nos cílios que ainda vão receber a extensão: o rosto continua produzindo oleosidade. Esse preparo abre levemente a cutícula e, junto com o adesivo adequado e a acoplagem correta, entrega excelente retenção.</p>
+<div class="figrow "><figure class=""><img src="img/ph-cuticula.webp" alt="ph-cuticula" loading="lazy"></figure><figure class=""><img src="img/retencao-cuticula.webp" alt="retencao-cuticula" loading="lazy"></figure></div>
+<aside class="note ">Não esqueça de limpar o chicote das extensões com álcool 70% ou Cleanser, para garantir a higienização completa. Agora é só iniciar a aplicação.</aside>
+</section>
+<section class="chapter" id="adesivos"><header><span class="chap-n">19</span><h2>Adesivos</h2></header>
+<p>É um dos assuntos em que a iniciante mais tem dificuldade, porque a durabilidade depende de vários fatores. Use o higrômetro para controlar a temperatura e a umidade conforme a indicação de cada adesivo. Há inúmeras marcas, e é preciso compreender como funcionam e do que são feitos para escolher bem.</p>
+<p>Os adesivos têm moléculas de <strong>cianoacrilato</strong>, que iniciam a polimerização ao contato com as moléculas de água do ar. Esse processo une as partículas da cola e a faz aderir aos cílios.</p>
+<h3>Breve história</h3>
+<ul><li><strong>1895:</strong> o polímero é descoberto por Awers Thorpe.</li><li><strong>1942:</strong> desenvolvido para miras de armas, mas aderia a tudo.</li><li><strong>1950:</strong> nova fórmula usada em cabines de aeronaves e na sutura de ferimentos (o metil cianoacrilato causava necrose).</li></ul>
+<p>É uma resina acrílica que polimeriza rapidamente na presença de água, formando cadeias longas e fortes. O cianoacrilato tem duas fases: <em>monômero</em> (líquido) e <em>polímero</em> (sólido). A passagem de uma para outra é a polimerização.</p>
+<h3>Estágios da polimerização</h3>
+<ul><li><strong>Adesão:</strong> tempo de ação especificado em cada adesivo, que une a extensão ao cílio natural.</li><li><strong>Coesão:</strong> tempo após a acoplagem. Nesse momento, segure e direcione o fio para que fique alinhado e bem acoplado.</li><li><strong>Polimerização (cura):</strong> processo de cura do adesivo, em média 24 h.</li></ul>
+<h3>Composição</h3>
+<p>Varia conforme o fabricante. O <strong>cianoacrilato</strong> (80 a 90%) deve ter sempre a maior concentração.</p>
+<div class="tablewrap"><table><thead><tr><th>Tipo de cianoacrilato</th><th>Características</th></tr></thead><tbody><tr><td>Metil</td><td>Altamente tóxico, <strong>uso proibido</strong></td></tr><tr><td>Etil</td><td>Secagem rápida, menos tóxico, resistente, cadeia longa</td></tr><tr><td>Butil</td><td>Secagem intermediária</td></tr><tr><td>Alkoxy</td><td>Cadeia longa, secagem e cura lentas, baixo odor e baixa emissão de gases, sensível à umidade, baixa toxicidade</td></tr><tr><td>Metoxi / Etoxi butil</td><td>Grau médico: reduzem o risco de irritações e alergias</td></tr></tbody></table></div>
+<p><strong>Outros componentes:</strong> estabilizantes (mantêm a molécula afastada e evitam que o adesivo endureça, mas são sensíveis à umidade); espessantes (anidrido ftálico, plastificante); PMMA (polimetil metacrilato, termoplástico que dá elasticidade e resistência); carbon black (cor do adesivo e dispersão); hidroquinona (retarda a secagem e estabiliza).</p>
+<div class="tablewrap"><table><thead><tr><th>Exemplo</th><th>Componentes</th></tr></thead><tbody><tr><td>1</td><td>Ethyl cianoacrilato, ethoxyethyl cianoacrilato, PMMA, carbon black</td></tr><tr><td>2</td><td>Etil cianoacrilato, alkoxy-2-cianoacrilato, PMMA</td></tr><tr><td>3</td><td>Ethyl-2-cyanoacrylate, alkoxy-2-cyanoacrylate, n-butyl-2-cyanoacrylate, PMMA, carbon black</td></tr><tr><td>4</td><td>Ethyl-2-cyanoacrylate, polimetil metacrilato, butyl-2-cyanoacrylate, alkoxy-2-cyanoacrylate, carbon black</td></tr></tbody></table></div>
+<h3>Toxicidade do adesivo</h3>
+<p>Está associada à estrutura molecular: quanto mais curta, maior o potencial de toxicidade. Todos os adesivos liberam vapores (a forma vaporizada dos monômeros de cianoacrilato) durante a polimerização. Em contato com olhos, nariz, garganta ou qualquer área úmida do corpo, esses fumos podem causar irritação, inchaço da pálpebra, ressecamento dos olhos e da garganta e, em casos raros, asma.</p>
+<div class="tablewrap"><table><thead><tr><th>Medidas de segurança</th></tr></thead><tbody><tr><td>Use EPIs</td></tr><tr><td>Mantenha o ambiente ventilado</td></tr><tr><td>Controle temperatura e umidade</td></tr><tr><td>Aplique a quantidade adequada de cola</td></tr><tr><td>Substitua regularmente a gota do seu adesivo</td></tr></tbody></table></div>
+<h3>Como escolher o melhor adesivo?</h3>
+<p>Escolha adesivos com pelo menos <strong>duas composições</strong> de cianoacrilato, que se tornam menos tóxicos, sempre com cadeia de <strong>grau médico</strong>, e respeite as indicações de umidade e temperatura. O principal é você dominar o que um bom adesivo precisa ter na composição.</p>
+<h3>Quando substituir o adesivo?</h3>
+<div class="tablewrap"><table><thead><tr><th>Alteração</th><th>Descrição</th></tr></thead><tbody><tr><td>Textura</td><td>Muito viscoso ou pegajoso</td></tr><tr><td>Desempenho</td><td>Diminuição da eficácia, afetando o tempo de fixação ou a retenção</td></tr><tr><td>Cor</td><td>Mesmo após agitar, não fica fluido e homogêneo</td></tr></tbody></table></div>
+<p>Siga sempre as recomendações do fabricante para uso e armazenamento.</p>
+<h3>Existe adesivo antialérgico?</h3>
+<p>Não. O que existe são adesivos <strong>hipoalergênicos</strong>: de cadeia longa, com cianoacrilatos de grau médico, que são menos nocivos. Os componentes necessários para uma boa aderência são os mesmos que podem desencadear alergia, e a sensibilidade varia de pessoa para pessoa. Por isso, realize testes de sensibilidade antes da aplicação completa.</p>
+<h3>Armazenamento e conservação</h3>
+<ul><li>Mantenha na embalagem original, de preferência em recipiente que possa ser lacrado, longe de calor, umidade e luz solar.</li><li>Agite bem antes de cada uso.</li><li>Troque a gota a cada <strong>20 minutos</strong> ou sempre que ela ficar viscosa.</li><li>O prazo de validade após aberto varia conforme o fabricante e o armazenamento; leia a descrição.</li><li>Limpe o bico para evitar entupimento.</li></ul>
+<aside class="note warn"><strong>Nunca use algodão</strong> para limpar o bico: ele reage com o adesivo e derrete, gerando combustão prejudicial à saúde.</aside>
+<div class="figrow "><figure class=""><img src="img/cola-gota.webp" alt="cola-gota" loading="lazy"></figure><figure class=""><img src="img/cola-pote.webp" alt="cola-pote" loading="lazy"></figure></div>
+</section>
+<section class="chapter" id="temperatura-umidade"><header><span class="chap-n">20</span><h2>Temperatura e umidade</h2></header>
+<p>Umidade e temperatura são fatores essenciais para a aderência. A umidade é crucial na cura porque o adesivo reage à água:</p>
+<ul><li><strong>Umidade alta:</strong> o adesivo endurece mais rápido. É preciso trabalhar com agilidade; do contrário, pode curar antes da hora e causar falsa colagem, prejudicando a retenção.</li><li><strong>Umidade baixa:</strong> o tempo de cura se prolonga, aumentando a chance de os cílios grudarem na aplicação (os chamados <em>stickers</em>).</li></ul>
+<aside class="note ">Faixa ideal: <strong>20 a 24 °C</strong> de temperatura e <strong>40 a 65%</strong> de umidade.</aside>
+<p>Selecione o adesivo conforme a temperatura e a umidade do ambiente de trabalho e adapte a agilidade ao tipo de adesivo. Mas esses não são os únicos fatores: higiene adequada, preparação minuciosa e acoplagem precisa também são fundamentais.</p>
+<figure class=""><img src="img/umidade-temp.webp" alt="umidade-temp" loading="lazy"></figure>
+<h3>Soluções práticas</h3>
+<div class="tablewrap"><table><thead><tr><th>Umidade alta</th><th>Umidade baixa</th></tr></thead><tbody><tr><td>Evite produtos com pH alto: eles aceleram a secagem da cola.</td><td>Aumente a umidade com um umidificador (se pequeno, coloque-o perto de você).</td></tr><tr><td>Use adesivos de secagem mais lenta.</td><td>Use adesivos de secagem rápida, para evitar <em>stickers</em> e acelerar o procedimento.</td></tr><tr><td>Agilize o processo de acoplagem.</td><td>Use menos adesivo para acelerar a secagem.</td></tr><tr><td>Reduza umidade e temperatura com ar-condicionado ou desumidificador.</td><td>Evite micro gotas: com baixa umidade o adesivo fica mais líquido.</td></tr><tr><td>Use a gota em recipiente com menos exposição.</td><td>Aumente a temperatura do ambiente e a controle.</td></tr><tr><td>Trabalhe com micro gotas (microdrop).</td><td>Deixe o ambiente ventilado.</td></tr></tbody></table></div>
+</section>
+<section class="chapter" id="polimerizacao"><header><span class="chap-n">21</span><h2>Polimerização e cura do adesivo</h2></header>
+<p>Ambas começam juntas, quando o fio sintético é acoplado ao natural pelo adesivo. Depois de fixado, a cura leva o adesivo do estado líquido ao sólido. O tempo varia conforme a marca e a técnica, e o tempo total de cura é de <strong>cerca de 24 horas</strong>.</p>
+<ul><li><strong>Início da polimerização:</strong> marca o início da fixação das extensões aos cílios naturais.</li><li><strong>Processo de cura:</strong> a aderência e a resistência se consolidam.</li><li><strong>Tempo de secagem:</strong> usualmente de 0,5 a 5 segundos, conforme a técnica e a agilidade da profissional.</li><li><strong>Adaptação à habilidade:</strong> iniciantes devem preferir adesivos de secagem de 2 a 3 segundos (os mais lentos). Com segurança, migre para os mais rápidos.</li><li><strong>Tempo total de cura:</strong> cerca de 24 h, quando a aderência alcança a máxima eficácia.</li></ul>
+<figure class=""><img src="img/polimerizacao.webp" alt="Polimerização: do monômero (líquido) ao polímero (sólido)." loading="lazy"><figcaption>Polimerização: do monômero (líquido) ao polímero (sólido).</figcaption></figure>
+<p>Ao mergulhar o fio, não use adesivo em excesso: não há necessidade e pode prejudicar o trabalho, além de causar complicações e alergias. Hoje existem produtos que fazem a cura do adesivo logo após o procedimento, e a cliente <strong>pode molhar os cílios imediatamente</strong>, sem esperar 24 h.</p>
+<h3>Sticker</h3>
+<p>Ocorre quando uma extensão gruda na outra ou quando é aplicada em mais de um fio natural. Para evitar: não use adesivo de secagem muito lenta para o seu tempo de acoplagem; controle umidade e temperatura; e isole corretamente. Trabalhar por camadas facilita a visualização. No volume russo, invista em uma pinça de excelente precisão e evite acoplar uma ao lado da outra: aplique uma e vá alternando até preencher.</p>
+<aside class="note warn">Stickers são prejudiciais à saúde do fio natural, pois podem arrancá-lo.</aside>
+<figure class=""><img src="img/stickers.webp" alt="stickers" loading="lazy"></figure>
+</section>
+<section class="chapter" id="alergias"><header><span class="chap-n">22</span><h2>Alergias e irritações</h2></header>
+<p>A alergia é uma resposta do organismo ao contato com uma substância (o alérgeno), com reações exageradas do sistema imunológico. Surge geralmente quando o organismo está mais debilitado e varia de pessoa para pessoa. Os sintomas incluem <strong>edema (inchaço) das pálpebras, vermelhidão, coceira, secreção, lacrimejamento e sensação de corpo estranho</strong>.</p>
+<p>As reações às extensões são raras, mas podem ocorrer, e o <strong>cianoacrilato</strong>, presente em todos os adesivos, é um dos componentes envolvidos. Como todo produto químico, pode se tornar irritante a qualquer momento, no primeiro contato ou quando a imunidade estiver baixa. A reação pode surgir durante a aplicação ou em até <strong>72 horas</strong>, pelo contato direto com a cola, só pelo fume ou por outros produtos usados. Quem usa extensões há anos também pode desenvolver alergia.</p>
+<figure class=""><img src="img/alergia.webp" alt="alergia" loading="lazy"></figure>
+<h3>Queimadura química × processo alérgico</h3>
+<div class="tablewrap"><table><thead><tr><th></th><th>Queimadura química</th><th>Processo alérgico</th></tr></thead><tbody><tr><td>O que é</td><td>Condição momentânea por contato com o fumo do adesivo, em geral porque os olhos ficaram semiabertos</td><td>Resposta do sistema imunológico</td></tr><tr><td>Sintomas</td><td>Olhos vermelhos e coçando, dor e vermelhidão intensa</td><td>Olhos vermelhos, coceira (prurido), lacrimejamento, ardência, fotofobia e edema nas pálpebras</td></tr></tbody></table></div>
+<figure class=""><img src="img/edema.webp" alt="edema" loading="lazy"></figure>
+<h3>Como minimizar o risco</h3>
+<ul><li>Faça a aplicação correta, com toda a higienização e o distanciamento da pálpebra.</li><li>Evite conversas durante o procedimento, para a cliente não abrir os olhos nem o pad se mover.</li><li>Preencha sempre a <strong>ficha de anamnese</strong>.</li><li>Se a cliente tem histórico de alergias, faça o <strong>teste de alergia um dia antes</strong>.</li></ul>
+<aside class="note warn"><strong>NUNCA prescreva medicamento à sua cliente.</strong> Oriente sempre a procurar um médico especialista.</aside>
+</section>
+<div class="part-label" id="parte-tcnicadeaplicao">Técnica de aplicação</div>
+<section class="chapter" id="mergulho"><header><span class="chap-n">23</span><h2>Forma correta de mergulhar os fios</h2></header>
+<p>Ao colocar o fio no adesivo, não use quantidade excessiva: não há necessidade, pode prejudicar o trabalho e causar complicações e alergias.</p>
+<ul><li><strong>Fio a fio:</strong> mergulhe 30% da base do fio.</li><li><strong>Fios tecnológicos:</strong> mergulhe até a bifurcação.</li><li><strong>Curvaturas criativas:</strong> a base deve estar em bom contato com o fio natural; pela anatomia, exigem um pouco mais de habilidade na acoplagem.</li></ul>
+<div class="figrow "><figure class=""><img src="img/mergulho.webp" alt="mergulho" loading="lazy"></figure><figure class=""><img src="img/criativas-ml.webp" alt="criativas-ml" loading="lazy"></figure></div>
+</section>
+<section class="chapter" id="isolamento"><header><span class="chap-n">24</span><h2>Isolamento, acoplagem, distanciamento e direcionamento</h2></header>
+<p>São os pilares de uma excelente aplicação e devem ser executados com excelência para o seu trabalho se destacar.</p>
+<h3>Isolamento</h3>
+<p>É essencial em qualquer técnica. Como os fios naturais passam por ciclos de crescimento, cada extensão deve ser aplicada individualmente, com pouco adesivo, para não grudar nos fios ao redor e não danificá-los no crescimento natural.</p>
+<p>Posicione a mão com a pinça de isolamento (reta ou curva) apoiada na testa da cliente, <strong>sem pesar</strong>. Comece a isolar no sentido da raiz para a ponta, com total visibilidade do fio isolado. Se necessário, use a outra mão com a pinça de acoplagem para auxiliar. O isolamento perfeito exige muito treino.</p>
+<figure class=""><img src="img/isolamento.webp" alt="isolamento" loading="lazy"></figure>
+<h3>Acoplagem</h3>
+<p>É a aplicação do fio sintético ao natural já isolado. Pode ser feita <strong>por cima</strong>, <strong>por baixo</strong> ou, a menos usada, de lado. Segure por alguns segundos e solte. Certifique-se de que a base do fio sintético está corretamente acoplada: isso garante segurança, conforto e durabilidade.</p>
+<figure class=""><img src="img/acoplagem.webp" alt="acoplagem" loading="lazy"></figure>
+<h3>Distanciamento</h3>
+<p>Respeite <strong>0,5 a 0,7 mm</strong> da pele como margem de segurança (algumas profissionais usam 0,3 mm nos cantos interno e externo). Se o adesivo tocar a pele, a chance de irritação e alergia aumenta bastante. Manter um padrão também harmoniza o alinhamento.</p>
+<div class="figrow "><figure class=""><img src="img/distancia.webp" alt="distancia" loading="lazy"></figure><figure class=""><img src="img/distanciamento.webp" alt="distanciamento" loading="lazy"></figure></div>
+<h3>Direcionamento</h3>
+<p>Acople os fios de forma direcionada e alinhada, conforme o mapping. Se o fio da cliente for torto, faça a acoplagem com direcionamento reto, sem acompanhar o fio natural: assim o trabalho fica alinhado ao mapping.</p>
+<figure class=""><img src="img/direcionamento.webp" alt="direcionamento" loading="lazy"></figure>
+<h3>Efeitos do direcionamento</h3>
+<div class="tablewrap"><table><thead><tr><th>Ângulo</th><th>Efeito</th></tr></thead><tbody><tr><td>90°</td><td>Abertura</td></tr><tr><td>45°</td><td>Elevação</td></tr><tr><td>130°</td><td>Aproximação</td></tr><tr><td>180°</td><td>Alongamento</td></tr></tbody></table></div>
+</section>
+<section class="chapter" id="camadas"><header><span class="chap-n">25</span><h2>Camadas</h2></header>
+<p>Os cílios se organizam em camadas, em média de <strong>2 a 4</strong>, conforme a cliente. Dividir em camadas agiliza a aplicação e é fundamental para os efeitos <em>top line</em> e <em>perfect line</em>. Se feita de forma incorreta, a divisão atrapalha e causa desconforto, além de deixar os olhos expostos.</p>
+<p>Use uma fita microporosa estreita, cortada de acordo com o comprimento dos olhos da cliente. Posicione-a sobre as pálpebras móveis, levante todos os cílios e use a pinça para separar delicadamente a primeira camada. Aplique <strong>uma camada por vez</strong>: ao preencher uma, solte a próxima, sequencialmente.</p>
+<aside class="note ">Trabalhar por camadas proporciona melhor visibilidade e facilita a fixação.</aside>
+</section>
+<section class="chapter" id="transicao"><header><span class="chap-n">26</span><h2>Transição de curvaturas, top line e perfect line</h2></header>
+<p>A transição de curvaturas permite passar de forma suave entre as diferentes curvaturas e garante um alinhamento perfeito, resultando em trabalhos <em>top line</em> ou <em>perfect line</em>. Trabalhe com no mínimo 2 camadas, faça bom preenchimento e capriche no acabamento.</p>
+<div class="tablewrap"><table><thead><tr><th></th><th>Como é feito</th><th>Exemplo</th></tr></thead><tbody><tr><td><strong>Top line</strong></td><td>Transição de numerações por camadas, diminuindo o tamanho de baixo para cima, <strong>com a mesma curvatura</strong>. Sem degraus.</td><td>Camada inferior 11 mm C · meio 10 mm C · superior 9 mm C</td></tr><tr><td><strong>Perfect line</strong></td><td>Transição por camadas diminuindo a numeração <strong>e trocando a curvatura</strong>.</td><td>Inferior 11 mm D · meio 10 mm CC · superior 9 mm C</td></tr></tbody></table></div>
+<p><strong>O que cada medida define:</strong> 9 mm: alinhamento · 10 mm: densidade · 11 mm: tamanho.</p>
+<figure class=""><img src="img/top-perfect.webp" alt="top-perfect" loading="lazy"></figure>
+</section>
+<section class="chapter" id="complicacoes"><header><span class="chap-n">27</span><h2>Como evitar possíveis complicações</h2></header>
+<p>Podem ocorrer intercorrências como sensibilidade, irritação ou alergia, relacionadas desde a assepsia até os produtos usados. O adesivo ainda líquido pode ser nocivo; depois de polimerizado, é menos nocivo. Cada organismo reage de um jeito: ter usado extensões por anos não impede que a cliente desenvolva alergia.</p>
+<h3>12 passos para minimizar os riscos</h3>
+<ol><li>Higienize corretamente as mãos antes do procedimento e calce luvas descartáveis.</li><li>Higienize adequadamente os olhos e a região próxima.</li><li>Evite colocar o pad próximo à parte interna dos olhos (dentro da linha d'água).</li><li>Use produtos de qualidade.</li><li>Use fita hipoalergênica para isolar os cílios inferiores e para ajudar na visibilidade dos superiores.</li><li>Mantenha o distanciamento adequado.</li><li>Use a quantidade correta de adesivo, sem excesso.</li><li>Não deixe os olhos da cliente abertos durante o procedimento.</li><li>Evite conversas durante o procedimento; ofereça um ambiente aconchegante para ela relaxar.</li><li>Acople corretamente os fios.</li><li>Não use algodão na região dos olhos.</li><li>Use o finalizador: acelera a polimerização e a cura, diminuindo o risco de irritação e alergia.</li></ol>
+<aside class="note warn">Se a cliente tiver qualquer intercorrência que exija medicamento, <strong>nunca prescreva</strong>. Oriente a procurar um especialista.</aside>
+</section>
+<section class="chapter" id="preparacao"><header><span class="chap-n">28</span><h2>Preparação, fatores externos e microdrop</h2></header>
+<p>Antes de iniciar, preencha a <strong>ficha de avaliação</strong> e entenda o que sua cliente busca. Analise o fio natural para realizar um procedimento seguro.</p>
+<p>Para as extensões durarem, os cílios naturais precisam estar <strong>100% limpos</strong>: qualquer resíduo ou oleosidade cria uma barreira entre adesivo e cílio, causando “falsa colagem” ou retenção menor. Higienize sempre os cílios e a região dos olhos antes de qualquer aplicação e enxágue em abundância. A higienização correta dos olhos previne inflamações e blefarites, e toda cliente deve higienizar diariamente após aplicar as extensões.</p>
+<h3>Como controlar os fatores externos</h3>
+<ul><li>Mantenha a sala arejada, para aumentar o nível de O₂.</li><li>Trabalhe com adesivos de média secagem.</li><li>Umidade entre 40 e 65% e temperatura entre 20 e 24 °C; regule o higrômetro.</li><li>Mantenha o adesivo no pacote hermético.</li><li>Use umidificador se a umidade estiver baixa.</li><li>Use a técnica microdrop se a umidade estiver alta.</li></ul>
+<h3>Técnica microdrop</h3>
+<p>Mergulhe o fio sintético no adesivo deixando uma pequena quantidade nele, para que, ao ser acoplado em zigue-zague, se espalhe pelo fio natural. É muito útil em dias de alta umidade, pois facilita a acoplagem e evita colagens falsas.</p>
+<figure class=""><img src="img/microdrop.webp" alt="microdrop" loading="lazy"></figure>
+</section>
+<section class="chapter" id="passo-a-passo"><header><span class="chap-n">29</span><h2>Passo a passo da aplicação</h2></header>
+<ol><li>Escolha pelo menos quatro numerações diferentes de fios sintéticos.</li><li>Higienize as mãos e use luvas.</li><li>Com um pincel delicado e descartável, higienize os olhos e a região próxima com água micelar. Repita duas vezes com o shampoo específico e enxágue muito bem (no mínimo 2 vezes).</li><li>Aplique o preparador de sua preferência.</li><li>Posicione os pads nos cílios inferiores, sem que fiquem dentro do olho, e isole os fios inferiores com fita micropore.</li><li>Faça a marcação do mapeamento desejado.</li><li>Com a fita micropore, tracione a pálpebra para facilitar o isolamento. Certifique-se de que o olho da cliente esteja completamente fechado e confortável.</li><li>Agite bem o adesivo, descarte a primeira gota e coloque uma gota no recipiente.</li><li>Posicione as mãos: uma segura a pinça de isolamento; a outra, a pinça para pegar os fios do chicote.</li><li>Depois de isolar, mergulhe um fio sintético no adesivo e posicione-o sobre o fio natural. Segure por alguns segundos na direção desejada.</li><li>Repita até preencher todo o mapeamento.</li><li>Ao finalizar, retire delicadamente as fitas e os pads.</li><li>Aplique o finalizador e use um ventilador para ajudar a evaporar o fumo. Só então peça para a cliente abrir os olhos.</li><li>Verifique se todos os fios estão corretamente acoplados.</li><li>Entregue um manual com os cuidados pós-procedimento e confirme que ela entendeu.</li><li>Ofereça o agendamento do próximo atendimento.</li></ol>
+</section>
+<section class="chapter" id="manutencao"><header><span class="chap-n">30</span><h2>Manutenção</h2></header>
+<p>Geralmente se faz <strong>1 aplicação e de 2 a 3 manutenções</strong>. Com o tempo, o crescimento dos fios naturais faz o mapping se perder e os resíduos de adesivo se acumulam, exigindo limpeza mais eficaz para uma nova aplicação.</p>
+<p>Na manutenção, a higienização é feita como na primeira aplicação. Em geral remove-se mecanicamente os fios sintéticos que já se afastaram da raiz e reaplicam-se os que caíram, os que trocaram de fase e os que você removeu.</p>
+<aside class="note ">Para cobrar como manutenção, a cliente deve voltar com <strong>no mínimo 50%</strong> das extensões. Caso contrário, cobre um novo procedimento.</aside>
+<p>Fique atenta se a cliente volta frequentemente com poucas extensões: oriente os cuidados e analise se você está falhando em algum processo.</p>
+<h3>Remoção mecânica</h3>
+<p>Feita com duas pinças: uma segura o fio natural e a outra remove o sintético, “como se estivesse descascando uma banana”. É a mais usada nas manutenções. Cuidado para não danificar o fio natural e <strong>evite mais de 3 manutenções mecânicas</strong>, pois, mesmo com todo o cuidado, a longo prazo podem fragilizar o fio.</p>
+<h3>Remoção química</h3>
+<p>Cole uma fita dupla face na pálpebra móvel da cliente e grude nela todos os fios que precisam ser removidos. Com microbrush, aplique o removedor somente na ligação com as extensões, deixe agir e remova. Geralmente é pouco usada. Depois, é só higienizar os cílios e fazer a manutenção.</p>
+<div class="figrow "><figure class=""><img src="img/manutencao-1.webp" alt="manutencao-1" loading="lazy"></figure><figure class=""><img src="img/manutencao-2.webp" alt="manutencao-2" loading="lazy"></figure></div>
+<aside class="note ">Deixe sempre a próxima manutenção agendada: isso fideliza e evita que a cliente esqueça de marcar.</aside>
+</section>
+<section class="chapter" id="remocao"><header><span class="chap-n">31</span><h2>Remoção</h2></header>
+<ol><li>Aplique o removedor.</li><li>Deixe agir conforme a indicação do fabricante.</li><li>Faça o sistema de varredura com a pinça.</li><li>Limpe os resíduos com cotonetes e certifique-se de que removeu tudo. Se entrarem em contato com água ou shampoo, os resíduos cristalizam e interferem na retenção.</li><li>Depois de remover toda a extensão, limpe o restante com gazes e cotonetes e lave com shampoo <strong>2 vezes</strong>.</li><li>Se quiser, já pode fazer uma nova aplicação.</li></ol>
+<div class="figrow "><figure class=""><img src="img/remocao-1.webp" alt="remocao-1" loading="lazy"></figure><figure class=""><img src="img/remocao-2.webp" alt="remocao-2" loading="lazy"></figure></div>
+</section>
+<section class="chapter" id="pos"><header><span class="chap-n">32</span><h2>Orientações pós-procedimento e lista de materiais</h2></header>
+<h3>Orientações para a cliente</h3>
+<ul><li>Não molhe as extensões por até 24 horas, caso não use finalizador ou seu adesivo não tenha essa tecnologia.</li><li>Higienize os cílios diariamente.</li><li>Não esfregue nem puxe as extensões.</li><li>Seque os olhos com cuidado, apenas pressionando a toalha.</li><li>Penteie delicadamente as extensões.</li><li>Não use demaquilante oleoso ou bifásico na área dos olhos.</li><li>Não use rímel ou curvex.</li><li>Evite dormir em posição que amasse ou pressione os cílios.</li><li>Evite banhos quentes e saunas.</li><li>Sempre que chorar, suar ou mergulhar (mar ou piscina), lave os cílios com água potável.</li></ul>
+<h3>Lista de materiais</h3>
+<div class="checks"><label><input type="checkbox"> Caixa de cílios</label><label><input type="checkbox"> Higrômetro</label><label><input type="checkbox"> Shampoo</label><label><input type="checkbox"> Primer</label><label><input type="checkbox"> Microbrush</label><label><input type="checkbox"> Escova descartável</label><label><input type="checkbox"> Ventilador</label><label><input type="checkbox"> Frasco pump</label><label><input type="checkbox"> Paleta suporte de cílios</label><label><input type="checkbox"> Removedor de cílios</label><label><input type="checkbox"> Pinça curva e pinça reta</label><label><input type="checkbox"> Gel pads</label><label><input type="checkbox"> Fita micropore</label><label><input type="checkbox"> Espelho de mão</label><label><input type="checkbox"> Suporte para adesivo</label><label><input type="checkbox"> Luvas</label><label><input type="checkbox"> Toucas</label><label><input type="checkbox"> Maca</label><label><input type="checkbox"> Ring light</label><label><input type="checkbox"> Mocho</label></div>
+<aside class="note "><strong>Onde comprar?</strong> Compare preços para melhorar sua margem de lucro. Hoje, plataformas como Shopee e AliExpress costumam oferecer o melhor custo-benefício.</aside>
+</section>
+<section class="chapter" id="capping"><header><span class="chap-n">33</span><h2>Técnica de capping e empilhamento</h2></header>
+<p>O <strong>capping</strong> consiste em acoplar <strong>dois fios artificiais</strong> sobre o fio natural, em formato de sanduíche ou de empilhamento. Embora exista há algum tempo, ganhou destaque com as novas tecnologias de fios, entregando volume e efeitos impressionantes sem montar fans.</p>
+<h3>Vantagens</h3>
+<ul><li>Volume e densidade sem montagem de fans.</li><li>Durabilidade das extensões superior a 30 dias.</li></ul>
+<h3>Quais fios usar</h3>
+<p>Fios Y, W, fio a fio cônico ou elipse, inclusive de forma híbrida (por exemplo, fio Y por baixo e fio a fio por cima). A forma mais comercializada hoje é fio Y + fio a fio.</p>
+<figure class=""><img src="img/capping-fios.webp" alt="capping-fios" loading="lazy"></figure>
+<h3>Formato sanduíche</h3>
+<p>Um fio artificial é colocado na parte inferior do cílio natural e outro delicadamente por cima. A acoplagem “abraça” o fio natural e dá muito mais durabilidade. Para maior densidade, use o fio de menor numeração por cima e o de maior numeração por baixo.</p>
+<figure class=""><img src="img/capping-sanduiche.webp" alt="capping-sanduiche" loading="lazy"></figure>
+<h3>Formato empilhamento</h3>
+<p>Dois fios sintéticos são acoplados um sobre o outro no cílio natural, criando um efeito de camadas, com olhar marcante e volumoso. Podem ser acoplados por cima ou por baixo do fio natural. Há empilhamento com fios elipse e com fios tecnológicos.</p>
+<figure class=""><img src="img/capping-empilhamento.webp" alt="capping-empilhamento" loading="lazy"></figure>
+<h3>Controle do adesivo</h3>
+<p>No capping, o controle preciso do adesivo é essencial. O <strong>primeiro fio</strong> é mergulhado até a bifurcação e acoplado ao fio natural por cima; o <strong>segundo fio</strong> é imerso cerca de <strong>1/3</strong> para a devida acoplagem. Isso garante aderência e preserva o fio natural.</p>
+<aside class="note ">Avalie a estrutura do fio natural de cada cliente: a técnica não é indicada para todos os tipos de fio. Só realize se a estrutura for compatível.</aside>
+<h3>Durabilidade do capping</h3>
+<ol><li><strong>Ciclo de vida natural dos cílios:</strong> o fio artificial fica firmemente acoplado durante o ciclo de crescimento e queda.</li><li><strong>Qualidade da cola:</strong> adesivos de alta qualidade, com boa cadeia de cianoacrilato, aumentam a retenção. Faça corretamente a higienização e o preparo do fio e controle umidade e temperatura.</li><li><strong>Alinhamento adequado:</strong> distribuição uniforme e equilibrada melhora a estética e a durabilidade.</li></ol>
+<p>A durabilidade varia de pessoa para pessoa, conforme os cuidados pós-procedimento e as características individuais.</p>
+<h3>Devo fazer manutenção de capping?</h3>
+<p>No <strong>sanduíche</strong>, <strong>não</strong> faça manutenção: danifica os cílios naturais e não é viável financeiramente. Quando a cliente quiser trocar, faça toda a remoção de forma <strong>química</strong> e depois uma nova aplicação. No <strong>empilhamento</strong>, como o fio natural não é abraçado pelos dois fios, algumas profissionais fazem manutenção com remoção mecânica.</p>
+</section>
+<div class="part-label" id="parte-atendimentoenegcio">Atendimento e negócio</div>
+<section class="chapter" id="atendimento"><header><span class="chap-n">34</span><h2>Atendimento: passo a passo (Master em Durabilidade)</h2></header>
+<ol><li>Comece o atendimento com o preenchimento da ficha de avaliação.</li><li>Fotografe sua cliente sentada e deitada e decida com ela qual shape será utilizado, avaliando o rosto dela.</li><li>Higienize os olhos com a espuma, usando o pincel de aplicar gloss para esfregar os fios; enxágue com água mineral e seque levemente. Repita 2 vezes, ou mais, até o fio estar completamente limpo.</li><li>Coloque o pad em gel abaixo dos cílios inferiores e, se necessário, cole a fita micropore por cima para isolar os fios inferiores.</li><li>Use a fita transpore para levantar as pálpebras (<strong>cuidado para não deixar os olhos abertos</strong>).</li><li>De acordo com o formato dos olhos, desenhe o mapping para não se perder nem errar os tamanhos.</li><li>Isole os fios em camadas, fixando-os na pálpebra, e retire apenas a primeira camada com uma pinça.</li><li>Isole o fio natural com a pinça reta ou semicurva e depois pegue o fio sintético.</li><li>Molhe o fio na parte superior da cola em um movimento único, deixando o fio limpo ao tirar. Se vir uma bolinha ou pingo de cola, há excesso.</li><li>Aplique o fio com a pinça respeitando o tempo do seu adesivo e a distância da raiz. Aplique em <strong>100% dos fios</strong> para um resultado mais bonito.</li><li>Confira fio por fio: cole os que faltaram e desgrude os que grudaram, para evitar desconfortos.</li><li>Use um finalizador para curar completamente a extensão, ou finalize com o nano mister e peça que a cliente aguarde 24 horas para molhar.</li><li>Retire os micropores e os pads em gel e seque bem os fios antes de pedir para a cliente abrir os olhos.</li></ol>
+<figure class=""><img src="img/resultado-3.webp" alt="Resultado de extensão de cílios: volume, acabamento e alinhamento." loading="lazy"><figcaption>Resultado de extensão de cílios: volume, acabamento e alinhamento.</figcaption></figure>
+</section>
+<section class="chapter" id="preco"><header><span class="chap-n">35</span><h2>Preço × valor</h2></header>
+<p>A principal objeção do cliente geralmente é o preço. Ao comunicar o valor do serviço, destaque o <strong>benefício</strong> que será obtido, em vez de só mencionar o preço.</p>
+<p>Preço é o custo financeiro; <strong>valor</strong> é o benefício percebido. Imagine que eu ofereça a troca de uma nota de R$ 10 por outra de R$ 10: não é tentador. Mas se eu propuser R$ 100 em troca da mesma nota de R$ 10, a oferta fica muito atrativa.</p>
+<aside class="note ">Ao apresentar seu serviço, não assuste a cliente com o preço. Faça com que ela perceba que está investindo R$ 10 em algo que vale R$ 100 ou mais.</aside>
+</section>
+<section class="chapter" id="precificacao"><header><span class="chap-n">36</span><h2>Como precificar seu trabalho</h2></header>
+<p>Uma coisa é fato: a maioria de nós não aprende a cobrar corretamente. Muita gente aprende assim: “olhe o preço das concorrentes e defina o seu”. Isso <strong>não funciona</strong>, porque os custos da concorrente podem ser bem menores que os seus, e ela tem lucro cobrando aquele valor, e você talvez não.</p>
+<div class="formula"><span>Custos fixos e variáveis</span> + <span>Região</span> + <span>Experiência</span> = <strong>Valor do procedimento</strong></div>
+<h3>Região</h3>
+<p>Pesquise os <strong>10 melhores studios</strong> da sua região e faça a média: some os valores e divida por 10.</p>
+<h3>Experiência</h3>
+<p>Cliente não é modelo: não atenda clientes antes de atender modelos e ter certeza do que está entregando. Assim você cobra o justo pelo que entrega. Considere também o valor que você investiu para aprender.</p>
+<h3>Custos</h3>
+<ul><li><strong>Custo fixo:</strong> tudo o que você gasta tendo atendimento ou não (aluguel, internet, água, luz).</li><li><strong>Custo variável:</strong> tudo o que você gasta quando há atendimento (material, taxa de cartão, café da cliente, mimo).</li></ul>
+<h3>Exemplo com valores hipotéticos</h3>
+<div class="tablewrap"><table><thead><tr><th>Item</th><th>Valor</th></tr></thead><tbody><tr><td>Custo fixo mensal</td><td>R$ 3.000</td></tr><tr><td>Custo variável por cliente</td><td>R$ 60</td></tr><tr><td>Preço médio da sua região</td><td>R$ 200</td></tr><tr><td>Meta de atendimentos</td><td>30 por mês (1 por dia)</td></tr></tbody></table></div>
+<p>Quando ainda não temos clientes, definimos uma <strong>meta</strong> de atendimentos. Com 30 atendimentos por mês:</p>
+<ul><li>Custo fixo por atendimento: R$ 3.000 ÷ 30 = <strong>R$ 100</strong></li><li>Mais o custo variável: R$ 100 + R$ 60 = <strong>R$ 160</strong> (somente custos)</li><li>Margem de lucro: o mínimo recomendado é <strong>30%</strong>, mas você pode cobrar mais, pensando na sua experiência: R$ 160 + 30% = <strong>R$ 208</strong></li></ul>
+<aside class="note ">R$ 208 é o <strong>valor mínimo</strong> que você pode cobrar com base nesses valores hipotéticos.</aside>
+<div class="calc" id="calc">
+ <h3>Calculadora de preço mínimo</h3>
+ <div class="calc-grid">
+  <label>Custo fixo mensal (R$)<input type="number" id="c-fixo" value="3000" min="0" step="10"></label>
+  <label>Meta de atendimentos por mês<input type="number" id="c-meta" value="30" min="1" step="1"></label>
+  <label>Custo variável por cliente (R$)<input type="number" id="c-var" value="60" min="0" step="1"></label>
+  <label>Margem de lucro (%)<input type="number" id="c-lucro" value="30" min="0" step="1"></label>
+ </div>
+ <p class="calc-out">Valor mínimo por atendimento: <strong id="c-res">R$ 208,00</strong></p>
+</div>
+</section>
+
+  <footer>
+    <div class="t">Lash Design</div>
+    <p>Elis Miranda · Beauty Academy</p>
+  </footer>
+</main>
+
+<button id="top" aria-label="Voltar ao topo">↑</button>
+<div id="lb"><img alt=""></div>
+
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  function safe(fn){try{return fn()}catch(e){}}
+
+  // progresso e botão de topo
+  var bar=$('#progress'), top=$('#top');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?h.scrollTop/max*100:0)+'%';
+    top.classList.toggle('show',h.scrollTop>900);
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  top.onclick=function(){scrollTo({top:0,behavior:'smooth'})};
+
+  // menu móvel
+  $('#menuBtn').onclick=function(){document.body.classList.toggle('open')};
+  $('#scrim').onclick=function(){document.body.classList.remove('open')};
+  $$('#side nav a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('open')})});
+
+  // capítulo ativo no índice
+  var links={}; $$('#side nav a').forEach(function(a){links[a.dataset.id]=a});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        $$('#side nav a.on').forEach(function(x){x.classList.remove('on')});
+        var l=links[e.target.id]; if(l){l.classList.add('on'); safe(function(){l.scrollIntoView({block:'nearest'})})}
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  $$('.chapter').forEach(function(s){io.observe(s)});
+
+  // tema
+  var root=document.documentElement, tb=$('#theme');
+  function dark(){return root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+  function label(){tb.textContent=dark()?'Modo claro':'Modo escuro'}
+  safe(function(){var t=localStorage.getItem('apostila-theme'); if(t) root.dataset.theme=t});
+  label();
+  tb.onclick=function(){var n=dark()?'light':'dark'; root.dataset.theme=n; safe(function(){localStorage.setItem('apostila-theme',n)}); label()};
+  $('#print').onclick=function(){print()};
+
+  // zoom nas imagens
+  var lb=$('#lb'), lbi=$('img',lb);
+  $$('figure img').forEach(function(i){i.addEventListener('click',function(){lbi.src=i.src; lb.classList.add('on')})});
+  lb.onclick=function(){lb.classList.remove('on')};
+  addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+
+  // lista de materiais lembra o que foi marcado
+  var boxes=$$('.checks input');
+  var saved=safe(function(){return JSON.parse(localStorage.getItem('apostila-materiais')||'[]')})||[];
+  boxes.forEach(function(b,i){
+    b.checked=saved.indexOf(i)>-1;
+    b.addEventListener('change',function(){
+      var s=boxes.map(function(x,j){return x.checked?j:-1}).filter(function(j){return j>-1});
+      safe(function(){localStorage.setItem('apostila-materiais',JSON.stringify(s))});
+    });
+  });
+
+  // calculadora de preço
+  function calc(){
+    var f=+$('#c-fixo').value||0, m=Math.max(+$('#c-meta').value||1,1), v=+$('#c-var').value||0, l=+$('#c-lucro').value||0;
+    var r=(f/m+v)*(1+l/100);
+    $('#c-res').textContent='R$ '+r.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+  }
+  $$('.calc input').forEach(function(i){i.addEventListener('input',calc)}); calc();
+})();
+</script>
+</body>
+</html>
