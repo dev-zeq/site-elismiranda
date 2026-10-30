@@ -114,14 +114,6 @@ td:first-child{white-space:nowrap}
 .formula{margin:1.4em 0;padding:22px;text-align:center;background:var(--paper-off);border-radius:10px;font-family:var(--serif);font-size:1.25rem}
 .formula span{display:inline-block;padding:2px 10px}
 .formula strong{color:var(--rose-deep)}
-.calc{margin:2.4em 0 0;padding:26px;border:1px solid var(--rule);border-radius:12px;background:var(--paper-card)}
-.calc h3{margin-top:0}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.calc label{display:flex;flex-direction:column;gap:6px;font-size:.82rem;color:var(--ink-soft)}
-.calc input{font:inherit;font-size:1rem;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink)}
-.calc input:focus{outline:2px solid var(--rose);border-color:transparent}
-.calc-out{margin:18px 0 0;font-size:1.05rem}
-.calc-out strong{font-family:var(--serif);font-size:2rem;color:var(--rose-deep)}
 
 footer{margin-top:60px;padding:46px 28px 70px;text-align:center;background:var(--paper-off);border-top:1px solid var(--rule)}
 footer .t{font-family:var(--serif);font-size:2rem;color:var(--rose-deep)}
@@ -140,13 +132,11 @@ footer p{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(
   main{margin-left:0}
   .cover-inner{padding:40px 24px 48px}
   .pull{grid-template-columns:1fr;gap:24px}
-  .calc-grid{grid-template-columns:1fr}
-  .chap-n{font-size:2.6rem}
+    .chap-n{font-size:2.6rem}
   td:first-child{white-space:normal}
 }
 @media print{
-  #side,#menuBtn,#progress,#top,.go,.calc{display:none!important}
-  main{margin:0}
+  #side,#menuBtn,#progress,#top,.go,  main{margin:0}
   body{background:#fff;color:#000;font-size:11pt}
   .cover{min-height:auto;page-break-after:always}
   .chapter{page-break-inside:auto;padding-top:20px}
@@ -280,14 +270,6 @@ footer p{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(
       safe(function(){localStorage.setItem('apostila-materiais',JSON.stringify(s))});
     });
   });
-
-  // calculadora de preço
-  function calc(){
-    var f=+$('#c-fixo').value||0, m=Math.max(+$('#c-meta').value||1,1), v=+$('#c-var').value||0, l=+$('#c-lucro').value||0;
-    var r=(f/m+v)*(1+l/100);
-    $('#c-res').textContent='R$ '+r.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
-  }
-  $$('.calc input').forEach(function(i){i.addEventListener('input',calc)}); calc();
 })();
 </script>
 </body>

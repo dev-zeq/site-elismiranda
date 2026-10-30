@@ -555,16 +555,6 @@ p6.append(("precificacao", "Como precificar seu trabalho", f"""
 <p>Quando ainda não temos clientes, definimos uma <strong>meta</strong> de atendimentos. Com 30 atendimentos por mês:</p>
 {ul("Custo fixo por atendimento: R$ 3.000 ÷ 30 = <strong>R$ 100</strong>", "Mais o custo variável: R$ 100 + R$ 60 = <strong>R$ 160</strong> (somente custos)", "Margem de lucro: o mínimo recomendado é <strong>30%</strong>, mas você pode cobrar mais, pensando na sua experiência: R$ 160 + 30% = <strong>R$ 208</strong>")}
 {note("R$ 208 é o <strong>valor mínimo</strong> que você pode cobrar com base nesses valores hipotéticos.")}
-<div class="calc" id="calc">
- <h3>Calculadora de preço mínimo</h3>
- <div class="calc-grid">
-  <label>Custo fixo mensal (R$)<input type="number" id="c-fixo" value="3000" min="0" step="10"></label>
-  <label>Meta de atendimentos por mês<input type="number" id="c-meta" value="30" min="1" step="1"></label>
-  <label>Custo variável por cliente (R$)<input type="number" id="c-var" value="60" min="0" step="1"></label>
-  <label>Margem de lucro (%)<input type="number" id="c-lucro" value="30" min="0" step="1"></label>
- </div>
- <p class="calc-out">Valor mínimo por atendimento: <strong id="c-res">R$ 208,00</strong></p>
-</div>
 """))
 PARTS.append(("Atendimento e negócio", p6))
 
