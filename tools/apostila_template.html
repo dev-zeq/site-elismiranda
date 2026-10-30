@@ -195,7 +195,9 @@ footer p{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var
   #topbar .tb-t{flex:1;min-width:0;font-size:.9rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink-soft)}
   #topbar .tb-t b{color:var(--rose-deep);font-weight:700;margin-right:6px}
   #topbar .tb-p{font-size:.85rem;font-variant-numeric:tabular-nums;color:var(--rose-deep);font-weight:700}
-  #topbar .tb-theme{width:44px;height:44px;border:none;background:transparent;color:var(--ink);font-size:1.15rem;cursor:pointer;flex:none}
+  #topbar .tb-theme{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:none;background:transparent;color:var(--ink);cursor:pointer;flex:none}
+  body.open #topbar{z-index:40}
+  body.open #menuBtn{visibility:hidden}
   body.hide-top #topbar{transform:translateY(-110%)}
   body.hide-top #menuBtn{top:-60px}
   main{margin-left:0}
@@ -205,8 +207,8 @@ footer p{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var
   .resume-side.show{display:block}
 }
 @media (max-width:420px){
-  .cover .go,.cover .go2{display:block;width:100%;text-align:center;margin-left:0}
-  .cover .go2.show{display:block;margin-top:12px}
+  .cover .go,.cover .go2.show{display:block;width:100%;text-align:center;margin-left:0}
+  .cover .go2.show{margin-top:12px}
 }
 @media (min-width:1024px){
   #progress{left:var(--side);}
@@ -349,7 +351,7 @@ footer p{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var
   function label(id){var c=byId[id];return c?c.n+' · '+c.t:''}
 
   var bar=document.createElement('div');bar.id='topbar';bar.setAttribute('data-ui','');
-  bar.innerHTML='<div class="tb-t"><b></b><span></span></div><div class="tb-p">0%</div><button class="tb-theme" type="button" aria-label="Alternar modo claro e escuro">◐</button>';
+  bar.innerHTML='<div class="tb-t"><b></b><span></span></div><div class="tb-p">0%</div><button class="tb-theme" type="button" aria-label="Alternar modo claro e escuro"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>';
   body.insertBefore(bar,$('main'));
   var tbB=$('.tb-t b',bar), tbS=$('.tb-t span',bar), tbP=$('.tb-p',bar);
   var close=document.createElement('button');close.className='side-close';close.type='button';close.setAttribute('data-ui','');close.setAttribute('aria-label','Fechar índice');close.textContent='×';
