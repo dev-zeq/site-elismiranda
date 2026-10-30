@@ -355,10 +355,10 @@ p4.append(("adesivos", "Adesivos", f"""
  ["3","Ethyl-2-cyanoacrylate, alkoxy-2-cyanoacrylate, n-butyl-2-cyanoacrylate, PMMA, carbon black"],
  ["4","Ethyl-2-cyanoacrylate, polimetil metacrilato, butyl-2-cyanoacrylate, alkoxy-2-cyanoacrylate, carbon black"]])}
 <h3>Toxicidade do adesivo</h3>
-<p>Está associada à estrutura molecular: quanto mais curta, maior o potencial de toxicidade. Todos os adesivos liberam vapores (a forma vaporizada dos monômeros de cianoacrilato) durante a polimerização. Em contato com olhos, nariz, garganta ou qualquer área úmida do corpo, esses fumos podem causar irritação, inchaço da pálpebra, ressecamento dos olhos e da garganta e, em casos raros, asma.</p>
+<p>Está associada à estrutura molecular: quanto mais curta, maior o potencial de toxicidade. Todos os adesivos liberam vapores (a forma vaporizada dos monômeros de cianoacrilato) durante a polimerização. Em contato com olhos, nariz, garganta ou qualquer área úmida do corpo, esses fumos podem provocar reações como irritação, inchaço da pálpebra, ressecamento dos olhos e da garganta, mutação fetal, alteração nas células cancerígenas e, em casos raros, asma, devido à polimerização em contato com a umidade das membranas, o que faz o adesivo ficar inerte.</p>
 {table(["Medidas de segurança"],[["Use EPIs"],["Mantenha o ambiente ventilado"],["Controle temperatura e umidade"],["Aplique a quantidade adequada de cola"],["Substitua regularmente a gota do seu adesivo"]])}
 <h3>Como escolher o melhor adesivo?</h3>
-<p>Escolha adesivos com pelo menos <strong>duas composições</strong> de cianoacrilato, que se tornam menos tóxicos, sempre com cadeia de <strong>grau médico</strong>, e respeite as indicações de umidade e temperatura. O principal é você dominar o que um bom adesivo precisa ter na composição.</p>
+<p>Escolha adesivos com pelo menos <strong>duas composições</strong> de cianoacrilato, que se tornam menos tóxicos, sempre com cadeia de <strong>grau médico</strong>, e respeite as indicações de umidade e temperatura. Na tabela de exemplos acima estão sugestões das melhores composições de cola que já usei, mas não leve minha escolha como regra: o principal é você dominar o que um bom adesivo precisa ter na composição para ter uma boa indicação.</p>
 <h3>Quando substituir o adesivo?</h3>
 {table(["Alteração","Descrição"],[
  ["Textura","Muito viscoso ou pegajoso"],
