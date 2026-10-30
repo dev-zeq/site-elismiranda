@@ -340,6 +340,9 @@ footer p{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var
   function store(k,v){return safe(function(){if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)})}
   var body=document.body, root=document.documentElement;
 
+  // As imagens são leves (1,4 MB no total). Carregá-las logo evita que o conteúdo "pule" ao tocar no índice.
+  $$('img[loading="lazy"]').forEach(function(i){i.loading='eager'});
+
   // ── elementos de interface criados aqui (não fazem parte do conteúdo) ──
   var links=$$('#side nav a[data-id]'), byId={}, order=[];
   links.forEach(function(a,i){byId[a.dataset.id]={a:a,i:i,n:$('.n',a).textContent,t:a.textContent.replace($('.n',a).textContent,'').trim()};order.push(a.dataset.id)});
@@ -357,7 +360,7 @@ footer p{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var
   var go=$('.cover .go'); if(go) go.parentNode.insertBefore(resumeCover,go.nextSibling);
 
   // ── progresso, botão de topo e barra superior ──
-  var prog=$('#progress'), topBtn=$('#top'), lastY=0, cur=null;
+  var prog=$('#progress'), topBtn=$('#top'), lastY=0, cur=null, keepTop=0;
   function setCur(id){
     cur=id; $$('#side nav a.on').forEach(function(x){x.classList.remove('on')});
     var c=byId[id]; if(c){c.a.classList.add('on'); tbB.textContent=c.n; tbS.textContent=c.t}
@@ -367,7 +370,7 @@ footer p{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var
     prog.style.width=(max>0?y/max*100:0)+'%'; tbP.textContent=pct+'%';
     topBtn.classList.toggle('show',y>900);
     if(!cur){tbB.textContent='';tbS.textContent='Lash Design'}
-    var dy=y-lastY; if(!body.classList.contains('open')){ if(y<90||dy<-6)body.classList.remove('hide-top'); else if(dy>8)body.classList.add('hide-top') } lastY=y;
+    var dy=y-lastY; if(!body.classList.contains('open')){ if(y<90||dy<-6||Date.now()<keepTop)body.classList.remove('hide-top'); else if(dy>8)body.classList.add('hide-top') } lastY=y;
     savePos();
   }
   addEventListener('scroll',onScroll,{passive:true});
@@ -380,7 +383,8 @@ footer p{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var
   menuBtn.onclick=function(){drawer(!body.classList.contains('open'))};
   close.onclick=function(){drawer(false)};
   $('#scrim').onclick=function(){drawer(false)};
-  links.forEach(function(a){a.addEventListener('click',function(){body.classList.remove('open')})});
+  // ao saltar para um capítulo, a barra superior continua visível por um instante
+  addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(a){keepTop=Date.now()+1500; if(body.classList.contains('open'))drawer(false)}});
   addEventListener('keydown',function(e){if(e.key==='Escape'){if($('#lb').classList.contains('on'))closeLb();else if(body.classList.contains('open'))drawer(false)}});
 
   // ── capítulo atual no índice ──
@@ -410,7 +414,7 @@ footer p{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var
       store('apostila-pos',JSON.stringify({id:cur,off:off}))},500);
   }
   var saved=safe(function(){return JSON.parse(store('apostila-pos')||'null')});
-  function goSaved(){var el=saved&&document.getElementById(saved.id); if(!el)return; drawer(false); scrollTo({top:el.getBoundingClientRect().top+scrollY+(saved.off||0),behavior:'smooth'})}
+  function goSaved(){var el=saved&&document.getElementById(saved.id); if(!el)return; drawer(false); keepTop=Date.now()+1500; scrollTo({top:el.getBoundingClientRect().top+scrollY+(saved.off||0),behavior:'smooth'})}
   if(saved&&byId[saved.id]&&!(saved.id===order[0]&&(saved.off||0)<300)){
     resumeSide.innerHTML='<b>Continuar de onde parei</b>'+label(saved.id); resumeSide.classList.add('show'); resumeCover.classList.add('show');
     resumeSide.onclick=goSaved; resumeCover.onclick=goSaved;
